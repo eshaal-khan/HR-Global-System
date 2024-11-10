@@ -71,6 +71,12 @@
     <Compile Include="FrmHRManagerLogin.Designer.cs">
       <DependentUpon>FrmHRManagerLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSelfServiceLandingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelfServiceLandingPage.Designer.cs">
+      <DependentUpon>FrmSelfServiceLandingPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSelfServiceLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHRManagerLogin.resx">
       <DependentUpon>FrmHRManagerLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelfServiceLandingPage.resx">
+      <DependentUpon>FrmSelfServiceLandingPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSelfServiceLogin.resx">
       <DependentUpon>FrmSelfServiceLogin.cs</DependentUpon>

@@ -79,6 +79,7 @@
             this.btnSelfServiceSignIn.TabIndex = 4;
             this.btnSelfServiceSignIn.Text = "Sign In";
             this.btnSelfServiceSignIn.UseVisualStyleBackColor = true;
+            this.btnSelfServiceSignIn.Click += new System.EventHandler(this.btnSelfServiceSignIn_Click);
             // 
             // FrmSelfServiceLogin
             // 
