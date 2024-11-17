@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace HR_Global_System
 {
-    public partial class FrmHRManagerLogin : Form
+    public partial class FrnViewAnalytics : Form
     {
-        public FrmHRManagerLogin()
+        public FrnViewAnalytics()
         {
             InitializeComponent();
         }
 
-        private void btnHRManagerSignIn_Click(object sender, EventArgs e)
+        private void FrnViewAnalytics_Load(object sender, EventArgs e)
         {
-            FrmHRLandingPage HRLandingPage = new FrmHRLandingPage();
-            HRLandingPage.ShowDialog();
+            //chart2.Series["Employees"].Points.AddXY("")
         }
     }
 }

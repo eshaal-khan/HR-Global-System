@@ -32,5 +32,10 @@ namespace HR_Global_System
             createEmployee.ShowDialog();
             this.Close();
         }
+
+        private void btnViewAnalytics_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace HR_Global_System
             txtSelectedEmployeeCountry.Text=selectedEmployee._baseCountry;
         }
 
-        private void btnUpdatEmployeeInfo_Click(object sender, EventArgs e)
+        private void btnUpdateEmployeeInfo_Click(object sender, EventArgs e)
         {
             //opening connection with database
             OleDbConnection con;

@@ -76,6 +76,7 @@
             this.btnViewAnalytics.TabIndex = 3;
             this.btnViewAnalytics.Text = "View Analytics";
             this.btnViewAnalytics.UseVisualStyleBackColor = true;
+            this.btnViewAnalytics.Click += new System.EventHandler(this.btnViewAnalytics_Click);
             // 
             // btnManageLeave
             // 

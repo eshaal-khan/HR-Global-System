@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,80 +47,93 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoginValidation.cs" />
+    <Compile Include="Management Classes\DatabaseManagement.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="FrmCreateEmployee.cs">
+    <Compile Include="Management Classes\ErrorManagement.cs" />
+    <Compile Include="Management Classes\FormManagement.cs" />
+    <Compile Include="Forms\FrmCreateEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCreateEmployee.Designer.cs">
+    <Compile Include="Forms\FrmCreateEmployee.Designer.cs">
       <DependentUpon>FrmCreateEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditEmployeeInfo.cs">
+    <Compile Include="Forms\FrmEditEmployeeInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEditEmployeeInfo.Designer.cs">
+    <Compile Include="Forms\FrmEditEmployeeInfo.Designer.cs">
       <DependentUpon>FrmEditEmployeeInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmHRLandingPage.cs">
+    <Compile Include="Forms\FrmHRLandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmHRLandingPage.Designer.cs">
+    <Compile Include="Forms\FrmHRLandingPage.Designer.cs">
       <DependentUpon>FrmHRLandingPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmHRManagerLogin.cs">
+    <Compile Include="Forms\FrmHRManagerLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmHRManagerLogin.Designer.cs">
+    <Compile Include="Forms\FrmHRManagerLogin.Designer.cs">
       <DependentUpon>FrmHRManagerLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSelfServiceLandingPage.cs">
+    <Compile Include="Forms\FrmSelfServiceLandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSelfServiceLandingPage.Designer.cs">
+    <Compile Include="Forms\FrmSelfServiceLandingPage.Designer.cs">
       <DependentUpon>FrmSelfServiceLandingPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSelfServiceLogin.cs">
+    <Compile Include="Forms\FrmSelfServiceLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSelfServiceLogin.Designer.cs">
+    <Compile Include="Forms\FrmSelfServiceLogin.Designer.cs">
       <DependentUpon>FrmSelfServiceLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmViewEmployeeRecords.cs">
+    <Compile Include="Forms\FrmViewEmployeeRecords.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmViewEmployeeRecords.Designer.cs">
+    <Compile Include="Forms\FrmViewEmployeeRecords.Designer.cs">
       <DependentUpon>FrmViewEmployeeRecords.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmWelcomePage.cs">
+    <Compile Include="Forms\FrmWelcomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmWelcomePage.Designer.cs">
+    <Compile Include="Forms\FrmWelcomePage.Designer.cs">
       <DependentUpon>FrmWelcomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrnViewAnalytics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrnViewAnalytics.Designer.cs">
+      <DependentUpon>FrnViewAnalytics.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmCreateEmployee.resx">
+    <EmbeddedResource Include="Forms\FrmCreateEmployee.resx">
       <DependentUpon>FrmCreateEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditEmployeeInfo.resx">
+    <EmbeddedResource Include="Forms\FrmEditEmployeeInfo.resx">
       <DependentUpon>FrmEditEmployeeInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmHRLandingPage.resx">
+    <EmbeddedResource Include="Forms\FrmHRLandingPage.resx">
       <DependentUpon>FrmHRLandingPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmHRManagerLogin.resx">
+    <EmbeddedResource Include="Forms\FrmHRManagerLogin.resx">
       <DependentUpon>FrmHRManagerLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSelfServiceLandingPage.resx">
+    <EmbeddedResource Include="Forms\FrmSelfServiceLandingPage.resx">
       <DependentUpon>FrmSelfServiceLandingPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSelfServiceLogin.resx">
+    <EmbeddedResource Include="Forms\FrmSelfServiceLogin.resx">
       <DependentUpon>FrmSelfServiceLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmViewEmployeeRecords.resx">
+    <EmbeddedResource Include="Forms\FrmViewEmployeeRecords.resx">
       <DependentUpon>FrmViewEmployeeRecords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmWelcomePage.resx">
+    <EmbeddedResource Include="Forms\FrmWelcomePage.resx">
       <DependentUpon>FrmWelcomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrnViewAnalytics.resx">
+      <DependentUpon>FrnViewAnalytics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

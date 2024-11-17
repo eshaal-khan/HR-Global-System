@@ -53,7 +53,7 @@
             this.txtSelectedEmployeeManager = new System.Windows.Forms.TextBox();
             this.txtSelectedEmployeeGender = new System.Windows.Forms.TextBox();
             this.lblSelectedEmployeeFullName = new System.Windows.Forms.Label();
-            this.btnUpdatEmployeeInfo = new System.Windows.Forms.Button();
+            this.btnUpdateEmployeeInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSelectedEmployeeID
@@ -271,22 +271,22 @@
             this.lblSelectedEmployeeFullName.TabIndex = 26;
             this.lblSelectedEmployeeFullName.Text = "label1";
             // 
-            // btnUpdatEmployeeInfo
+            // btnUpdateEmployeeInfo
             // 
-            this.btnUpdatEmployeeInfo.Location = new System.Drawing.Point(1372, 794);
-            this.btnUpdatEmployeeInfo.Name = "btnUpdatEmployeeInfo";
-            this.btnUpdatEmployeeInfo.Size = new System.Drawing.Size(206, 139);
-            this.btnUpdatEmployeeInfo.TabIndex = 27;
-            this.btnUpdatEmployeeInfo.Text = "Update";
-            this.btnUpdatEmployeeInfo.UseVisualStyleBackColor = true;
-            this.btnUpdatEmployeeInfo.Click += new System.EventHandler(this.btnUpdatEmployeeInfo_Click);
+            this.btnUpdateEmployeeInfo.Location = new System.Drawing.Point(1372, 794);
+            this.btnUpdateEmployeeInfo.Name = "btnUpdateEmployeeInfo";
+            this.btnUpdateEmployeeInfo.Size = new System.Drawing.Size(206, 139);
+            this.btnUpdateEmployeeInfo.TabIndex = 27;
+            this.btnUpdateEmployeeInfo.Text = "Update";
+            this.btnUpdateEmployeeInfo.UseVisualStyleBackColor = true;
+            this.btnUpdateEmployeeInfo.Click += new System.EventHandler(this.btnUpdateEmployeeInfo_Click);
             // 
             // FrmEditEmployeeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1609, 975);
-            this.Controls.Add(this.btnUpdatEmployeeInfo);
+            this.Controls.Add(this.btnUpdateEmployeeInfo);
             this.Controls.Add(this.lblSelectedEmployeeFullName);
             this.Controls.Add(this.txtSelectedEmployeeGender);
             this.Controls.Add(this.txtSelectedEmployeeManager);
@@ -346,6 +346,6 @@
         private System.Windows.Forms.TextBox txtSelectedEmployeeManager;
         private System.Windows.Forms.TextBox txtSelectedEmployeeGender;
         private System.Windows.Forms.Label lblSelectedEmployeeFullName;
-        private System.Windows.Forms.Button btnUpdatEmployeeInfo;
+        private System.Windows.Forms.Button btnUpdateEmployeeInfo;
     }
 }
