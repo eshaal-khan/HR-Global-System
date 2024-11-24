@@ -8,7 +8,8 @@ namespace HR_Global_System
 {
     public class Employee
     {
-        public int _employeeID { get; set; }
+        public string _employeeID { get; set; }
+        public string _password {  get; set; }
         public string _firstName { get; set; }
         public string _lastName { get; set; }
         public string _gender { get; set; }
@@ -21,10 +22,11 @@ namespace HR_Global_System
         public string _jobGrade { get; set; }
         public string _baseCountry { get; set; }
 
-        public Employee(int employeeID, string firstName, string lastName, string gender, string contactEmail, string contactNumber,
+        public Employee(string employeeID, string password, string firstName, string lastName, string gender, string contactEmail, string contactNumber,
             string jobTitle, string managerName, decimal annualSalary, decimal totalPaidLeave, string jobGrade, string baseCountry)
         {
             this._employeeID = employeeID;
+            this._password = password;
             this._firstName = firstName;
             this._lastName = lastName;
             this._gender = gender;

@@ -12,30 +12,28 @@ namespace HR_Global_System
 {
     public partial class FrmHRLandingPage : Form
     {
-        public FrmHRLandingPage()
+        public FrmHRLandingPage(string baseCountry)
         {
             InitializeComponent();
+            lblHRLandingPage.Text = ($"Welcome to the {baseCountry} HR Portal! Use the below options for navigation:");
         }
 
         private void btnViewEmployeeRecords_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmViewEmployeeRecords viewEmployeeRecords = new FrmViewEmployeeRecords();
-            viewEmployeeRecords.ShowDialog();
-            this.Close();
+            FrmViewEmployeeRecords viewRecords = new FrmViewEmployeeRecords();
+            FormManagement.NavigateToNextForm(this, viewRecords);
         }
 
         private void btnCreateEmployeeRecord_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FrmCreateEmployee createEmployee = new FrmCreateEmployee();
-            createEmployee.ShowDialog();
-            this.Close();
+            FormManagement.NavigateToNextForm(this, createEmployee);
         }
 
         private void btnViewAnalytics_Click(object sender, EventArgs e)
         {
-
+            FrmViewAnalytics viewAnalytics = new FrmViewAnalytics();
+            FormManagement.NavigateToNextForm(this, viewAnalytics);
         }
     }
 }

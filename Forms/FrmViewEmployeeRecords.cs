@@ -16,7 +16,7 @@ namespace HR_Global_System
         static OleDbConnection con;
         static OleDbCommand cmd;
         static OleDbDataReader reader;
-        public FrmViewEmployeeRecords()
+        public FrmViewEmployeeRecords(string baseCountry)
         {
             InitializeComponent();
         }
@@ -26,7 +26,8 @@ namespace HR_Global_System
             con.ConnectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
             cmd = new OleDbCommand();
             cmd.Connection = con;
-            cmd.CommandText = @"SELECT * From TableEmployeeInfo";
+            cmd.CommandText = @"SELECT * From TableEmployeeInfo WHERE BaseCountry={baseCountry}";
+            cmd.Parameters.AddWithValue("@baseCountry",baseCountry)
             con.Open();
             reader = cmd.ExecuteReader();
             BindingSource bindingSource = new BindingSource();
@@ -38,9 +39,9 @@ namespace HR_Global_System
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Employee selectedEmployee = new Employee(Convert.ToInt32(dgvAllEmployeeRecords.SelectedCells[0].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[1].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[2].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[3].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[4].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[5].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[6].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[7].Value), Convert.ToDecimal(dgvAllEmployeeRecords.SelectedCells[8].Value), Convert.ToDecimal(dgvAllEmployeeRecords.SelectedCells[9].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[10].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[11].Value));
-            FrmEditEmployeeInfo EditEmployee = new FrmEditEmployeeInfo(selectedEmployee);
-            EditEmployee.ShowDialog();
+            Employee selectedEmployee = new Employee(Convert.ToString(dgvAllEmployeeRecords.SelectedCells[0].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[1].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[2].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[3].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[4].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[5].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[6].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[7].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[8].Value), Convert.ToDecimal(dgvAllEmployeeRecords.SelectedCells[9].Value), Convert.ToDecimal(dgvAllEmployeeRecords.SelectedCells[10].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[11].Value), Convert.ToString(dgvAllEmployeeRecords.SelectedCells[12].Value));
+            FrmEditEmployeeInfo editEmployee = new FrmEditEmployeeInfo(selectedEmployee);
+            FormManagement.NavigateToNextForm(this, editEmployee);
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)

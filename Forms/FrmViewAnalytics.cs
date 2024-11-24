@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HR_Global_System
 {
-    public partial class FrnViewAnalytics : Form
+    public partial class FrmViewAnalytics : Form
     {
-        public FrnViewAnalytics()
+        public FrmViewAnalytics()
         {
             InitializeComponent();
         }

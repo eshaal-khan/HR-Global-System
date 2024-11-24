@@ -22,73 +22,57 @@ namespace HR_Global_System
 
         private void btnHRManagerSignIn_Click(object sender, EventArgs e)
         {
-            OleDbConnection con;
-            OleDbCommand cmd;
-            OleDbDataReader reader;
-            con = new OleDbConnection();
-            con.ConnectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-            cmd = new OleDbCommand();
-            cmd.Connection = con;
-            //con.Open();
-            List<string> IDs = new List<string>();
-            using (OleDbConnection connection = new OleDbConnection(con.ConnectionString))
+            string connectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
+            try
             {
-                con.Open();
-                using (cmd = new OleDbCommand(@"SELECT * FROM TableEmployeeInfo",con))
+                using (OleDbConnection con = new OleDbConnection(connectionString))
                 {
-                    using (reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string ID = reader.GetString(0);
-                            IDs.Add(ID);
-
-                        }
-                    }
-                }
-            }
-            foreach (string ID in IDs)
-            {
-                if (ID == txtHRUsername.Text)
-                {
-                    OleDbConnection con2;
-                    OleDbCommand cmd2;
-                    OleDbDataReader reader2;
-                    con2 = new OleDbConnection();
-                    con2.ConnectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-                    cmd2 = new OleDbCommand();
-                    cmd2.Connection = con2;
-                    cmd2.CommandText = @"SELECT Password FROM TableEmployeeInfo WHERE LoginNumber= @id";
-                    cmd2.Parameters.AddWithValue("@id", ID); //parameterised query
-                    con2.Open();
-                    string expectedPassword = Convert.ToString(cmd2.ExecuteScalar());
-                    con2.Close();
-
-                    OleDbConnection con3;
-                    OleDbCommand cmd3;
-                    OleDbDataReader reader3;
-                    con3 = new OleDbConnection();
-                    con3.ConnectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-                    cmd3 = new OleDbCommand();
-                    cmd3.Connection = con3;
-                    cmd3.CommandText = @"SELECT JobTtitle FROM TableEmployeeInfo WHERE LoginNumber= @id";
-                    cmd3.Parameters.AddWithValue("@id", ID); //parameterised query
                     con.Open();
-                    string jobTitle = Convert.ToString(cmd2.ExecuteScalar());
-                    con.Close();
-                    if (expectedPassword==txtHRPassword.Text)
+                    string verificationQuery = "SELECT * From TableEmployeeInfo WHERE LoginNumber= '" + txtHRUsername.Text + "' AND Password='" + txtHRPassword.Text + "'";
+                    using (OleDbCommand cmd = new OleDbCommand(verificationQuery, con))
                     {
-                        if (jobTitle=="HR Lead")
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
                         {
-                            DialogResult res = MessageBox.Show("Successful Login!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            FrmHRLandingPage HRLandingPage = new FrmHRLandingPage();
-                            HRLandingPage.ShowDialog();
+                            string jobQuery = "SELECT JobTitle From TableEmployeeInfo WHERE LoginNumber= '" + txtHRUsername.Text + "' AND Password='" + txtHRPassword.Text + "'";
+                            using (OleDbCommand cmd2 = new OleDbCommand(jobQuery, con))
+                            {
+                                object jobResult = cmd2.ExecuteScalar();
+                                string jobTitle = jobResult.ToString();
+
+                                if (jobTitle.Equals("HR Lead", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    string countryQuery= "SELECT BaseCountry From TableEmployeeInfo WHERE LoginNumber= '" + txtHRUsername.Text + "' AND Password='" + txtHRPassword.Text + "'";
+                                    using (OleDbCommand cmd3 = new OleDbCommand(countryQuery, con))
+                                    {
+                                        object baseCountryResult = cmd3.ExecuteScalar();
+                                        string baseCountry = baseCountryResult.ToString();
+                                        MessageBox.Show("Login successful!");
+                                        FrmHRLandingPage HRLandingPage = new FrmHRLandingPage(baseCountry);
+                                        FormManagement.NavigateToNextForm(this, HRLandingPage);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Access denied as you are not a HR Lead. Please contact your HR Lead for further guidance or log into the self service portal");
+                                }
+                            }
 
                         }
+                        else
+                        {
+                            MessageBox.Show("Invalid login details, please recheck your details");
+                        }
                     }
-
                 }
             }
+            catch (OleDbException exception)
+            {
+
+                MessageBox.Show($"Error in checking details: {exception.Message}");
+            }
+
         }
     }
 }

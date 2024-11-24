@@ -1,6 +1,6 @@
 ﻿namespace HR_Global_System
 {
-    partial class FrnViewAnalytics
+    partial class FrmViewAnalytics
     {
         /// <summary>
         /// Required designer variable.

@@ -54,6 +54,9 @@
             this.txtSelectedEmployeeGender = new System.Windows.Forms.TextBox();
             this.lblSelectedEmployeeFullName = new System.Windows.Forms.Label();
             this.btnUpdateEmployeeInfo = new System.Windows.Forms.Button();
+            this.txtSelectedEmployeePassword = new System.Windows.Forms.TextBox();
+            this.lblSelectedEmployeePassword = new System.Windows.Forms.Label();
+            this.btnShowPassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSelectedEmployeeID
@@ -70,7 +73,7 @@
             // 
             this.lblSelectedEmployeeFirstName.AutoSize = true;
             this.lblSelectedEmployeeFirstName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeFirstName.Location = new System.Drawing.Point(12, 179);
+            this.lblSelectedEmployeeFirstName.Location = new System.Drawing.Point(12, 230);
             this.lblSelectedEmployeeFirstName.Name = "lblSelectedEmployeeFirstName";
             this.lblSelectedEmployeeFirstName.Size = new System.Drawing.Size(226, 42);
             this.lblSelectedEmployeeFirstName.TabIndex = 1;
@@ -80,7 +83,7 @@
             // 
             this.lblSelectedEmployeeSurname.AutoSize = true;
             this.lblSelectedEmployeeSurname.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeSurname.Location = new System.Drawing.Point(12, 237);
+            this.lblSelectedEmployeeSurname.Location = new System.Drawing.Point(12, 288);
             this.lblSelectedEmployeeSurname.Name = "lblSelectedEmployeeSurname";
             this.lblSelectedEmployeeSurname.Size = new System.Drawing.Size(196, 42);
             this.lblSelectedEmployeeSurname.TabIndex = 2;
@@ -90,7 +93,7 @@
             // 
             this.lblSelectedEmployeeGender.AutoSize = true;
             this.lblSelectedEmployeeGender.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeGender.Location = new System.Drawing.Point(12, 297);
+            this.lblSelectedEmployeeGender.Location = new System.Drawing.Point(12, 348);
             this.lblSelectedEmployeeGender.Name = "lblSelectedEmployeeGender";
             this.lblSelectedEmployeeGender.Size = new System.Drawing.Size(164, 42);
             this.lblSelectedEmployeeGender.TabIndex = 3;
@@ -100,7 +103,7 @@
             // 
             this.lblSelectedEmployeeEmail.AutoSize = true;
             this.lblSelectedEmployeeEmail.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeEmail.Location = new System.Drawing.Point(12, 357);
+            this.lblSelectedEmployeeEmail.Location = new System.Drawing.Point(12, 408);
             this.lblSelectedEmployeeEmail.Name = "lblSelectedEmployeeEmail";
             this.lblSelectedEmployeeEmail.Size = new System.Drawing.Size(288, 42);
             this.lblSelectedEmployeeEmail.TabIndex = 5;
@@ -110,7 +113,7 @@
             // 
             this.lblSelectedEmployeeMobile.AutoSize = true;
             this.lblSelectedEmployeeMobile.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeMobile.Location = new System.Drawing.Point(12, 419);
+            this.lblSelectedEmployeeMobile.Location = new System.Drawing.Point(12, 470);
             this.lblSelectedEmployeeMobile.Name = "lblSelectedEmployeeMobile";
             this.lblSelectedEmployeeMobile.Size = new System.Drawing.Size(304, 42);
             this.lblSelectedEmployeeMobile.TabIndex = 6;
@@ -120,7 +123,7 @@
             // 
             this.lblSelectedEmployeeTitle.AutoSize = true;
             this.lblSelectedEmployeeTitle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeTitle.Location = new System.Drawing.Point(12, 489);
+            this.lblSelectedEmployeeTitle.Location = new System.Drawing.Point(12, 540);
             this.lblSelectedEmployeeTitle.Name = "lblSelectedEmployeeTitle";
             this.lblSelectedEmployeeTitle.Size = new System.Drawing.Size(184, 42);
             this.lblSelectedEmployeeTitle.TabIndex = 7;
@@ -130,7 +133,7 @@
             // 
             this.lblSelectedEmployeeManager.AutoSize = true;
             this.lblSelectedEmployeeManager.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeManager.Location = new System.Drawing.Point(12, 553);
+            this.lblSelectedEmployeeManager.Location = new System.Drawing.Point(12, 604);
             this.lblSelectedEmployeeManager.Name = "lblSelectedEmployeeManager";
             this.lblSelectedEmployeeManager.Size = new System.Drawing.Size(188, 42);
             this.lblSelectedEmployeeManager.TabIndex = 8;
@@ -140,7 +143,7 @@
             // 
             this.lblSelectedEmployeeSalary.AutoSize = true;
             this.lblSelectedEmployeeSalary.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeSalary.Location = new System.Drawing.Point(12, 614);
+            this.lblSelectedEmployeeSalary.Location = new System.Drawing.Point(12, 665);
             this.lblSelectedEmployeeSalary.Name = "lblSelectedEmployeeSalary";
             this.lblSelectedEmployeeSalary.Size = new System.Drawing.Size(441, 42);
             this.lblSelectedEmployeeSalary.TabIndex = 9;
@@ -150,7 +153,7 @@
             // 
             this.lblSelectedEmployeeLeave.AutoSize = true;
             this.lblSelectedEmployeeLeave.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeLeave.Location = new System.Drawing.Point(12, 681);
+            this.lblSelectedEmployeeLeave.Location = new System.Drawing.Point(12, 732);
             this.lblSelectedEmployeeLeave.Name = "lblSelectedEmployeeLeave";
             this.lblSelectedEmployeeLeave.Size = new System.Drawing.Size(476, 42);
             this.lblSelectedEmployeeLeave.TabIndex = 10;
@@ -160,7 +163,7 @@
             // 
             this.lblSelectedEmployeeGrade.AutoSize = true;
             this.lblSelectedEmployeeGrade.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeGrade.Location = new System.Drawing.Point(12, 737);
+            this.lblSelectedEmployeeGrade.Location = new System.Drawing.Point(12, 788);
             this.lblSelectedEmployeeGrade.Name = "lblSelectedEmployeeGrade";
             this.lblSelectedEmployeeGrade.Size = new System.Drawing.Size(266, 42);
             this.lblSelectedEmployeeGrade.TabIndex = 11;
@@ -170,7 +173,7 @@
             // 
             this.lblSelectedEmployeeCountry.AutoSize = true;
             this.lblSelectedEmployeeCountry.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectedEmployeeCountry.Location = new System.Drawing.Point(12, 794);
+            this.lblSelectedEmployeeCountry.Location = new System.Drawing.Point(12, 845);
             this.lblSelectedEmployeeCountry.Name = "lblSelectedEmployeeCountry";
             this.lblSelectedEmployeeCountry.Size = new System.Drawing.Size(276, 42);
             this.lblSelectedEmployeeCountry.TabIndex = 12;
@@ -186,77 +189,77 @@
             // 
             // txtSelectedEmployeeFirstName
             // 
-            this.txtSelectedEmployeeFirstName.Location = new System.Drawing.Point(244, 183);
+            this.txtSelectedEmployeeFirstName.Location = new System.Drawing.Point(244, 234);
             this.txtSelectedEmployeeFirstName.Name = "txtSelectedEmployeeFirstName";
             this.txtSelectedEmployeeFirstName.Size = new System.Drawing.Size(315, 38);
             this.txtSelectedEmployeeFirstName.TabIndex = 14;
             // 
             // txtSelectedEmployeeSurname
             // 
-            this.txtSelectedEmployeeSurname.Location = new System.Drawing.Point(214, 241);
+            this.txtSelectedEmployeeSurname.Location = new System.Drawing.Point(214, 292);
             this.txtSelectedEmployeeSurname.Name = "txtSelectedEmployeeSurname";
             this.txtSelectedEmployeeSurname.Size = new System.Drawing.Size(352, 38);
             this.txtSelectedEmployeeSurname.TabIndex = 15;
             // 
             // txtSelectedEmployeeTitle
             // 
-            this.txtSelectedEmployeeTitle.Location = new System.Drawing.Point(202, 493);
+            this.txtSelectedEmployeeTitle.Location = new System.Drawing.Point(202, 544);
             this.txtSelectedEmployeeTitle.Name = "txtSelectedEmployeeTitle";
             this.txtSelectedEmployeeTitle.Size = new System.Drawing.Size(218, 38);
             this.txtSelectedEmployeeTitle.TabIndex = 16;
             // 
             // txtSelectedEmployeeCountry
             // 
-            this.txtSelectedEmployeeCountry.Location = new System.Drawing.Point(306, 798);
+            this.txtSelectedEmployeeCountry.Location = new System.Drawing.Point(306, 849);
             this.txtSelectedEmployeeCountry.Name = "txtSelectedEmployeeCountry";
             this.txtSelectedEmployeeCountry.Size = new System.Drawing.Size(253, 38);
             this.txtSelectedEmployeeCountry.TabIndex = 17;
             // 
             // txtSelectedEmployeeGrade
             // 
-            this.txtSelectedEmployeeGrade.Location = new System.Drawing.Point(284, 741);
+            this.txtSelectedEmployeeGrade.Location = new System.Drawing.Point(284, 792);
             this.txtSelectedEmployeeGrade.Name = "txtSelectedEmployeeGrade";
             this.txtSelectedEmployeeGrade.Size = new System.Drawing.Size(100, 38);
             this.txtSelectedEmployeeGrade.TabIndex = 18;
             // 
             // txtSelectedEmployeeEmail
             // 
-            this.txtSelectedEmployeeEmail.Location = new System.Drawing.Point(306, 361);
+            this.txtSelectedEmployeeEmail.Location = new System.Drawing.Point(306, 412);
             this.txtSelectedEmployeeEmail.Name = "txtSelectedEmployeeEmail";
             this.txtSelectedEmployeeEmail.Size = new System.Drawing.Size(414, 38);
             this.txtSelectedEmployeeEmail.TabIndex = 19;
             // 
             // txtSelectedEmployeeLeave
             // 
-            this.txtSelectedEmployeeLeave.Location = new System.Drawing.Point(494, 685);
+            this.txtSelectedEmployeeLeave.Location = new System.Drawing.Point(494, 736);
             this.txtSelectedEmployeeLeave.Name = "txtSelectedEmployeeLeave";
             this.txtSelectedEmployeeLeave.Size = new System.Drawing.Size(124, 38);
             this.txtSelectedEmployeeLeave.TabIndex = 21;
             // 
             // txtSelectedEmployeeSalary
             // 
-            this.txtSelectedEmployeeSalary.Location = new System.Drawing.Point(459, 614);
+            this.txtSelectedEmployeeSalary.Location = new System.Drawing.Point(459, 665);
             this.txtSelectedEmployeeSalary.Name = "txtSelectedEmployeeSalary";
             this.txtSelectedEmployeeSalary.Size = new System.Drawing.Size(159, 38);
             this.txtSelectedEmployeeSalary.TabIndex = 22;
             // 
             // txtSelectedEmployeeMobile
             // 
-            this.txtSelectedEmployeeMobile.Location = new System.Drawing.Point(322, 427);
+            this.txtSelectedEmployeeMobile.Location = new System.Drawing.Point(322, 478);
             this.txtSelectedEmployeeMobile.Name = "txtSelectedEmployeeMobile";
             this.txtSelectedEmployeeMobile.Size = new System.Drawing.Size(252, 38);
             this.txtSelectedEmployeeMobile.TabIndex = 23;
             // 
             // txtSelectedEmployeeManager
             // 
-            this.txtSelectedEmployeeManager.Location = new System.Drawing.Point(202, 557);
+            this.txtSelectedEmployeeManager.Location = new System.Drawing.Point(202, 608);
             this.txtSelectedEmployeeManager.Name = "txtSelectedEmployeeManager";
             this.txtSelectedEmployeeManager.Size = new System.Drawing.Size(218, 38);
             this.txtSelectedEmployeeManager.TabIndex = 24;
             // 
             // txtSelectedEmployeeGender
             // 
-            this.txtSelectedEmployeeGender.Location = new System.Drawing.Point(188, 301);
+            this.txtSelectedEmployeeGender.Location = new System.Drawing.Point(188, 352);
             this.txtSelectedEmployeeGender.Name = "txtSelectedEmployeeGender";
             this.txtSelectedEmployeeGender.Size = new System.Drawing.Size(171, 38);
             this.txtSelectedEmployeeGender.TabIndex = 25;
@@ -281,11 +284,42 @@
             this.btnUpdateEmployeeInfo.UseVisualStyleBackColor = true;
             this.btnUpdateEmployeeInfo.Click += new System.EventHandler(this.btnUpdateEmployeeInfo_Click);
             // 
+            // txtSelectedEmployeePassword
+            // 
+            this.txtSelectedEmployeePassword.Location = new System.Drawing.Point(282, 178);
+            this.txtSelectedEmployeePassword.Name = "txtSelectedEmployeePassword";
+            this.txtSelectedEmployeePassword.ReadOnly = true;
+            this.txtSelectedEmployeePassword.Size = new System.Drawing.Size(277, 38);
+            this.txtSelectedEmployeePassword.TabIndex = 29;
+            // 
+            // lblSelectedEmployeePassword
+            // 
+            this.lblSelectedEmployeePassword.AutoSize = true;
+            this.lblSelectedEmployeePassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectedEmployeePassword.Location = new System.Drawing.Point(12, 178);
+            this.lblSelectedEmployeePassword.Name = "lblSelectedEmployeePassword";
+            this.lblSelectedEmployeePassword.Size = new System.Drawing.Size(204, 42);
+            this.lblSelectedEmployeePassword.TabIndex = 28;
+            this.lblSelectedEmployeePassword.Text = "Password:";
+            // 
+            // btnShowPassword
+            // 
+            this.btnShowPassword.Location = new System.Drawing.Point(599, 183);
+            this.btnShowPassword.Name = "btnShowPassword";
+            this.btnShowPassword.Size = new System.Drawing.Size(311, 64);
+            this.btnShowPassword.TabIndex = 30;
+            this.btnShowPassword.Text = "Show Password";
+            this.btnShowPassword.UseVisualStyleBackColor = true;
+            this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
+            // 
             // FrmEditEmployeeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1609, 975);
+            this.Controls.Add(this.btnShowPassword);
+            this.Controls.Add(this.txtSelectedEmployeePassword);
+            this.Controls.Add(this.lblSelectedEmployeePassword);
             this.Controls.Add(this.btnUpdateEmployeeInfo);
             this.Controls.Add(this.lblSelectedEmployeeFullName);
             this.Controls.Add(this.txtSelectedEmployeeGender);
@@ -347,5 +381,8 @@
         private System.Windows.Forms.TextBox txtSelectedEmployeeGender;
         private System.Windows.Forms.Label lblSelectedEmployeeFullName;
         private System.Windows.Forms.Button btnUpdateEmployeeInfo;
+        private System.Windows.Forms.TextBox txtSelectedEmployeePassword;
+        private System.Windows.Forms.Label lblSelectedEmployeePassword;
+        private System.Windows.Forms.Button btnShowPassword;
     }
 }

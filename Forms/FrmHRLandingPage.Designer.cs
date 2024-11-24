@@ -32,7 +32,6 @@
             this.btnViewEmployeeRecords = new System.Windows.Forms.Button();
             this.btnCreateEmployeeRecord = new System.Windows.Forms.Button();
             this.btnViewAnalytics = new System.Windows.Forms.Button();
-            this.btnManageLeave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHRLandingPage
@@ -59,7 +58,7 @@
             // btnCreateEmployeeRecord
             // 
             this.btnCreateEmployeeRecord.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateEmployeeRecord.Location = new System.Drawing.Point(32, 341);
+            this.btnCreateEmployeeRecord.Location = new System.Drawing.Point(972, 113);
             this.btnCreateEmployeeRecord.Name = "btnCreateEmployeeRecord";
             this.btnCreateEmployeeRecord.Size = new System.Drawing.Size(276, 195);
             this.btnCreateEmployeeRecord.TabIndex = 2;
@@ -70,7 +69,7 @@
             // btnViewAnalytics
             // 
             this.btnViewAnalytics.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewAnalytics.Location = new System.Drawing.Point(459, 113);
+            this.btnViewAnalytics.Location = new System.Drawing.Point(484, 113);
             this.btnViewAnalytics.Name = "btnViewAnalytics";
             this.btnViewAnalytics.Size = new System.Drawing.Size(276, 195);
             this.btnViewAnalytics.TabIndex = 3;
@@ -78,22 +77,11 @@
             this.btnViewAnalytics.UseVisualStyleBackColor = true;
             this.btnViewAnalytics.Click += new System.EventHandler(this.btnViewAnalytics_Click);
             // 
-            // btnManageLeave
-            // 
-            this.btnManageLeave.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageLeave.Location = new System.Drawing.Point(459, 341);
-            this.btnManageLeave.Name = "btnManageLeave";
-            this.btnManageLeave.Size = new System.Drawing.Size(276, 195);
-            this.btnManageLeave.TabIndex = 4;
-            this.btnManageLeave.Text = "Manage Leave Requests";
-            this.btnManageLeave.UseVisualStyleBackColor = true;
-            // 
             // FrmHRLandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 569);
-            this.Controls.Add(this.btnManageLeave);
+            this.ClientSize = new System.Drawing.Size(1525, 569);
             this.Controls.Add(this.btnViewAnalytics);
             this.Controls.Add(this.btnCreateEmployeeRecord);
             this.Controls.Add(this.btnViewEmployeeRecords);
@@ -111,6 +99,5 @@
         private System.Windows.Forms.Button btnViewEmployeeRecords;
         private System.Windows.Forms.Button btnCreateEmployeeRecord;
         private System.Windows.Forms.Button btnViewAnalytics;
-        private System.Windows.Forms.Button btnManageLeave;
     }
 }

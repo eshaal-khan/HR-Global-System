@@ -18,6 +18,7 @@ namespace HR_Global_System
             InitializeComponent();
             lblSelectedEmployeeFullName.Text = selectedEmployee._firstName + ' '+selectedEmployee._lastName;
             txtSelectedEmployeeID.Text = Convert.ToString(selectedEmployee._employeeID);
+            txtSelectedEmployeePassword.Text=Convert.ToString(selectedEmployee._password);
             txtSelectedEmployeeFirstName.Text = selectedEmployee._firstName;
             txtSelectedEmployeeSurname.Text = selectedEmployee._lastName;
             txtSelectedEmployeeGender.Text = selectedEmployee._gender;
@@ -69,6 +70,20 @@ namespace HR_Global_System
             else
             {
                 Console.WriteLine("Error");
+            }
+        }
+
+        private void btnShowPassword_Click(object sender, EventArgs e)
+        {
+            if (btnShowPassword.Text=="Show Password")
+            {
+                txtSelectedEmployeePassword.UseSystemPasswordChar = true;
+                btnShowPassword.Text = "Hide Password";
+            }
+            else
+            {
+                txtSelectedEmployeePassword.UseSystemPasswordChar = false;
+                btnShowPassword.Text = "Show Password";
             }
         }
     }
