@@ -20,7 +20,7 @@ namespace HR_Global_System
         private void btnSelfServiceSignIn_Click(object sender, EventArgs e)
         {
             FrmSelfServiceLandingPage selfServiceLandingPage = new FrmSelfServiceLandingPage(Convert.ToString(txtSelfServiceUsername.Text));
-            FormManagement.NavigateToNextForm(this,  selfServiceLandingPage );
+            FormManagement.NavigateToNextForm(this, selfServiceLandingPage );
         }
     }
 }

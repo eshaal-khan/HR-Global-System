@@ -16,7 +16,7 @@ namespace HR_Global_System
         static OleDbConnection con;
         static OleDbCommand cmd;
         static OleDbDataReader reader;
-        public FrmViewEmployeeRecords(string baseCountry)
+        public FrmViewEmployeeRecords()
         {
             InitializeComponent();
         }
@@ -26,8 +26,8 @@ namespace HR_Global_System
             con.ConnectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
             cmd = new OleDbCommand();
             cmd.Connection = con;
-            cmd.CommandText = @"SELECT * From TableEmployeeInfo WHERE BaseCountry={baseCountry}";
-            cmd.Parameters.AddWithValue("@baseCountry",baseCountry)
+            //cmd.CommandText = @"SELECT * From TableEmployeeInfo WHERE BaseCountry={baseCountry}";
+            //cmd.Parameters.AddWithValue("@baseCountry",baseCountry)
             con.Open();
             reader = cmd.ExecuteReader();
             BindingSource bindingSource = new BindingSource();

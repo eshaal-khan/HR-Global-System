@@ -62,8 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ILogin.cs" />
-    <Compile Include="HRSessionManagement.cs" />
+    <Compile Include="Management Classes\HRLogin.cs" />
+    <Compile Include="Management Classes\LoginBase.cs" />
+    <Compile Include="Management Classes\LoginLogic.cs" />
+    <Compile Include="SessionManager.cs" />
     <Compile Include="Management Classes\DatabaseManagement.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Management Classes\ErrorManagement.cs" />
