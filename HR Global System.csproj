@@ -62,13 +62,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Management Classes\HRLogin.cs" />
-    <Compile Include="Management Classes\LoginBase.cs" />
-    <Compile Include="Management Classes\LoginLogic.cs" />
+    <Compile Include="Forms\FrmSelfServiceUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSelfServiceUpdate.Designer.cs">
+      <DependentUpon>FrmSelfServiceUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HRPortalEmployeeFunctionality.cs" />
+    <Compile Include="Login Classes\HRLogin.cs" />
+    <Compile Include="Login Classes\LoginBase.cs" />
+    <Compile Include="Login Classes\SelfServiceLogin.cs" />
     <Compile Include="SessionManager.cs" />
-    <Compile Include="Management Classes\DatabaseManagement.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="Management Classes\ErrorManagement.cs" />
     <Compile Include="Management Classes\FormManagement.cs" />
     <Compile Include="Forms\FrmCreateEmployee.cs">
       <SubType>Form</SubType>
@@ -143,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSelfServiceLogin.resx">
       <DependentUpon>FrmSelfServiceLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSelfServiceUpdate.resx">
+      <DependentUpon>FrmSelfServiceUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmViewEmployeeRecords.resx">
       <DependentUpon>FrmViewEmployeeRecords.cs</DependentUpon>

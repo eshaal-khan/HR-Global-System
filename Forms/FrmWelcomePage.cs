@@ -19,14 +19,12 @@ namespace HR_Global_System
 
         private void btnAccessSelfService_Click(object sender, EventArgs e)
         {
-            FrmSelfServiceLogin selfServiceLogin = new FrmSelfServiceLogin();
-            FormManagement.NavigateToNextForm(this, selfServiceLogin);
+            FormManagement.NavigateToNextForm(this, new FrmSelfServiceLogin());
         }
 
         private void btnAccessHRPortal_Click(object sender, EventArgs e)
         {
-            FrmHRManagerLogin HRManagerLogin = new FrmHRManagerLogin();
-            FormManagement.NavigateToNextForm(this, HRManagerLogin);
+            FormManagement.NavigateToNextForm(this, new FrmHRManagerLogin());
         }
     }
 }

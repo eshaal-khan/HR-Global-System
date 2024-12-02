@@ -4,6 +4,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.OleDb;
+using System.Diagnostics;
 
 namespace HR_Global_System
 {
@@ -29,6 +32,7 @@ namespace HR_Global_System
                     return instance;
                 }
         }   }
+        
         public void CreateSession(string userID, string userJobTitle, string userCountry)
         {
             this._IDOfUser = userID;
@@ -41,6 +45,8 @@ namespace HR_Global_System
             _IDOfUser = null;
             _jobOfUser = null;
             _countryOfUser = null;
+            Application.Exit();
+
         }
     }
 }

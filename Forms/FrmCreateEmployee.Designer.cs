@@ -54,6 +54,8 @@
             this.txtNewEmployeeFirstName = new System.Windows.Forms.TextBox();
             this.lblCreateEmployee = new System.Windows.Forms.Label();
             this.btnCreateEmployee = new System.Windows.Forms.Button();
+            this.txtNewEmployeePassword = new System.Windows.Forms.TextBox();
+            this.lblNewEmployeePassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNewEmployeeID
@@ -70,7 +72,7 @@
             // 
             this.lblNewEmployeeFirstName.AutoSize = true;
             this.lblNewEmployeeFirstName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewEmployeeFirstName.Location = new System.Drawing.Point(24, 184);
+            this.lblNewEmployeeFirstName.Location = new System.Drawing.Point(24, 224);
             this.lblNewEmployeeFirstName.Name = "lblNewEmployeeFirstName";
             this.lblNewEmployeeFirstName.Size = new System.Drawing.Size(229, 42);
             this.lblNewEmployeeFirstName.TabIndex = 1;
@@ -80,7 +82,7 @@
             // 
             this.lblNewEmployeeSurname.AutoSize = true;
             this.lblNewEmployeeSurname.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewEmployeeSurname.Location = new System.Drawing.Point(24, 244);
+            this.lblNewEmployeeSurname.Location = new System.Drawing.Point(24, 284);
             this.lblNewEmployeeSurname.Name = "lblNewEmployeeSurname";
             this.lblNewEmployeeSurname.Size = new System.Drawing.Size(196, 42);
             this.lblNewEmployeeSurname.TabIndex = 2;
@@ -90,7 +92,7 @@
             // 
             this.lblNewEmployeeGender.AutoSize = true;
             this.lblNewEmployeeGender.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewEmployeeGender.Location = new System.Drawing.Point(24, 307);
+            this.lblNewEmployeeGender.Location = new System.Drawing.Point(24, 347);
             this.lblNewEmployeeGender.Name = "lblNewEmployeeGender";
             this.lblNewEmployeeGender.Size = new System.Drawing.Size(164, 42);
             this.lblNewEmployeeGender.TabIndex = 3;
@@ -100,7 +102,7 @@
             // 
             this.lblNewEmployeeEmail.AutoSize = true;
             this.lblNewEmployeeEmail.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewEmployeeEmail.Location = new System.Drawing.Point(24, 366);
+            this.lblNewEmployeeEmail.Location = new System.Drawing.Point(24, 406);
             this.lblNewEmployeeEmail.Name = "lblNewEmployeeEmail";
             this.lblNewEmployeeEmail.Size = new System.Drawing.Size(288, 42);
             this.lblNewEmployeeEmail.TabIndex = 4;
@@ -110,7 +112,7 @@
             // 
             this.lblNewEmployeeMobile.AutoSize = true;
             this.lblNewEmployeeMobile.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewEmployeeMobile.Location = new System.Drawing.Point(24, 431);
+            this.lblNewEmployeeMobile.Location = new System.Drawing.Point(24, 471);
             this.lblNewEmployeeMobile.Name = "lblNewEmployeeMobile";
             this.lblNewEmployeeMobile.Size = new System.Drawing.Size(304, 42);
             this.lblNewEmployeeMobile.TabIndex = 5;
@@ -120,7 +122,7 @@
             // 
             this.lblNewEmployeeTitle.AutoSize = true;
             this.lblNewEmployeeTitle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewEmployeeTitle.Location = new System.Drawing.Point(24, 494);
+            this.lblNewEmployeeTitle.Location = new System.Drawing.Point(24, 534);
             this.lblNewEmployeeTitle.Name = "lblNewEmployeeTitle";
             this.lblNewEmployeeTitle.Size = new System.Drawing.Size(184, 42);
             this.lblNewEmployeeTitle.TabIndex = 6;
@@ -130,7 +132,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(24, 558);
+            this.label8.Location = new System.Drawing.Point(24, 598);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(188, 42);
             this.label8.TabIndex = 7;
@@ -140,7 +142,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 617);
+            this.label9.Location = new System.Drawing.Point(24, 657);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(441, 42);
             this.label9.TabIndex = 8;
@@ -150,7 +152,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(24, 687);
+            this.label10.Location = new System.Drawing.Point(24, 727);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(476, 42);
             this.label10.TabIndex = 9;
@@ -160,7 +162,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(24, 756);
+            this.label11.Location = new System.Drawing.Point(24, 796);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(266, 42);
             this.label11.TabIndex = 10;
@@ -170,7 +172,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(24, 827);
+            this.label12.Location = new System.Drawing.Point(24, 867);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(276, 42);
             this.label12.TabIndex = 11;
@@ -178,70 +180,70 @@
             // 
             // txtNewEmployeeSalary
             // 
-            this.txtNewEmployeeSalary.Location = new System.Drawing.Point(471, 621);
+            this.txtNewEmployeeSalary.Location = new System.Drawing.Point(471, 661);
             this.txtNewEmployeeSalary.Name = "txtNewEmployeeSalary";
             this.txtNewEmployeeSalary.Size = new System.Drawing.Size(173, 38);
             this.txtNewEmployeeSalary.TabIndex = 12;
             // 
             // txtNewEmployeeGender
             // 
-            this.txtNewEmployeeGender.Location = new System.Drawing.Point(190, 311);
+            this.txtNewEmployeeGender.Location = new System.Drawing.Point(190, 351);
             this.txtNewEmployeeGender.Name = "txtNewEmployeeGender";
             this.txtNewEmployeeGender.Size = new System.Drawing.Size(226, 38);
             this.txtNewEmployeeGender.TabIndex = 13;
             // 
             // txtNewEmployeeEmail
             // 
-            this.txtNewEmployeeEmail.Location = new System.Drawing.Point(316, 370);
+            this.txtNewEmployeeEmail.Location = new System.Drawing.Point(316, 410);
             this.txtNewEmployeeEmail.Name = "txtNewEmployeeEmail";
             this.txtNewEmployeeEmail.Size = new System.Drawing.Size(406, 38);
             this.txtNewEmployeeEmail.TabIndex = 14;
             // 
             // txtNewEmployeeCountry
             // 
-            this.txtNewEmployeeCountry.Location = new System.Drawing.Point(306, 831);
+            this.txtNewEmployeeCountry.Location = new System.Drawing.Point(306, 871);
             this.txtNewEmployeeCountry.Name = "txtNewEmployeeCountry";
             this.txtNewEmployeeCountry.Size = new System.Drawing.Size(285, 38);
             this.txtNewEmployeeCountry.TabIndex = 15;
             // 
             // txtNewEmployeeGrade
             // 
-            this.txtNewEmployeeGrade.Location = new System.Drawing.Point(296, 760);
+            this.txtNewEmployeeGrade.Location = new System.Drawing.Point(296, 800);
             this.txtNewEmployeeGrade.Name = "txtNewEmployeeGrade";
             this.txtNewEmployeeGrade.Size = new System.Drawing.Size(150, 38);
             this.txtNewEmployeeGrade.TabIndex = 16;
             // 
             // txtNewEmployeeLeave
             // 
-            this.txtNewEmployeeLeave.Location = new System.Drawing.Point(506, 691);
+            this.txtNewEmployeeLeave.Location = new System.Drawing.Point(506, 731);
             this.txtNewEmployeeLeave.Name = "txtNewEmployeeLeave";
             this.txtNewEmployeeLeave.Size = new System.Drawing.Size(175, 38);
             this.txtNewEmployeeLeave.TabIndex = 17;
             // 
             // txtNewEmployeeJob
             // 
-            this.txtNewEmployeeJob.Location = new System.Drawing.Point(214, 498);
+            this.txtNewEmployeeJob.Location = new System.Drawing.Point(214, 538);
             this.txtNewEmployeeJob.Name = "txtNewEmployeeJob";
             this.txtNewEmployeeJob.Size = new System.Drawing.Size(300, 38);
             this.txtNewEmployeeJob.TabIndex = 18;
             // 
             // txtNewEmployeeManager
             // 
-            this.txtNewEmployeeManager.Location = new System.Drawing.Point(218, 562);
+            this.txtNewEmployeeManager.Location = new System.Drawing.Point(218, 602);
             this.txtNewEmployeeManager.Name = "txtNewEmployeeManager";
             this.txtNewEmployeeManager.Size = new System.Drawing.Size(296, 38);
             this.txtNewEmployeeManager.TabIndex = 19;
             // 
             // txtNewEmployeeMobile
             // 
-            this.txtNewEmployeeMobile.Location = new System.Drawing.Point(334, 435);
+            this.txtNewEmployeeMobile.Location = new System.Drawing.Point(334, 475);
             this.txtNewEmployeeMobile.Name = "txtNewEmployeeMobile";
             this.txtNewEmployeeMobile.Size = new System.Drawing.Size(327, 38);
             this.txtNewEmployeeMobile.TabIndex = 20;
             // 
             // txtNewEmployeeSurname
             // 
-            this.txtNewEmployeeSurname.Location = new System.Drawing.Point(240, 248);
+            this.txtNewEmployeeSurname.Location = new System.Drawing.Point(240, 288);
             this.txtNewEmployeeSurname.Name = "txtNewEmployeeSurname";
             this.txtNewEmployeeSurname.Size = new System.Drawing.Size(297, 38);
             this.txtNewEmployeeSurname.TabIndex = 21;
@@ -255,7 +257,7 @@
             // 
             // txtNewEmployeeFirstName
             // 
-            this.txtNewEmployeeFirstName.Location = new System.Drawing.Point(259, 188);
+            this.txtNewEmployeeFirstName.Location = new System.Drawing.Point(259, 228);
             this.txtNewEmployeeFirstName.Name = "txtNewEmployeeFirstName";
             this.txtNewEmployeeFirstName.Size = new System.Drawing.Size(278, 38);
             this.txtNewEmployeeFirstName.TabIndex = 23;
@@ -280,11 +282,30 @@
             this.btnCreateEmployee.UseVisualStyleBackColor = true;
             this.btnCreateEmployee.Click += new System.EventHandler(this.btnCreateEmployee_Click);
             // 
+            // txtNewEmployeePassword
+            // 
+            this.txtNewEmployeePassword.Location = new System.Drawing.Point(269, 184);
+            this.txtNewEmployeePassword.Name = "txtNewEmployeePassword";
+            this.txtNewEmployeePassword.Size = new System.Drawing.Size(268, 38);
+            this.txtNewEmployeePassword.TabIndex = 26;
+            // 
+            // lblNewEmployeePassword
+            // 
+            this.lblNewEmployeePassword.AutoSize = true;
+            this.lblNewEmployeePassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewEmployeePassword.Location = new System.Drawing.Point(24, 180);
+            this.lblNewEmployeePassword.Name = "lblNewEmployeePassword";
+            this.lblNewEmployeePassword.Size = new System.Drawing.Size(204, 42);
+            this.lblNewEmployeePassword.TabIndex = 27;
+            this.lblNewEmployeePassword.Text = "Password:";
+            // 
             // FrmCreateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1636, 1041);
+            this.Controls.Add(this.lblNewEmployeePassword);
+            this.Controls.Add(this.txtNewEmployeePassword);
             this.Controls.Add(this.btnCreateEmployee);
             this.Controls.Add(this.lblCreateEmployee);
             this.Controls.Add(this.txtNewEmployeeFirstName);
@@ -346,5 +367,7 @@
         private System.Windows.Forms.TextBox txtNewEmployeeFirstName;
         private System.Windows.Forms.Label lblCreateEmployee;
         private System.Windows.Forms.Button btnCreateEmployee;
+        private System.Windows.Forms.TextBox txtNewEmployeePassword;
+        private System.Windows.Forms.Label lblNewEmployeePassword;
     }
 }

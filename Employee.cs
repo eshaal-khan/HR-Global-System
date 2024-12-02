@@ -8,36 +8,179 @@ namespace HR_Global_System
 {
     public class Employee
     {
-        public string _employeeID { get; set; }
-        public string _password {  get; set; }
-        public string _firstName { get; set; }
-        public string _lastName { get; set; }
-        public string _gender { get; set; }
-        public string _contactEmail { get; set; }
-        public string _contactNumber { get; set; }
-        public string _jobTitle { get; set; }
-        public string _managerName { get; set; }
-        public decimal _annualSalary { get; set; }
-        public decimal _totalPaidLeave { get; set; }
-        public string _jobGrade { get; set; }
-        public string _baseCountry { get; set; }
+        private string _employeeID;
+        private string _password;
+        private string _firstName;
+        private string _surname;
+        private string _gender;
+        private string _emailAddress;
+        private string _phoneNumber;
+        private string _jobTitle;
+        private string _manager;
+        private decimal _annualSalary;
+        private decimal _totalPaidLeave;
+        private string _jobGrade;
+        private string _baseCountry;
 
-        public Employee(string employeeID, string password, string firstName, string lastName, string gender, string contactEmail, string contactNumber,
-            string jobTitle, string managerName, decimal annualSalary, decimal totalPaidLeave, string jobGrade, string baseCountry)
+        public Employee(string employeeID, string password, string firstName, string lastName, string gender, string emailAddress, string phoneNumber,
+            string jobTitle, string manager, decimal annualSalary, decimal totalPaidLeave, string jobGrade, string baseCountry)
         {
             this._employeeID = employeeID;
             this._password = password;
             this._firstName = firstName;
-            this._lastName = lastName;
+            this._surname = lastName;
             this._gender = gender;
-            this._contactEmail = contactEmail;
-            this._contactNumber = contactNumber;
+            this._emailAddress = emailAddress;
+            this._phoneNumber = phoneNumber;
             this._jobTitle = jobTitle;
-            this._managerName = managerName;
+            this._manager = manager;
             this._annualSalary = annualSalary;
             this._totalPaidLeave = totalPaidLeave;
             this._jobGrade = jobGrade;
             this._baseCountry = baseCountry;
+        }
+        public string employeeID
+        {
+            get
+            {
+                return this._employeeID;
+            }
+            set
+            {
+                this._employeeID = value;
+            }
+        }
+        public string password
+        {
+            get
+            {
+                return this._password;
+            }
+            set
+            {
+                this._password = value;
+            }
+        }
+        public string firstName
+        {
+            get
+            {
+                return this._firstName;
+            }
+            set
+            {
+                this._firstName = value;
+            }
+        }
+        public string surname
+        {
+            get
+            {
+                return this._surname;
+            }
+            set
+            {
+                this._surname = value;
+            }
+        }
+        public string gender
+        {
+            get
+            {
+                return this._gender;
+            }
+            set
+            {
+                this._gender = value;
+            }
+        }
+        public string emailAddress
+        {
+            get
+            {
+                return this._emailAddress;
+            }
+            set
+            {
+                this._emailAddress = value;
+            }
+        }
+        public string phoneNumber
+        {
+            get
+            {
+                return this._phoneNumber;
+            }
+            set
+            {
+                this._phoneNumber = value;
+            }
+        }
+        public string jobTitle
+        {
+            get
+            {
+                return this._jobTitle;
+            }
+            set
+            {
+                this._jobTitle = value;
+            }
+        }
+        public string manager
+        {
+            get
+            {
+                return this._manager;
+            }
+            set
+            {
+                this._manager = value;
+            }
+        }
+        public decimal annualSalary
+        {
+            get
+            {
+                return this._annualSalary;
+            }
+            set
+            {
+                this._annualSalary = value;
+            }
+        }
+        public decimal totalPaidLeave
+        {
+            get
+            {
+                return this._totalPaidLeave;
+            }
+            set
+            {
+                this._totalPaidLeave = value;
+            }
+        }
+        public string jobGrade
+        {
+            get
+            {
+                return this._jobGrade;
+            }
+            set
+            {
+                this._jobGrade = value;
+            }
+        }
+        public string baseCountry
+        {
+            get
+            {
+                return this._baseCountry;
+            }
+            set
+            {
+                this._baseCountry = value;
+            }
         }
     }
 }

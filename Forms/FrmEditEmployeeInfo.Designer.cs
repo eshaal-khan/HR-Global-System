@@ -288,7 +288,6 @@
             // 
             this.txtSelectedEmployeePassword.Location = new System.Drawing.Point(282, 178);
             this.txtSelectedEmployeePassword.Name = "txtSelectedEmployeePassword";
-            this.txtSelectedEmployeePassword.ReadOnly = true;
             this.txtSelectedEmployeePassword.Size = new System.Drawing.Size(277, 38);
             this.txtSelectedEmployeePassword.TabIndex = 29;
             // 
