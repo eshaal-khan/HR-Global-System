@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace HR_Global_System
 {
@@ -144,6 +145,53 @@ namespace HR_Global_System
                             return null;
                         }
                     }
+                }
+            }
+        }
+
+        public static void PopulateChart(Dictionary<string, int> jobRolesCounting, Chart chart1)
+        {
+
+            foreach (var role in jobRolesCounting)
+            {
+                chart1.Series["Employee Count"].Points.AddXY(role.Key, role.Value);
+            }
+        }
+        public static Dictionary <string,int> PopulateJobRolesCountChart()
+        {
+            string connectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
+            Dictionary<string, int> jobRolesCounting = new Dictionary<string, int>();
+            using (OleDbConnection con = new OleDbConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    string query = "SELECT JobTitle FROM TableEmployeeInfo WHERE BaseCountry=@country";
+                    using (OleDbCommand cmd = new OleDbCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@country", SessionManager.Instance._countryOfUser);
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string jobRole = reader["JobTitle"].ToString();
+                                if (jobRolesCounting.ContainsKey(jobRole))
+                                {
+                                    jobRolesCounting[jobRole]++;
+                                }
+                                else
+                                {
+                                    jobRolesCounting.Add(jobRole, 1);
+                                }
+                            }
+                        }
+                        return jobRolesCounting;
+                    }                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show($"Error:{ex.Message}");
+                    return null;
                 }
             }
         }

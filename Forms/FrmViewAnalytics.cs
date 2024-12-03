@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace HR_Global_System
 {
@@ -19,7 +21,8 @@ namespace HR_Global_System
 
         private void FrnViewAnalytics_Load(object sender, EventArgs e)
         {
-            //chart2.Series["Employees"].Points.AddXY("")
+            Dictionary<string, int> jobRolesCount = HRPortalEmployeeFunctionality.PopulateJobRolesCountChart();
+            HRPortalEmployeeFunctionality.PopulateChart(jobRolesCount,chtHeadcountByJob);
         }
     }
 }
