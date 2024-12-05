@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditEmployeeInfo));
             this.lblSelectedEmployeeID = new System.Windows.Forms.Label();
             this.lblSelectedEmployeeFirstName = new System.Windows.Forms.Label();
             this.lblSelectedEmployeeSurname = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.txtSelectedEmployeePassword = new System.Windows.Forms.TextBox();
             this.lblSelectedEmployeePassword = new System.Windows.Forms.Label();
             this.btnShowPassword = new System.Windows.Forms.Button();
+            this.btnBackFromHREditRecord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSelectedEmployeeID
@@ -311,11 +313,23 @@
             this.btnShowPassword.UseVisualStyleBackColor = true;
             this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
             // 
+            // btnBackFromHREditRecord
+            // 
+            this.btnBackFromHREditRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFromHREditRecord.Image = ((System.Drawing.Image)(resources.GetObject("btnBackFromHREditRecord.Image")));
+            this.btnBackFromHREditRecord.Location = new System.Drawing.Point(1453, 30);
+            this.btnBackFromHREditRecord.Name = "btnBackFromHREditRecord";
+            this.btnBackFromHREditRecord.Size = new System.Drawing.Size(125, 128);
+            this.btnBackFromHREditRecord.TabIndex = 31;
+            this.btnBackFromHREditRecord.UseVisualStyleBackColor = true;
+            this.btnBackFromHREditRecord.Click += new System.EventHandler(this.btnBackFromHREditRecord_Click);
+            // 
             // FrmEditEmployeeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1609, 975);
+            this.Controls.Add(this.btnBackFromHREditRecord);
             this.Controls.Add(this.btnShowPassword);
             this.Controls.Add(this.txtSelectedEmployeePassword);
             this.Controls.Add(this.lblSelectedEmployeePassword);
@@ -383,5 +397,6 @@
         private System.Windows.Forms.TextBox txtSelectedEmployeePassword;
         private System.Windows.Forms.Label lblSelectedEmployeePassword;
         private System.Windows.Forms.Button btnShowPassword;
+        private System.Windows.Forms.Button btnBackFromHREditRecord;
     }
 }

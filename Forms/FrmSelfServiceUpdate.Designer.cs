@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSelfServiceUpdate));
             this.lblSelfServiceEditDetails = new System.Windows.Forms.Label();
             this.lblSelfServiceEditPassword = new System.Windows.Forms.Label();
             this.lblSelfServiceEditNumber = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.lblSelfServiceEditEmpID = new System.Windows.Forms.Label();
             this.txtSelfServiceEditCountry = new System.Windows.Forms.TextBox();
             this.lblSelfServiceEditCountry = new System.Windows.Forms.Label();
+            this.btnBackFromSSUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSelfServiceEditDetails
@@ -317,11 +319,23 @@
             this.lblSelfServiceEditCountry.TabIndex = 27;
             this.lblSelfServiceEditCountry.Text = "Base Country:";
             // 
+            // btnBackFromSSUpdate
+            // 
+            this.btnBackFromSSUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFromSSUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnBackFromSSUpdate.Image")));
+            this.btnBackFromSSUpdate.Location = new System.Drawing.Point(1039, 28);
+            this.btnBackFromSSUpdate.Name = "btnBackFromSSUpdate";
+            this.btnBackFromSSUpdate.Size = new System.Drawing.Size(125, 128);
+            this.btnBackFromSSUpdate.TabIndex = 29;
+            this.btnBackFromSSUpdate.UseVisualStyleBackColor = true;
+            this.btnBackFromSSUpdate.Click += new System.EventHandler(this.btnBackFromSSUpdate_Click);
+            // 
             // FrmSelfServiceUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 1023);
+            this.Controls.Add(this.btnBackFromSSUpdate);
             this.Controls.Add(this.txtSelfServiceEditCountry);
             this.Controls.Add(this.lblSelfServiceEditCountry);
             this.Controls.Add(this.txtSelfServiceEditJob);
@@ -389,5 +403,6 @@
         private System.Windows.Forms.Label lblSelfServiceEditEmpID;
         private System.Windows.Forms.TextBox txtSelfServiceEditCountry;
         private System.Windows.Forms.Label lblSelfServiceEditCountry;
+        private System.Windows.Forms.Button btnBackFromSSUpdate;
     }
 }

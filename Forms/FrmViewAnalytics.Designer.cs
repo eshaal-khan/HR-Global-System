@@ -44,18 +44,20 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmViewAnalytics));
             this.chtHeadcountByJob = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblGenderRepAnalytics = new System.Windows.Forms.Label();
             this.lblGenRepMaleCount = new System.Windows.Forms.Label();
             this.lblGenRepFemaleCount = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtMoneyPerRole = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtCountryHeadcounts = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblGenRepOtherCount = new System.Windows.Forms.Label();
+            this.chtProfessionGrades = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnBackFromHRLanding = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chtHeadcountByJob)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtMoneyPerRole)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtCountryHeadcounts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtProfessionGrades)).BeginInit();
             this.SuspendLayout();
             // 
             // chtHeadcountByJob
@@ -81,33 +83,11 @@
             title1.Text = "Total Headcount per Job Role";
             this.chtHeadcountByJob.Titles.Add(title1);
             // 
-            // chart2
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(961, 930);
-            this.chart2.Name = "chart2";
-            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Employees";
-            this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(1032, 567);
-            this.chart2.TabIndex = 1;
-            this.chart2.Text = "chart2";
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title1";
-            title2.Text = "Number of Employees at each Profession Grade";
-            this.chart2.Titles.Add(title2);
-            // 
             // lblGenderRepAnalytics
             // 
             this.lblGenderRepAnalytics.AutoSize = true;
             this.lblGenderRepAnalytics.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenderRepAnalytics.Location = new System.Drawing.Point(954, 73);
+            this.lblGenderRepAnalytics.Location = new System.Drawing.Point(1000, 73);
             this.lblGenderRepAnalytics.Name = "lblGenderRepAnalytics";
             this.lblGenderRepAnalytics.Size = new System.Drawing.Size(515, 39);
             this.lblGenderRepAnalytics.TabIndex = 2;
@@ -117,7 +97,7 @@
             // 
             this.lblGenRepMaleCount.AutoSize = true;
             this.lblGenRepMaleCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenRepMaleCount.Location = new System.Drawing.Point(955, 147);
+            this.lblGenRepMaleCount.Location = new System.Drawing.Point(1000, 147);
             this.lblGenRepMaleCount.Name = "lblGenRepMaleCount";
             this.lblGenRepMaleCount.Size = new System.Drawing.Size(321, 32);
             this.lblGenRepMaleCount.TabIndex = 3;
@@ -127,84 +107,120 @@
             // 
             this.lblGenRepFemaleCount.AutoSize = true;
             this.lblGenRepFemaleCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenRepFemaleCount.Location = new System.Drawing.Point(955, 206);
+            this.lblGenRepFemaleCount.Location = new System.Drawing.Point(1000, 206);
             this.lblGenRepFemaleCount.Name = "lblGenRepFemaleCount";
             this.lblGenRepFemaleCount.Size = new System.Drawing.Size(356, 32);
             this.lblGenRepFemaleCount.TabIndex = 4;
             this.lblGenRepFemaleCount.Text = "Female Employee Count:";
             // 
-            // chart1
+            // chtMoneyPerRole
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chtMoneyPerRole.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chtMoneyPerRole.Legends.Add(legend2);
+            this.chtMoneyPerRole.Location = new System.Drawing.Point(12, 930);
+            this.chtMoneyPerRole.Name = "chtMoneyPerRole";
+            this.chtMoneyPerRole.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Legend = "Legend1";
+            series2.Name = "Money (£)";
+            series2.YValuesPerPoint = 2;
+            this.chtMoneyPerRole.Series.Add(series2);
+            this.chtMoneyPerRole.Size = new System.Drawing.Size(912, 567);
+            this.chtMoneyPerRole.TabIndex = 5;
+            this.chtMoneyPerRole.Text = "chart1";
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Text = "Total Salary Spent per Job Role (annual, before tax)";
+            this.chtMoneyPerRole.Titles.Add(title2);
+            // 
+            // chtCountryHeadcounts
             // 
             chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            this.chtCountryHeadcounts.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(12, 930);
-            this.chart1.Name = "chart1";
+            this.chtCountryHeadcounts.Legends.Add(legend3);
+            this.chtCountryHeadcounts.Location = new System.Drawing.Point(12, 330);
+            this.chtCountryHeadcounts.Name = "chtCountryHeadcounts";
+            this.chtCountryHeadcounts.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.YValuesPerPoint = 2;
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(912, 567);
-            this.chart1.TabIndex = 5;
-            this.chart1.Text = "chart1";
+            series3.Name = "Employee Count";
+            this.chtCountryHeadcounts.Series.Add(series3);
+            this.chtCountryHeadcounts.Size = new System.Drawing.Size(912, 567);
+            this.chtCountryHeadcounts.TabIndex = 6;
+            this.chtCountryHeadcounts.Text = "chart3";
             title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title3.Name = "Title1";
-            title3.Text = "Salary Funding per Role";
-            this.chart1.Titles.Add(title3);
-            // 
-            // chart3
-            // 
-            chartArea4.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart3.Legends.Add(legend4);
-            this.chart3.Location = new System.Drawing.Point(12, 330);
-            this.chart3.Name = "chart3";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart3.Series.Add(series4);
-            this.chart3.Size = new System.Drawing.Size(912, 567);
-            this.chart3.TabIndex = 6;
-            this.chart3.Text = "chart3";
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title4.Name = "Title1";
-            title4.Text = "Total Headcount by Country";
-            this.chart3.Titles.Add(title4);
+            title3.Text = "Total Headcount by Country";
+            this.chtCountryHeadcounts.Titles.Add(title3);
             // 
             // lblGenRepOtherCount
             // 
             this.lblGenRepOtherCount.AutoSize = true;
             this.lblGenRepOtherCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenRepOtherCount.Location = new System.Drawing.Point(955, 264);
+            this.lblGenRepOtherCount.Location = new System.Drawing.Point(1000, 264);
             this.lblGenRepOtherCount.Name = "lblGenRepOtherCount";
             this.lblGenRepOtherCount.Size = new System.Drawing.Size(99, 32);
             this.lblGenRepOtherCount.TabIndex = 7;
             this.lblGenRepOtherCount.Text = "Other:";
+            // 
+            // chtProfessionGrades
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chtProfessionGrades.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chtProfessionGrades.Legends.Add(legend4);
+            this.chtProfessionGrades.Location = new System.Drawing.Point(945, 930);
+            this.chtProfessionGrades.Name = "chtProfessionGrades";
+            this.chtProfessionGrades.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series4.Legend = "Legend1";
+            series4.Name = "Employee Count";
+            this.chtProfessionGrades.Series.Add(series4);
+            this.chtProfessionGrades.Size = new System.Drawing.Size(1048, 567);
+            this.chtProfessionGrades.TabIndex = 8;
+            this.chtProfessionGrades.Text = "chart1";
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.Name = "Title1";
+            title4.Text = "Number of Employees per Profession Grade";
+            this.chtProfessionGrades.Titles.Add(title4);
+            // 
+            // btnBackFromHRLanding
+            // 
+            this.btnBackFromHRLanding.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFromHRLanding.Image = ((System.Drawing.Image)(resources.GetObject("btnBackFromHRLanding.Image")));
+            this.btnBackFromHRLanding.Location = new System.Drawing.Point(1853, 28);
+            this.btnBackFromHRLanding.Name = "btnBackFromHRLanding";
+            this.btnBackFromHRLanding.Size = new System.Drawing.Size(125, 128);
+            this.btnBackFromHRLanding.TabIndex = 9;
+            this.btnBackFromHRLanding.UseVisualStyleBackColor = true;
+            this.btnBackFromHRLanding.Click += new System.EventHandler(this.btnBackFromHRLanding_Click);
             // 
             // FrmViewAnalytics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2015, 1523);
+            this.Controls.Add(this.btnBackFromHRLanding);
+            this.Controls.Add(this.chtProfessionGrades);
             this.Controls.Add(this.lblGenRepOtherCount);
-            this.Controls.Add(this.chart3);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.chtCountryHeadcounts);
+            this.Controls.Add(this.chtMoneyPerRole);
             this.Controls.Add(this.lblGenRepFemaleCount);
             this.Controls.Add(this.lblGenRepMaleCount);
             this.Controls.Add(this.lblGenderRepAnalytics);
-            this.Controls.Add(this.chart2);
             this.Controls.Add(this.chtHeadcountByJob);
             this.Name = "FrmViewAnalytics";
             this.Text = "FrnViewAnalytics";
             this.Load += new System.EventHandler(this.FrnViewAnalytics_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chtHeadcountByJob)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtMoneyPerRole)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtCountryHeadcounts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtProfessionGrades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,12 +229,13 @@
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chtHeadcountByJob;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Label lblGenderRepAnalytics;
         private System.Windows.Forms.Label lblGenRepMaleCount;
         private System.Windows.Forms.Label lblGenRepFemaleCount;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtMoneyPerRole;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtCountryHeadcounts;
         private System.Windows.Forms.Label lblGenRepOtherCount;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtProfessionGrades;
+        private System.Windows.Forms.Button btnBackFromHRLanding;
     }
 }

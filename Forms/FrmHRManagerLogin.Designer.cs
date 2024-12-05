@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHRManagerLogin));
             this.lblHRUsername = new System.Windows.Forms.Label();
             this.lblHRPassword = new System.Windows.Forms.Label();
             this.txtHRUsername = new System.Windows.Forms.TextBox();
             this.txtHRPassword = new System.Windows.Forms.TextBox();
             this.btnHRManagerSignIn = new System.Windows.Forms.Button();
+            this.btnBackFromHRLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHRUsername
@@ -59,14 +61,14 @@
             // 
             this.txtHRUsername.Location = new System.Drawing.Point(610, 38);
             this.txtHRUsername.Name = "txtHRUsername";
-            this.txtHRUsername.Size = new System.Drawing.Size(415, 38);
+            this.txtHRUsername.Size = new System.Drawing.Size(296, 38);
             this.txtHRUsername.TabIndex = 2;
             // 
             // txtHRPassword
             // 
             this.txtHRPassword.Location = new System.Drawing.Point(247, 108);
             this.txtHRPassword.Name = "txtHRPassword";
-            this.txtHRPassword.Size = new System.Drawing.Size(450, 38);
+            this.txtHRPassword.Size = new System.Drawing.Size(303, 38);
             this.txtHRPassword.TabIndex = 3;
             this.txtHRPassword.UseSystemPasswordChar = true;
             // 
@@ -81,11 +83,23 @@
             this.btnHRManagerSignIn.UseVisualStyleBackColor = true;
             this.btnHRManagerSignIn.Click += new System.EventHandler(this.btnHRManagerSignIn_Click);
             // 
+            // btnBackFromHRLogin
+            // 
+            this.btnBackFromHRLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFromHRLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnBackFromHRLogin.Image")));
+            this.btnBackFromHRLogin.Location = new System.Drawing.Point(970, 18);
+            this.btnBackFromHRLogin.Name = "btnBackFromHRLogin";
+            this.btnBackFromHRLogin.Size = new System.Drawing.Size(125, 128);
+            this.btnBackFromHRLogin.TabIndex = 5;
+            this.btnBackFromHRLogin.UseVisualStyleBackColor = true;
+            this.btnBackFromHRLogin.Click += new System.EventHandler(this.btnBackFromHRLogin_Click);
+            // 
             // FrmHRManagerLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1119, 458);
+            this.Controls.Add(this.btnBackFromHRLogin);
             this.Controls.Add(this.btnHRManagerSignIn);
             this.Controls.Add(this.txtHRPassword);
             this.Controls.Add(this.txtHRUsername);
@@ -105,5 +119,6 @@
         private System.Windows.Forms.TextBox txtHRUsername;
         private System.Windows.Forms.TextBox txtHRPassword;
         private System.Windows.Forms.Button btnHRManagerSignIn;
+        private System.Windows.Forms.Button btnBackFromHRLogin;
     }
 }

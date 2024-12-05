@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AnalyticsAndDataMethods.cs" />
     <Compile Include="Forms\FrmSelfServiceUpdate.cs">
       <SubType>Form</SubType>
     </Compile>

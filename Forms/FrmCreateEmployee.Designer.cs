@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCreateEmployee));
             this.lblNewEmployeeID = new System.Windows.Forms.Label();
             this.lblNewEmployeeFirstName = new System.Windows.Forms.Label();
             this.lblNewEmployeeSurname = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             this.btnCreateEmployee = new System.Windows.Forms.Button();
             this.txtNewEmployeePassword = new System.Windows.Forms.TextBox();
             this.lblNewEmployeePassword = new System.Windows.Forms.Label();
+            this.btnBackFromCreateEmp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNewEmployeeID
@@ -203,6 +205,7 @@
             // 
             this.txtNewEmployeeCountry.Location = new System.Drawing.Point(306, 871);
             this.txtNewEmployeeCountry.Name = "txtNewEmployeeCountry";
+            this.txtNewEmployeeCountry.ReadOnly = true;
             this.txtNewEmployeeCountry.Size = new System.Drawing.Size(285, 38);
             this.txtNewEmployeeCountry.TabIndex = 15;
             // 
@@ -299,11 +302,23 @@
             this.lblNewEmployeePassword.TabIndex = 27;
             this.lblNewEmployeePassword.Text = "Password:";
             // 
+            // btnBackFromCreateEmp
+            // 
+            this.btnBackFromCreateEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFromCreateEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnBackFromCreateEmp.Image")));
+            this.btnBackFromCreateEmp.Location = new System.Drawing.Point(1475, 37);
+            this.btnBackFromCreateEmp.Name = "btnBackFromCreateEmp";
+            this.btnBackFromCreateEmp.Size = new System.Drawing.Size(125, 128);
+            this.btnBackFromCreateEmp.TabIndex = 28;
+            this.btnBackFromCreateEmp.UseVisualStyleBackColor = true;
+            this.btnBackFromCreateEmp.Click += new System.EventHandler(this.btnBackFromCreateEmp_Click);
+            // 
             // FrmCreateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1636, 1041);
+            this.Controls.Add(this.btnBackFromCreateEmp);
             this.Controls.Add(this.lblNewEmployeePassword);
             this.Controls.Add(this.txtNewEmployeePassword);
             this.Controls.Add(this.btnCreateEmployee);
@@ -369,5 +384,6 @@
         private System.Windows.Forms.Button btnCreateEmployee;
         private System.Windows.Forms.TextBox txtNewEmployeePassword;
         private System.Windows.Forms.Label lblNewEmployeePassword;
+        private System.Windows.Forms.Button btnBackFromCreateEmp;
     }
 }

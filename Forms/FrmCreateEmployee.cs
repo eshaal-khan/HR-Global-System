@@ -17,6 +17,7 @@ namespace HR_Global_System
         public FrmCreateEmployee()
         {
             InitializeComponent();
+            txtNewEmployeeCountry.Text = SessionManager.Instance._countryOfUser;
         }
 
         private void btnCreateEmployee_Click(object sender, EventArgs e)
@@ -25,6 +26,12 @@ namespace HR_Global_System
                 txtNewEmployeeManager.Text,Convert.ToDecimal(txtNewEmployeeSalary),Convert.ToDecimal(txtNewEmployeeLeave),txtNewEmployeeGrade.Text,txtNewEmployeeCountry.Text);
 
             employeeFunctionality.CreateNewRecord(newEmployee);
+        }
+
+        private void btnBackFromCreateEmp_Click(object sender, EventArgs e)
+        {
+            FormManagement.MoveBackToPreviousForm(this, new FrmHRLandingPage());
+
         }
     }
 }

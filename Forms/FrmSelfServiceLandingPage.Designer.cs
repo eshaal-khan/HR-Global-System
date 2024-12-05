@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSelfServiceLandingPage));
             this.lblSelfServiceWelcome = new System.Windows.Forms.Label();
             this.lblSelfServiceID = new System.Windows.Forms.Label();
             this.lblSelfServicePassword = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             this.lblSelfServiceJobTtitle = new System.Windows.Forms.Label();
             this.btnSelfServiceUpdate = new System.Windows.Forms.Button();
             this.btnSelfServicePassword = new System.Windows.Forms.Button();
+            this.btnBackFromSSLanding = new System.Windows.Forms.Button();
+            this.btnSSLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSelfServiceWelcome
@@ -208,11 +211,34 @@
             this.btnSelfServicePassword.UseVisualStyleBackColor = true;
             this.btnSelfServicePassword.Click += new System.EventHandler(this.btnSelfServicePassword_Click);
             // 
+            // btnBackFromSSLanding
+            // 
+            this.btnBackFromSSLanding.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFromSSLanding.Image = ((System.Drawing.Image)(resources.GetObject("btnBackFromSSLanding.Image")));
+            this.btnBackFromSSLanding.Location = new System.Drawing.Point(1808, 31);
+            this.btnBackFromSSLanding.Name = "btnBackFromSSLanding";
+            this.btnBackFromSSLanding.Size = new System.Drawing.Size(125, 128);
+            this.btnBackFromSSLanding.TabIndex = 17;
+            this.btnBackFromSSLanding.UseVisualStyleBackColor = true;
+            this.btnBackFromSSLanding.Click += new System.EventHandler(this.btnBackFromSSLanding_Click);
+            // 
+            // btnSSLogout
+            // 
+            this.btnSSLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnSSLogout.Image")));
+            this.btnSSLogout.Location = new System.Drawing.Point(1627, 187);
+            this.btnSSLogout.Name = "btnSSLogout";
+            this.btnSSLogout.Size = new System.Drawing.Size(306, 106);
+            this.btnSSLogout.TabIndex = 18;
+            this.btnSSLogout.UseVisualStyleBackColor = true;
+            this.btnSSLogout.Click += new System.EventHandler(this.btnSSLogout_Click);
+            // 
             // FrmSelfServiceLandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1957, 1263);
+            this.Controls.Add(this.btnSSLogout);
+            this.Controls.Add(this.btnBackFromSSLanding);
             this.Controls.Add(this.btnSelfServicePassword);
             this.Controls.Add(this.btnSelfServiceUpdate);
             this.Controls.Add(this.lblSelfServiceJobTtitle);
@@ -255,5 +281,7 @@
         private System.Windows.Forms.Label lblSelfServiceJobTtitle;
         private System.Windows.Forms.Button btnSelfServiceUpdate;
         private System.Windows.Forms.Button btnSelfServicePassword;
+        private System.Windows.Forms.Button btnBackFromSSLanding;
+        private System.Windows.Forms.Button btnSSLogout;
     }
 }

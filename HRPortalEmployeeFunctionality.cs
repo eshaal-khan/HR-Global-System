@@ -56,7 +56,8 @@ namespace HR_Global_System
             con.ConnectionString = connectionString;
             cmd = new OleDbCommand();
             cmd.Connection = con;
-            cmd.CommandText = @"INSERT INTO TableEmployeeInfo (LoginNumber, Password,FirstName,Surname,Gender,ContactEmail,ContactNumber,JobTitle,ManagerName,BaseAnnualSalary,PaidLeaveHours,ProfessionGrade,BaseCountry) VALUES (@id,@pwd,@fn,@sn,@gen, @email,@number,@job,@manager, @salary,@leave,@grade,@country)";
+            cmd.CommandText = @"INSERT INTO TableEmployeeInfo (LoginNumber, [Password],FirstName,Surname,Gender,ContactEmail,ContactNumber,JobTitle,ManagerName,BaseAnnualSalary,PaidLeaveHours,ProfessionGrade,BaseCountry) 
+            VALUES (@id,@pwd,@fn,@sn,@gen, @email,@number,@job,@manager, @salary,@leave,@grade,@country)";
             cmd.Parameters.AddWithValue("@id", newEmployee.employeeID);
             cmd.Parameters.AddWithValue("@pwd",newEmployee.password);
             cmd.Parameters.AddWithValue("@fn",newEmployee.firstName);
@@ -82,10 +83,8 @@ namespace HR_Global_System
             con.ConnectionString = connectionString;
             cmd = new OleDbCommand();
             cmd.Connection = con;
-            //SQL for updating staff record
-            cmd.CommandText = @"UPDATE TableEmployeeInfo SET Password=@pwd,FirstName=@fn , Surname=@sn , Gender=@gen , ContactEmail=@email , ContactNumber=@number , JobTitle=@job, ManagerName=@manager, BaseAnnualSalary=@salary, PaidLeaveHours=@leave, ProfessionalGrade=@grade, BaseCountry=@country  WHERE LoginNumber=@id";
+            cmd.CommandText = @"UPDATE TableEmployeeInfo SET [Password]=@pwd,FirstName=@fn , Surname=@sn , Gender=@gen , ContactEmail=@email , ContactNumber=@number , JobTitle=@job, ManagerName=@manager, BaseAnnualSalary=@salary, PaidLeaveHours=@leave, ProfessionGrade=@grade, BaseCountry=@country  WHERE LoginNumber=@id";
             //parameterised queries for information needed for table
-            cmd.Parameters.AddWithValue("@id", updatedEmployeeInfo.employeeID);
             cmd.Parameters.AddWithValue("@pwd", updatedEmployeeInfo.password);
             cmd.Parameters.AddWithValue("@fn", updatedEmployeeInfo.firstName);
             cmd.Parameters.AddWithValue("@sn", updatedEmployeeInfo.surname);
@@ -94,10 +93,11 @@ namespace HR_Global_System
             cmd.Parameters.AddWithValue("@number", updatedEmployeeInfo.phoneNumber);
             cmd.Parameters.AddWithValue("@job", updatedEmployeeInfo.jobTitle);
             cmd.Parameters.AddWithValue("@manager", updatedEmployeeInfo.manager);
-            cmd.Parameters.AddWithValue("@salary", updatedEmployeeInfo.annualSalary);
-            cmd.Parameters.AddWithValue("@leave", updatedEmployeeInfo.totalPaidLeave);
+            cmd.Parameters.AddWithValue("@salary", Convert.ToDecimal(updatedEmployeeInfo.annualSalary));
+            cmd.Parameters.AddWithValue("@leave", Convert.ToDecimal(updatedEmployeeInfo.totalPaidLeave));
             cmd.Parameters.AddWithValue("@grade", updatedEmployeeInfo.jobGrade);
             cmd.Parameters.AddWithValue("@country", updatedEmployeeInfo.baseCountry);
+            cmd.Parameters.AddWithValue("@id", updatedEmployeeInfo.employeeID);
             con.Open();
             int status = cmd.ExecuteNonQuery();
             con.Close();
@@ -137,7 +137,6 @@ namespace HR_Global_System
                                 );
                             return EmployeeRecord;
 
-
                         }
                         else
                         {
@@ -149,51 +148,5 @@ namespace HR_Global_System
             }
         }
 
-        public static void PopulateChart(Dictionary<string, int> jobRolesCounting, Chart chart1)
-        {
-
-            foreach (var role in jobRolesCounting)
-            {
-                chart1.Series["Employee Count"].Points.AddXY(role.Key, role.Value);
-            }
-        }
-        public static Dictionary <string,int> PopulateJobRolesCountChart()
-        {
-            string connectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-            Dictionary<string, int> jobRolesCounting = new Dictionary<string, int>();
-            using (OleDbConnection con = new OleDbConnection(connectionString))
-            {
-                try
-                {
-                    con.Open();
-                    string query = "SELECT JobTitle FROM TableEmployeeInfo WHERE BaseCountry=@country";
-                    using (OleDbCommand cmd = new OleDbCommand(query, con))
-                    {
-                        cmd.Parameters.AddWithValue("@country", SessionManager.Instance._countryOfUser);
-                        using (OleDbDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                string jobRole = reader["JobTitle"].ToString();
-                                if (jobRolesCounting.ContainsKey(jobRole))
-                                {
-                                    jobRolesCounting[jobRole]++;
-                                }
-                                else
-                                {
-                                    jobRolesCounting.Add(jobRole, 1);
-                                }
-                            }
-                        }
-                        return jobRolesCounting;
-                    }                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show($"Error:{ex.Message}");
-                    return null;
-                }
-            }
-        }
     }
 }

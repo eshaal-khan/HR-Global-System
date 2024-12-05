@@ -55,5 +55,15 @@ namespace HR_Global_System
                 btnShowPassword.Text = "Hide Password";
             }
         }
+
+        private void btnBackFromHREditRecord_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to go back? No changes made will be saved.", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res == DialogResult.Yes)
+            {
+                FormManagement.MoveBackToPreviousForm(this, new FrmViewEmployeeRecords());
+            }
+
+        }
     }
 }

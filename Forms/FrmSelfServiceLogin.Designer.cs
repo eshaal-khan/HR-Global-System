@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSelfServiceLogin));
             this.lblSelfServiceUsername = new System.Windows.Forms.Label();
             this.lblSelfServicePassword = new System.Windows.Forms.Label();
             this.txtSelfServiceUsername = new System.Windows.Forms.TextBox();
             this.txtSelfServicePassword = new System.Windows.Forms.TextBox();
             this.btnSelfServiceSignIn = new System.Windows.Forms.Button();
+            this.btnBackFromSSLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSelfServiceUsername
@@ -81,11 +83,23 @@
             this.btnSelfServiceSignIn.UseVisualStyleBackColor = true;
             this.btnSelfServiceSignIn.Click += new System.EventHandler(this.btnSelfServiceSignIn_Click);
             // 
+            // btnBackFromSSLogin
+            // 
+            this.btnBackFromSSLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFromSSLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnBackFromSSLogin.Image")));
+            this.btnBackFromSSLogin.Location = new System.Drawing.Point(1003, 12);
+            this.btnBackFromSSLogin.Name = "btnBackFromSSLogin";
+            this.btnBackFromSSLogin.Size = new System.Drawing.Size(125, 128);
+            this.btnBackFromSSLogin.TabIndex = 5;
+            this.btnBackFromSSLogin.UseVisualStyleBackColor = true;
+            this.btnBackFromSSLogin.Click += new System.EventHandler(this.btnBackFromSSLogin_Click);
+            // 
             // FrmSelfServiceLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1140, 458);
+            this.Controls.Add(this.btnBackFromSSLogin);
             this.Controls.Add(this.btnSelfServiceSignIn);
             this.Controls.Add(this.txtSelfServicePassword);
             this.Controls.Add(this.txtSelfServiceUsername);
@@ -105,5 +119,6 @@
         private System.Windows.Forms.TextBox txtSelfServiceUsername;
         private System.Windows.Forms.TextBox txtSelfServicePassword;
         private System.Windows.Forms.Button btnSelfServiceSignIn;
+        private System.Windows.Forms.Button btnBackFromSSLogin;
     }
 }

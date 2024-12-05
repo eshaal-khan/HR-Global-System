@@ -35,5 +35,10 @@ namespace HR_Global_System
             employeeFunctionality.DeleteSelectedRecord(Convert.ToInt32(dgvAllEmployeeRecords.SelectedCells[0].Value), dgvAllEmployeeRecords);
             employeeFunctionality.RetrieveEmpData(dgvAllEmployeeRecords);
         }
+
+        private void btnBackFromViewEmpRecords_Click(object sender, EventArgs e)
+        {
+            FormManagement.MoveBackToPreviousForm(this, new FrmHRLandingPage());
+        }
     }
 }

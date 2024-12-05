@@ -36,5 +36,10 @@ namespace HR_Global_System
                 SessionManager.Instance.FinishSession();
             }
         }
+
+        private void btnBackFromSSLogin_Click(object sender, EventArgs e)
+        {
+                FormManagement.MoveBackToPreviousForm(this, new FrmWelcomePage());
+        }
     }
 }

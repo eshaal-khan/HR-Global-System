@@ -32,5 +32,24 @@ namespace HR_Global_System
         {
             FormManagement.NavigateToNextForm(this, new FrmViewAnalytics());
         }
+
+        private void btnBackFromHRLanding_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to go back? Proceeding will log you out of the portal.", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res == DialogResult.Yes)
+            {
+                FormManagement.MoveBackToPreviousForm(this, new FrmHRManagerLogin());
+            }
+        }
+
+        private void btnHRLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you would like to log out?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res == DialogResult.Yes)
+            {
+                SessionManager.Instance.FinishSession();
+            }
+
+        }
     }
 }
