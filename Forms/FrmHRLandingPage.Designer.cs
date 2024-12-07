@@ -35,6 +35,7 @@
             this.btnViewAnalytics = new System.Windows.Forms.Button();
             this.btnBackFromHRLanding = new System.Windows.Forms.Button();
             this.btnHRLogout = new System.Windows.Forms.Button();
+            this.btnViewUpdateRequests = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHRLandingPage
@@ -101,11 +102,22 @@
             this.btnHRLogout.UseVisualStyleBackColor = true;
             this.btnHRLogout.Click += new System.EventHandler(this.btnHRLogout_Click);
             // 
+            // btnViewUpdateRequests
+            // 
+            this.btnViewUpdateRequests.Location = new System.Drawing.Point(1270, 190);
+            this.btnViewUpdateRequests.Name = "btnViewUpdateRequests";
+            this.btnViewUpdateRequests.Size = new System.Drawing.Size(243, 158);
+            this.btnViewUpdateRequests.TabIndex = 6;
+            this.btnViewUpdateRequests.Text = "View Update Requests";
+            this.btnViewUpdateRequests.UseVisualStyleBackColor = true;
+            this.btnViewUpdateRequests.Click += new System.EventHandler(this.btnViewUpdateRequests_Click);
+            // 
             // FrmHRLandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1525, 569);
+            this.Controls.Add(this.btnViewUpdateRequests);
             this.Controls.Add(this.btnHRLogout);
             this.Controls.Add(this.btnBackFromHRLanding);
             this.Controls.Add(this.btnViewAnalytics);
@@ -127,5 +139,6 @@
         private System.Windows.Forms.Button btnViewAnalytics;
         private System.Windows.Forms.Button btnBackFromHRLanding;
         private System.Windows.Forms.Button btnHRLogout;
+        private System.Windows.Forms.Button btnViewUpdateRequests;
     }
 }

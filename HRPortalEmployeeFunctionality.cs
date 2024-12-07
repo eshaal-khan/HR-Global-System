@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,6 +11,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace HR_Global_System
 {
+    //Used the following for help in structuring the databases querying code- https://stackoverflow.com/questions/15148588/proper-way-of-getting-a-data-from-an-access-database
     internal class HRPortalEmployeeFunctionality
     {
         private static OleDbConnection con;
@@ -34,8 +36,21 @@ namespace HR_Global_System
             con.Close();
         }
 
-        public void DeleteSelectedRecord(int employeeID, DataGridView dgvAllEmployeeRecords)
+        public void DeleteSelectedRecord(string employeeID)
         {
+            OleDbConnection conInsertRecord = new OleDbConnection();
+            conInsertRecord.ConnectionString = connectionString;
+            OleDbCommand cmdInsertRecord = new OleDbCommand();
+            cmdInsertRecord.Connection = conInsertRecord;
+            //SQL for deleting the record where the ID is the one in the variable above
+            cmdInsertRecord.CommandText = @"INSERT INTO TableRecordsArchive (LoginNumber,[Password],FirstName,Surname,Gender,ContactEmail,ContactNumber,JobTitle,ManagerName,BaseAnnualSalary,PaidLeaveHours,ProfessionGrade,BaseCountry) 
+            SELECT LoginNumber,[Password],FirstName,Surname,Gender,ContactEmail,ContactNumber,JobTitle,ManagerName,BaseAnnualSalary,PaidLeaveHours,ProfessionGrade,BaseCountry FROM TableEmployeeInfo WHERE LoginNumber= @id";
+            cmdInsertRecord.Parameters.AddWithValue("@id", employeeID); //parameterised query
+            conInsertRecord.Open();
+            reader = cmdInsertRecord.ExecuteReader();
+            conInsertRecord.Close();
+            DialogResult res1 = MessageBox.Show("Record successfully inserted!!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             con = new OleDbConnection();
             con.ConnectionString = connectionString;
             cmd = new OleDbCommand();
@@ -45,9 +60,37 @@ namespace HR_Global_System
             cmd.Parameters.AddWithValue("@id", employeeID); //parameterised query
             con.Open();
             int status = cmd.ExecuteNonQuery();
+            MessageBox.Show(Convert.ToString(status));
             con.Close();
             //shows message to user that deleting has been done successfully- if not, prints an error message
             DialogResult res = MessageBox.Show("Employee record deleted!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        public void CheckAndDeleteOldRecords()
+        {
+            DateTime cutoffDate = DateTime.Now.AddYears(-5);
+            DateTime cutoffDateFormatted = cutoffDate.Date;
+            try
+            {
+                using (OleDbConnection con = new OleDbConnection(connectionString))
+                {
+                    con.Open();
+
+                    string commandText = @"DELETE * From TableRecordsArchive WHERE DateDeleted < @cutoffDate";
+                    using (OleDbCommand cmd = new OleDbCommand(commandText, con))
+                    {
+                        cmd.Parameters.AddWithValue("@cutoffDate", cutoffDateFormatted);
+                        int deletedRows = cmd.ExecuteNonQuery();
+                        DialogResult res=MessageBox.Show(Convert.ToString(deletedRows) + " has been deleted in line with GDPR. Please view out data policy for more information","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        con.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error in deleting from archive");
+            }
+            
         }
 
         public void CreateNewRecord(Employee newEmployee)
@@ -147,6 +190,5 @@ namespace HR_Global_System
                 }
             }
         }
-
     }
 }

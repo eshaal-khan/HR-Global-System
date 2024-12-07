@@ -62,7 +62,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\AnalyticsAndDataMethods.cs" />
+    <Compile Include="AnalyticsAndDataMethods.cs" />
+    <Compile Include="Forms\FrmHRViewUpdateRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHRViewUpdateRequests.Designer.cs">
+      <DependentUpon>FrmHRViewUpdateRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRequestInfoUpdates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRequestInfoUpdates.Designer.cs">
+      <DependentUpon>FrmRequestInfoUpdates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmSelfServiceUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +144,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateRequest.cs" />
     <EmbeddedResource Include="Forms\FrmCreateEmployee.resx">
       <DependentUpon>FrmCreateEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmHRManagerLogin.resx">
       <DependentUpon>FrmHRManagerLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHRViewUpdateRequests.resx">
+      <DependentUpon>FrmHRViewUpdateRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRequestInfoUpdates.resx">
+      <DependentUpon>FrmRequestInfoUpdates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSelfServiceLandingPage.resx">
       <DependentUpon>FrmSelfServiceLandingPage.cs</DependentUpon>

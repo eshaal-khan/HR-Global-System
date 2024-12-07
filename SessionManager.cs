@@ -10,6 +10,7 @@ using System.Diagnostics;
 
 namespace HR_Global_System
 {
+    //Used the following to understand and implement Singleton pattern- https://csharpindepth.com/articles/singleton
     public sealed class SessionManager
     {
 

@@ -21,6 +21,7 @@ namespace HR_Global_System
         private void FrmViewEmployeeRecords_Load(object sender, EventArgs e)
         {
             employeeFunctionality.RetrieveEmpData(dgvAllEmployeeRecords);
+            employeeFunctionality.CheckAndDeleteOldRecords();
 
         }
 
@@ -32,7 +33,7 @@ namespace HR_Global_System
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            employeeFunctionality.DeleteSelectedRecord(Convert.ToInt32(dgvAllEmployeeRecords.SelectedCells[0].Value), dgvAllEmployeeRecords);
+            employeeFunctionality.DeleteSelectedRecord(Convert.ToString(dgvAllEmployeeRecords.SelectedCells[0].Value));
             employeeFunctionality.RetrieveEmpData(dgvAllEmployeeRecords);
         }
 

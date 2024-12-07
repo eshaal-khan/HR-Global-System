@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HR_Global_System.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,6 +50,12 @@ namespace HR_Global_System
             {
                 SessionManager.Instance.FinishSession();
             }
+
+        }
+
+        private void btnViewUpdateRequests_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new FrmHRViewUpdateRequests());
 
         }
     }

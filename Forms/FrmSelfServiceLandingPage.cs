@@ -62,7 +62,8 @@ namespace HR_Global_System
 
         private void btnSelfServiceUpdate_Click(object sender, EventArgs e)
         {
-            FormManagement.NavigateToNextForm(this, new FrmSelfServiceUpdate(fetchedDetails));
+            //FormManagement.NavigateToNextForm(this, new FrmSelfServiceUpdate(fetchedDetails));
+            FormManagement.NavigateToNextForm(this,new FrmRequestInfoUpdates());
 
         }
 

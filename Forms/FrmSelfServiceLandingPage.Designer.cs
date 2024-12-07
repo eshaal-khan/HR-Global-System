@@ -197,7 +197,7 @@
             this.btnSelfServiceUpdate.Size = new System.Drawing.Size(315, 191);
             this.btnSelfServiceUpdate.TabIndex = 15;
             this.btnSelfServiceUpdate.TabStop = false;
-            this.btnSelfServiceUpdate.Text = "Update data";
+            this.btnSelfServiceUpdate.Text = "Request data change";
             this.btnSelfServiceUpdate.UseVisualStyleBackColor = true;
             this.btnSelfServiceUpdate.Click += new System.EventHandler(this.btnSelfServiceUpdate_Click);
             // 
