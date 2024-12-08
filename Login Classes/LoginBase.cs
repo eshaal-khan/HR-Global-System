@@ -26,7 +26,7 @@ namespace HR_Global_System.Management_Classes
 
                         if (result != null)
                         {
-                            Employee employeeRecord = HRPortalEmployeeFunctionality.CreateEmployeeObject(username);
+                            Employee employeeRecord = HRPortalEmployeeRelatedMethods.CreateEmployeeObject(username);
                             return true;
                         }
                         else

@@ -15,7 +15,7 @@ namespace HR_Global_System
     public partial class FrmSelfServiceLandingPage : Form
     {
         //static OleDbConnection con;
-        Employee fetchedDetails = HRPortalEmployeeFunctionality.CreateEmployeeObject(SessionManager.Instance._IDOfUser);
+        Employee fetchedDetails = HRPortalEmployeeRelatedMethods.CreateEmployeeObject(SessionManager.Instance._IDOfUser);
         static OleDbCommand cmd=new OleDbCommand();
         static OleDbDataReader reader;
         public FrmSelfServiceLandingPage()

@@ -62,84 +62,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnalyticsAndDataMethods.cs" />
-    <Compile Include="Forms\FrmHRViewSelectedRequest.cs">
+    <Compile Include="HR Portal Functionality\HRAnalyticsPageMethods.cs" />
+    <Compile Include="Forms\HR Portal Forms\FrmHRViewSelectedRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmHRViewSelectedRequest.Designer.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmHRViewSelectedRequest.Designer.cs">
       <DependentUpon>FrmHRViewSelectedRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmHRViewUpdateRequests.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmHRViewUpdateRequests.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmHRViewUpdateRequests.Designer.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmHRViewUpdateRequests.Designer.cs">
       <DependentUpon>FrmHRViewUpdateRequests.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmRequestInfoUpdates.cs">
+    <Compile Include="Forms\Self Service Portal Forms\FrmRequestInfoUpdates.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmRequestInfoUpdates.Designer.cs">
+    <Compile Include="Forms\Self Service Portal Forms\FrmRequestInfoUpdates.Designer.cs">
       <DependentUpon>FrmRequestInfoUpdates.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmSelfServiceUpdate.cs">
+    <Compile Include="Forms\Self Service Portal Forms\FrmSelfServiceUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmSelfServiceUpdate.Designer.cs">
+    <Compile Include="Forms\Self Service Portal Forms\FrmSelfServiceUpdate.Designer.cs">
       <DependentUpon>FrmSelfServiceUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmViewPersonalUpdateRequests.cs">
+    <Compile Include="Forms\Self Service Portal Forms\FrmViewPersonalUpdateRequests.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmViewPersonalUpdateRequests.Designer.cs">
+    <Compile Include="Forms\Self Service Portal Forms\FrmViewPersonalUpdateRequests.Designer.cs">
       <DependentUpon>FrmViewPersonalUpdateRequests.cs</DependentUpon>
     </Compile>
-    <Compile Include="HRPortalEmployeeFunctionality.cs" />
+    <Compile Include="HR Portal Functionality\HRPortalEmployeeRelatedMethods.cs" />
     <Compile Include="Login Classes\HRLogin.cs" />
     <Compile Include="Login Classes\LoginBase.cs" />
     <Compile Include="Login Classes\SelfServiceLogin.cs" />
-    <Compile Include="SessionManager.cs" />
-    <Compile Include="Employee.cs" />
+    <Compile Include="Management Classes\SessionManager.cs" />
+    <Compile Include="Objects\Employee.cs" />
     <Compile Include="Management Classes\FormManagement.cs" />
-    <Compile Include="Forms\FrmCreateEmployee.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmCreateEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmCreateEmployee.Designer.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmCreateEmployee.Designer.cs">
       <DependentUpon>FrmCreateEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmEditEmployeeInfo.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmEditEmployeeInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmEditEmployeeInfo.Designer.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmEditEmployeeInfo.Designer.cs">
       <DependentUpon>FrmEditEmployeeInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmHRLandingPage.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmHRLandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmHRLandingPage.Designer.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmHRLandingPage.Designer.cs">
       <DependentUpon>FrmHRLandingPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmHRManagerLogin.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmHRManagerLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmHRManagerLogin.Designer.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmHRManagerLogin.Designer.cs">
       <DependentUpon>FrmHRManagerLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmSelfServiceLandingPage.cs">
+    <Compile Include="Forms\Self Service Portal Forms\FrmSelfServiceLandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmSelfServiceLandingPage.Designer.cs">
+    <Compile Include="Forms\Self Service Portal Forms\FrmSelfServiceLandingPage.Designer.cs">
       <DependentUpon>FrmSelfServiceLandingPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmSelfServiceLogin.cs">
+    <Compile Include="Forms\Self Service Portal Forms\FrmSelfServiceLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmSelfServiceLogin.Designer.cs">
+    <Compile Include="Forms\Self Service Portal Forms\FrmSelfServiceLogin.Designer.cs">
       <DependentUpon>FrmSelfServiceLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmViewEmployeeRecords.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmViewEmployeeRecords.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmViewEmployeeRecords.Designer.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmViewEmployeeRecords.Designer.cs">
       <DependentUpon>FrmViewEmployeeRecords.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmWelcomePage.cs">
@@ -148,55 +148,55 @@
     <Compile Include="Forms\FrmWelcomePage.Designer.cs">
       <DependentUpon>FrmWelcomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmViewAnalytics.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmViewAnalytics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmViewAnalytics.Designer.cs">
+    <Compile Include="Forms\HR Portal Forms\FrmViewAnalytics.Designer.cs">
       <DependentUpon>FrmViewAnalytics.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdateRequest.cs" />
-    <EmbeddedResource Include="Forms\FrmCreateEmployee.resx">
+    <Compile Include="Objects\UpdateRequest.cs" />
+    <EmbeddedResource Include="Forms\HR Portal Forms\FrmCreateEmployee.resx">
       <DependentUpon>FrmCreateEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmEditEmployeeInfo.resx">
+    <EmbeddedResource Include="Forms\HR Portal Forms\FrmEditEmployeeInfo.resx">
       <DependentUpon>FrmEditEmployeeInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmHRLandingPage.resx">
+    <EmbeddedResource Include="Forms\HR Portal Forms\FrmHRLandingPage.resx">
       <DependentUpon>FrmHRLandingPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmHRManagerLogin.resx">
+    <EmbeddedResource Include="Forms\HR Portal Forms\FrmHRManagerLogin.resx">
       <DependentUpon>FrmHRManagerLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmHRViewSelectedRequest.resx">
+    <EmbeddedResource Include="Forms\HR Portal Forms\FrmHRViewSelectedRequest.resx">
       <DependentUpon>FrmHRViewSelectedRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmHRViewUpdateRequests.resx">
+    <EmbeddedResource Include="Forms\HR Portal Forms\FrmHRViewUpdateRequests.resx">
       <DependentUpon>FrmHRViewUpdateRequests.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmRequestInfoUpdates.resx">
+    <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmRequestInfoUpdates.resx">
       <DependentUpon>FrmRequestInfoUpdates.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmSelfServiceLandingPage.resx">
+    <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmSelfServiceLandingPage.resx">
       <DependentUpon>FrmSelfServiceLandingPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmSelfServiceLogin.resx">
+    <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmSelfServiceLogin.resx">
       <DependentUpon>FrmSelfServiceLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmSelfServiceUpdate.resx">
+    <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmSelfServiceUpdate.resx">
       <DependentUpon>FrmSelfServiceUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmViewEmployeeRecords.resx">
+    <EmbeddedResource Include="Forms\HR Portal Forms\FrmViewEmployeeRecords.resx">
       <DependentUpon>FrmViewEmployeeRecords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmViewPersonalUpdateRequests.resx">
+    <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmViewPersonalUpdateRequests.resx">
       <DependentUpon>FrmViewPersonalUpdateRequests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmWelcomePage.resx">
       <DependentUpon>FrmWelcomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmViewAnalytics.resx">
+    <EmbeddedResource Include="Forms\HR Portal Forms\FrmViewAnalytics.resx">
       <DependentUpon>FrmViewAnalytics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

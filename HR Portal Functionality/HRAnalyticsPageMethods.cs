@@ -11,7 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace HR_Global_System.Forms
 {
     //Used the following for understanding how to use charts and read data into them: https://www.youtube.com/watch?v=ySTpfFFuYh8
-    internal class AnalyticsAndDataMethods
+    internal class HRAnalyticsPageMethods
     {
         //method which takes the values, chart and name of the series and populates the chart (bar chart specific)
         public static void PopulateBarChart(Dictionary<string, int> XYAxisValues, Chart chtToPopulate, string seriesName)

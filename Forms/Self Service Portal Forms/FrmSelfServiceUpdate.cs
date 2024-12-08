@@ -13,7 +13,7 @@ namespace HR_Global_System.Forms
 {
     public partial class FrmSelfServiceUpdate : Form
     {
-        HRPortalEmployeeFunctionality employeeFunctionality = new HRPortalEmployeeFunctionality();
+        HRPortalEmployeeRelatedMethods employeeFunctionality = new HRPortalEmployeeRelatedMethods();
 
         public FrmSelfServiceUpdate(Employee employeeToUpdate)
         {

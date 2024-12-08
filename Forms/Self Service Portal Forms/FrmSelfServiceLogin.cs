@@ -26,7 +26,7 @@ namespace HR_Global_System
             if (successfulLogin)
             {
                 MessageBox.Show("Successful Login!");
-                Employee employeeRecord = HRPortalEmployeeFunctionality.CreateEmployeeObject(txtSelfServiceUsername.Text);
+                Employee employeeRecord = HRPortalEmployeeRelatedMethods.CreateEmployeeObject(txtSelfServiceUsername.Text);
                 SessionManager.Instance.CreateSession(employeeRecord.employeeID, employeeRecord.jobTitle, employeeRecord.baseCountry);
                 FormManagement.NavigateToNextForm(this, new FrmSelfServiceLandingPage());
             }

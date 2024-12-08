@@ -13,7 +13,7 @@ namespace HR_Global_System
 {
     public partial class FrmEditEmployeeInfo : Form
     {
-        HRPortalEmployeeFunctionality employeeFunctionality=new HRPortalEmployeeFunctionality();
+        HRPortalEmployeeRelatedMethods employeeFunctionality=new HRPortalEmployeeRelatedMethods();
         public FrmEditEmployeeInfo(Employee selectedEmployee)
         {
             InitializeComponent();

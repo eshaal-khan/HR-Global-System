@@ -12,19 +12,19 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace HR_Global_System
 {
     //Used the following for help in structuring the databases querying code- https://stackoverflow.com/questions/15148588/proper-way-of-getting-a-data-from-an-access-database
-    internal class HRPortalEmployeeFunctionality
+    internal class HRPortalEmployeeRelatedMethods
     {
-        private static OleDbConnection con;
-        private static OleDbCommand cmd;
+        private static OleDbConnection con= new OleDbConnection();
+        private static OleDbCommand cmd= new OleDbCommand();
         private static OleDbDataReader reader;
         private string connectionString= "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
 
-        public void RetrieveEmpData(DataGridView dgvAllEmployeeRecords)
+        public void RetrieveEmpData(DataGridView dgvShowAllEmployeeRecords)
         {
 
-            con = new OleDbConnection();
+            //con = new OleDbConnection();
             con.ConnectionString = connectionString;
-            cmd = new OleDbCommand();
+            //cmd = new OleDbCommand();
             cmd.Connection = con;
             cmd.CommandText = @"SELECT * From TableEmployeeInfo WHERE BaseCountry=@baseCountry";
             cmd.Parameters.AddWithValue("@baseCountry", SessionManager.Instance._countryOfUser);
@@ -32,7 +32,7 @@ namespace HR_Global_System
             reader = cmd.ExecuteReader();
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = reader;
-            dgvAllEmployeeRecords.DataSource = bindingSource;
+            dgvShowAllEmployeeRecords.DataSource = bindingSource;
             con.Close();
         }
 
@@ -51,9 +51,9 @@ namespace HR_Global_System
             conInsertRecord.Close();
             DialogResult res1 = MessageBox.Show("Record successfully inserted!!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
-            con = new OleDbConnection();
+            //con = new OleDbConnection();
             con.ConnectionString = connectionString;
-            cmd = new OleDbCommand();
+            //cmd = new OleDbCommand();
             cmd.Connection = con;
             //SQL for deleting the record where the ID is the one in the variable above
             cmd.CommandText = @"DELETE FROM TableEmployeeInfo WHERE LoginNumber= @id";
@@ -95,9 +95,9 @@ namespace HR_Global_System
 
         public void CreateNewRecord(Employee newEmployee)
         {
-            con = new OleDbConnection();
+            //con = new OleDbConnection();
             con.ConnectionString = connectionString;
-            cmd = new OleDbCommand();
+            //cmd = new OleDbCommand();
             cmd.Connection = con;
             cmd.CommandText = @"INSERT INTO TableEmployeeInfo (LoginNumber, [Password],FirstName,Surname,Gender,ContactEmail,ContactNumber,JobTitle,ManagerName,BaseAnnualSalary,PaidLeaveHours,ProfessionGrade,BaseCountry) 
             VALUES (@id,@pwd,@fn,@sn,@gen, @email,@number,@job,@manager, @salary,@leave,@grade,@country)";
@@ -122,9 +122,9 @@ namespace HR_Global_System
 
         public void UpdateSelectedRecord(Employee updatedEmployeeInfo)
         {
-            con = new OleDbConnection();
+            //con = new OleDbConnection();
             con.ConnectionString = connectionString;
-            cmd = new OleDbCommand();
+            //cmd = new OleDbCommand();
             cmd.Connection = con;
             cmd.CommandText = @"UPDATE TableEmployeeInfo SET [Password]=@pwd,FirstName=@fn , Surname=@sn , Gender=@gen , ContactEmail=@email , ContactNumber=@number , JobTitle=@job, ManagerName=@manager, BaseAnnualSalary=@salary, PaidLeaveHours=@leave, ProfessionGrade=@grade, BaseCountry=@country  WHERE LoginNumber=@id";
             //parameterised queries for information needed for table
