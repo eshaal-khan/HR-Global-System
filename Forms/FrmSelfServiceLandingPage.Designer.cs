@@ -47,6 +47,7 @@
             this.btnSelfServicePassword = new System.Windows.Forms.Button();
             this.btnBackFromSSLanding = new System.Windows.Forms.Button();
             this.btnSSLogout = new System.Windows.Forms.Button();
+            this.btnViewPersonalRequests = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSelfServiceWelcome
@@ -232,11 +233,24 @@
             this.btnSSLogout.UseVisualStyleBackColor = true;
             this.btnSSLogout.Click += new System.EventHandler(this.btnSSLogout_Click);
             // 
+            // btnViewPersonalRequests
+            // 
+            this.btnViewPersonalRequests.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewPersonalRequests.Location = new System.Drawing.Point(1560, 977);
+            this.btnViewPersonalRequests.Name = "btnViewPersonalRequests";
+            this.btnViewPersonalRequests.Size = new System.Drawing.Size(315, 191);
+            this.btnViewPersonalRequests.TabIndex = 19;
+            this.btnViewPersonalRequests.TabStop = false;
+            this.btnViewPersonalRequests.Text = "View my update requests";
+            this.btnViewPersonalRequests.UseVisualStyleBackColor = true;
+            this.btnViewPersonalRequests.Click += new System.EventHandler(this.btnViewPersonalRequests_Click);
+            // 
             // FrmSelfServiceLandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1957, 1263);
+            this.Controls.Add(this.btnViewPersonalRequests);
             this.Controls.Add(this.btnSSLogout);
             this.Controls.Add(this.btnBackFromSSLanding);
             this.Controls.Add(this.btnSelfServicePassword);
@@ -283,5 +297,6 @@
         private System.Windows.Forms.Button btnSelfServicePassword;
         private System.Windows.Forms.Button btnBackFromSSLanding;
         private System.Windows.Forms.Button btnSSLogout;
+        private System.Windows.Forms.Button btnViewPersonalRequests;
     }
 }

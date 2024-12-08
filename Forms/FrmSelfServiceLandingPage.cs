@@ -85,5 +85,10 @@ namespace HR_Global_System
             }
 
         }
+
+        private void btnViewPersonalRequests_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new FrmViewPersonalUpdateRequests());
+        }
     }
 }

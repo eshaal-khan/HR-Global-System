@@ -40,10 +40,12 @@
             // dgvViewRequests
             // 
             this.dgvViewRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViewRequests.ContextMenuStrip = this.cmsViewRequestRecord;
             this.dgvViewRequests.Location = new System.Drawing.Point(27, 86);
             this.dgvViewRequests.Name = "dgvViewRequests";
             this.dgvViewRequests.RowHeadersWidth = 102;
             this.dgvViewRequests.RowTemplate.Height = 40;
+            this.dgvViewRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvViewRequests.Size = new System.Drawing.Size(1369, 660);
             this.dgvViewRequests.TabIndex = 0;
             // 
@@ -63,7 +65,7 @@
             this.cmsViewRequestRecord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewToolStripMenuItem});
             this.cmsViewRequestRecord.Name = "cmsViewRequestRecord";
-            this.cmsViewRequestRecord.Size = new System.Drawing.Size(361, 107);
+            this.cmsViewRequestRecord.Size = new System.Drawing.Size(161, 52);
             // 
             // viewToolStripMenuItem
             // 

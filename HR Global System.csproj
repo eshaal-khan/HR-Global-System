@@ -63,6 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalyticsAndDataMethods.cs" />
+    <Compile Include="Forms\FrmHRViewSelectedRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHRViewSelectedRequest.Designer.cs">
+      <DependentUpon>FrmHRViewSelectedRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmHRViewUpdateRequests.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     </Compile>
     <Compile Include="Forms\FrmSelfServiceUpdate.Designer.cs">
       <DependentUpon>FrmSelfServiceUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmViewPersonalUpdateRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmViewPersonalUpdateRequests.Designer.cs">
+      <DependentUpon>FrmViewPersonalUpdateRequests.cs</DependentUpon>
     </Compile>
     <Compile Include="HRPortalEmployeeFunctionality.cs" />
     <Compile Include="Login Classes\HRLogin.cs" />
@@ -157,6 +169,9 @@
     <EmbeddedResource Include="Forms\FrmHRManagerLogin.resx">
       <DependentUpon>FrmHRManagerLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHRViewSelectedRequest.resx">
+      <DependentUpon>FrmHRViewSelectedRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmHRViewUpdateRequests.resx">
       <DependentUpon>FrmHRViewUpdateRequests.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmViewEmployeeRecords.resx">
       <DependentUpon>FrmViewEmployeeRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmViewPersonalUpdateRequests.resx">
+      <DependentUpon>FrmViewPersonalUpdateRequests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmWelcomePage.resx">
       <DependentUpon>FrmWelcomePage.cs</DependentUpon>

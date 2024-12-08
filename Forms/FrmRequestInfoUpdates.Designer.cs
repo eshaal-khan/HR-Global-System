@@ -34,9 +34,6 @@
             this.btnSendRequest = new System.Windows.Forms.Button();
             this.lblUpdateRequestTitle = new System.Windows.Forms.Label();
             this.txtRequestTitle = new System.Windows.Forms.TextBox();
-            this.lblCurrentOpenRequests = new System.Windows.Forms.Label();
-            this.dgvCurrentRequestsOpen = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentRequestsOpen)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRequestUpdate
@@ -95,33 +92,11 @@
             this.txtRequestTitle.Size = new System.Drawing.Size(973, 38);
             this.txtRequestTitle.TabIndex = 5;
             // 
-            // lblCurrentOpenRequests
-            // 
-            this.lblCurrentOpenRequests.AutoSize = true;
-            this.lblCurrentOpenRequests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentOpenRequests.Location = new System.Drawing.Point(13, 808);
-            this.lblCurrentOpenRequests.Name = "lblCurrentOpenRequests";
-            this.lblCurrentOpenRequests.Size = new System.Drawing.Size(739, 36);
-            this.lblCurrentOpenRequests.TabIndex = 6;
-            this.lblCurrentOpenRequests.Text = "Note - you currently have the below requests open:";
-            // 
-            // dgvCurrentRequestsOpen
-            // 
-            this.dgvCurrentRequestsOpen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCurrentRequestsOpen.Location = new System.Drawing.Point(19, 868);
-            this.dgvCurrentRequestsOpen.Name = "dgvCurrentRequestsOpen";
-            this.dgvCurrentRequestsOpen.RowHeadersWidth = 102;
-            this.dgvCurrentRequestsOpen.RowTemplate.Height = 40;
-            this.dgvCurrentRequestsOpen.Size = new System.Drawing.Size(1315, 243);
-            this.dgvCurrentRequestsOpen.TabIndex = 7;
-            // 
             // FrmRequestInfoUpdates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1586, 1150);
-            this.Controls.Add(this.dgvCurrentRequestsOpen);
-            this.Controls.Add(this.lblCurrentOpenRequests);
+            this.ClientSize = new System.Drawing.Size(1586, 837);
             this.Controls.Add(this.txtRequestTitle);
             this.Controls.Add(this.lblUpdateRequestTitle);
             this.Controls.Add(this.btnSendRequest);
@@ -130,7 +105,6 @@
             this.Controls.Add(this.lblRequestUpdate);
             this.Name = "FrmRequestInfoUpdates";
             this.Text = "FrmRequestInfoUpdates";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentRequestsOpen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,7 +118,5 @@
         private System.Windows.Forms.Button btnSendRequest;
         private System.Windows.Forms.Label lblUpdateRequestTitle;
         private System.Windows.Forms.TextBox txtRequestTitle;
-        private System.Windows.Forms.Label lblCurrentOpenRequests;
-        private System.Windows.Forms.DataGridView dgvCurrentRequestsOpen;
     }
 }
