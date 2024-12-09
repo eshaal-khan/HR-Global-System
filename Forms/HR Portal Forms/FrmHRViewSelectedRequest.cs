@@ -13,6 +13,7 @@ namespace HR_Global_System.Forms
 {
     public partial class FrmHRViewSelectedRequest : Form
     {
+        HRUpdateRequestsMethods requestHandlingMethods;
         public FrmHRViewSelectedRequest(UpdateRequest selectedRequest)
         {
             InitializeComponent();
@@ -25,19 +26,7 @@ namespace HR_Global_System.Forms
 
         private void btnSaveStatusChange_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cbxRequestStatus.SelectedItem.ToString());
-            OleDbConnection con = new OleDbConnection();
-            con.ConnectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-            OleDbCommand cmd = new OleDbCommand();
-            cmd.Connection = con;
-            cmd.CommandText = @"UPDATE TableEmployeeRequests SET RequestStatus= @rs WHERE EmployeeID=@id";
-            //parameterised queries for information needed for table
-            cmd.Parameters.AddWithValue("@rs", cbxRequestStatus.SelectedItem.ToString());
-            cmd.Parameters.AddWithValue("@id", txtEmpID.Text);
-            con.Open();
-            int status = cmd.ExecuteNonQuery();
-            con.Close();
-            DialogResult res = MessageBox.Show("Status has been changed", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            requestHandlingMethods.SaveStatusChange(cbxRequestStatus.SelectedItem.ToString(),txtEmpID.Text);
         }
     }
 }

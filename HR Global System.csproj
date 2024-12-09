@@ -62,6 +62,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\HR Portal Forms\FrmHRViewLeaveRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HR Portal Forms\FrmHRViewLeaveRequests.Designer.cs">
+      <DependentUpon>FrmHRViewLeaveRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HR Portal Forms\FrmHRViewSelecredLeaveRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HR Portal Forms\FrmHRViewSelecredLeaveRequest.Designer.cs">
+      <DependentUpon>FrmHRViewSelecredLeaveRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Self Service Portal Forms\FrmSubmitLeaveRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Self Service Portal Forms\FrmSubmitLeaveRequest.Designer.cs">
+      <DependentUpon>FrmSubmitLeaveRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Self Service Portal Forms\FrmViewPersonalLeave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Self Service Portal Forms\FrmViewPersonalLeave.Designer.cs">
+      <DependentUpon>FrmViewPersonalLeave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\LeaveRequest.cs" />
     <Compile Include="HR Portal Functionality\HRAnalyticsPageMethods.cs" />
     <Compile Include="Forms\HR Portal Forms\FrmHRViewSelectedRequest.cs">
       <SubType>Form</SubType>
@@ -94,6 +119,7 @@
       <DependentUpon>FrmViewPersonalUpdateRequests.cs</DependentUpon>
     </Compile>
     <Compile Include="HR Portal Functionality\HRPortalEmployeeRelatedMethods.cs" />
+    <Compile Include="HR Portal Functionality\HRUpdateRequestsMethods.cs" />
     <Compile Include="Login Classes\HRLogin.cs" />
     <Compile Include="Login Classes\LoginBase.cs" />
     <Compile Include="Login Classes\SelfServiceLogin.cs" />
@@ -169,11 +195,20 @@
     <EmbeddedResource Include="Forms\HR Portal Forms\FrmHRManagerLogin.resx">
       <DependentUpon>FrmHRManagerLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HR Portal Forms\FrmHRViewLeaveRequests.resx">
+      <DependentUpon>FrmHRViewLeaveRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HR Portal Forms\FrmHRViewSelecredLeaveRequest.resx">
+      <DependentUpon>FrmHRViewSelecredLeaveRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HR Portal Forms\FrmHRViewSelectedRequest.resx">
       <DependentUpon>FrmHRViewSelectedRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HR Portal Forms\FrmHRViewUpdateRequests.resx">
       <DependentUpon>FrmHRViewUpdateRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmSubmitLeaveRequest.resx">
+      <DependentUpon>FrmSubmitLeaveRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmRequestInfoUpdates.resx">
       <DependentUpon>FrmRequestInfoUpdates.cs</DependentUpon>
@@ -189,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HR Portal Forms\FrmViewEmployeeRecords.resx">
       <DependentUpon>FrmViewEmployeeRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmViewPersonalLeave.resx">
+      <DependentUpon>FrmViewPersonalLeave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmViewPersonalUpdateRequests.resx">
       <DependentUpon>FrmViewPersonalUpdateRequests.cs</DependentUpon>

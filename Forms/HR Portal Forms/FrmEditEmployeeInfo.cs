@@ -40,6 +40,7 @@ namespace HR_Global_System
             Employee updatedEmployeeInfo = new Employee(txtSelectedEmployeeID.Text, txtSelectedEmployeePassword.Text, txtSelectedEmployeeFirstName.Text, txtSelectedEmployeeSurname.Text, txtSelectedEmployeeGender.Text, txtSelectedEmployeeEmail.Text, txtSelectedEmployeeMobile.Text,
                 txtSelectedEmployeeTitle.Text, txtSelectedEmployeeManager.Text, Convert.ToDecimal(txtSelectedEmployeeSalary.Text), Convert.ToDecimal(txtSelectedEmployeeLeave.Text), txtSelectedEmployeeGrade.Text, txtSelectedEmployeeCountry.Text);
             employeeFunctionality.UpdateSelectedRecord(updatedEmployeeInfo);
+            FormManagement.MoveBackToPreviousForm(this, new FrmViewEmployeeRecords());
         }
 
         private void btnShowPassword_Click(object sender, EventArgs e)

@@ -48,6 +48,8 @@
             this.btnBackFromSSLanding = new System.Windows.Forms.Button();
             this.btnSSLogout = new System.Windows.Forms.Button();
             this.btnViewPersonalRequests = new System.Windows.Forms.Button();
+            this.btnRequestLeave = new System.Windows.Forms.Button();
+            this.btnViewLeave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSelfServiceWelcome
@@ -193,7 +195,7 @@
             // btnSelfServiceUpdate
             // 
             this.btnSelfServiceUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelfServiceUpdate.Location = new System.Drawing.Point(1560, 746);
+            this.btnSelfServiceUpdate.Location = new System.Drawing.Point(1272, 363);
             this.btnSelfServiceUpdate.Name = "btnSelfServiceUpdate";
             this.btnSelfServiceUpdate.Size = new System.Drawing.Size(315, 191);
             this.btnSelfServiceUpdate.TabIndex = 15;
@@ -236,20 +238,46 @@
             // btnViewPersonalRequests
             // 
             this.btnViewPersonalRequests.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewPersonalRequests.Location = new System.Drawing.Point(1560, 977);
+            this.btnViewPersonalRequests.Location = new System.Drawing.Point(1618, 363);
             this.btnViewPersonalRequests.Name = "btnViewPersonalRequests";
             this.btnViewPersonalRequests.Size = new System.Drawing.Size(315, 191);
             this.btnViewPersonalRequests.TabIndex = 19;
             this.btnViewPersonalRequests.TabStop = false;
-            this.btnViewPersonalRequests.Text = "View my update requests";
+            this.btnViewPersonalRequests.Text = "View my data change requests";
             this.btnViewPersonalRequests.UseVisualStyleBackColor = true;
             this.btnViewPersonalRequests.Click += new System.EventHandler(this.btnViewPersonalRequests_Click);
+            // 
+            // btnRequestLeave
+            // 
+            this.btnRequestLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRequestLeave.Location = new System.Drawing.Point(1272, 633);
+            this.btnRequestLeave.Name = "btnRequestLeave";
+            this.btnRequestLeave.Size = new System.Drawing.Size(315, 191);
+            this.btnRequestLeave.TabIndex = 20;
+            this.btnRequestLeave.TabStop = false;
+            this.btnRequestLeave.Text = "Request leave";
+            this.btnRequestLeave.UseVisualStyleBackColor = true;
+            this.btnRequestLeave.Click += new System.EventHandler(this.btnRequestLeave_Click);
+            // 
+            // btnViewLeave
+            // 
+            this.btnViewLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewLeave.Location = new System.Drawing.Point(1618, 633);
+            this.btnViewLeave.Name = "btnViewLeave";
+            this.btnViewLeave.Size = new System.Drawing.Size(315, 191);
+            this.btnViewLeave.TabIndex = 21;
+            this.btnViewLeave.TabStop = false;
+            this.btnViewLeave.Text = "View my upcoming leave";
+            this.btnViewLeave.UseVisualStyleBackColor = true;
+            this.btnViewLeave.Click += new System.EventHandler(this.btnViewLeave_Click);
             // 
             // FrmSelfServiceLandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1957, 1263);
+            this.Controls.Add(this.btnViewLeave);
+            this.Controls.Add(this.btnRequestLeave);
             this.Controls.Add(this.btnViewPersonalRequests);
             this.Controls.Add(this.btnSSLogout);
             this.Controls.Add(this.btnBackFromSSLanding);
@@ -298,5 +326,7 @@
         private System.Windows.Forms.Button btnBackFromSSLanding;
         private System.Windows.Forms.Button btnSSLogout;
         private System.Windows.Forms.Button btnViewPersonalRequests;
+        private System.Windows.Forms.Button btnRequestLeave;
+        private System.Windows.Forms.Button btnViewLeave;
     }
 }

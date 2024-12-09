@@ -1,4 +1,6 @@
 ﻿using HR_Global_System.Forms;
+using HR_Global_System.Forms.HR_Portal_Forms;
+using HR_Global_System.Forms.Self_Service_Portal_Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -89,6 +91,16 @@ namespace HR_Global_System
         private void btnViewPersonalRequests_Click(object sender, EventArgs e)
         {
             FormManagement.NavigateToNextForm(this, new FrmViewPersonalUpdateRequests());
+        }
+
+        private void btnRequestLeave_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new FrmSubmitLeaveRequest());
+        }
+
+        private void btnViewLeave_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new FrmViewPersonalLeave());
         }
     }
 }

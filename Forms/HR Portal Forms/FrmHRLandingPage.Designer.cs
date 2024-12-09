@@ -36,6 +36,7 @@
             this.btnBackFromHRLanding = new System.Windows.Forms.Button();
             this.btnHRLogout = new System.Windows.Forms.Button();
             this.btnViewUpdateRequests = new System.Windows.Forms.Button();
+            this.btnViewLeaveRequests = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHRLandingPage
@@ -62,7 +63,7 @@
             // btnCreateEmployeeRecord
             // 
             this.btnCreateEmployeeRecord.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateEmployeeRecord.Location = new System.Drawing.Point(968, 129);
+            this.btnCreateEmployeeRecord.Location = new System.Drawing.Point(720, 129);
             this.btnCreateEmployeeRecord.Name = "btnCreateEmployeeRecord";
             this.btnCreateEmployeeRecord.Size = new System.Drawing.Size(276, 195);
             this.btnCreateEmployeeRecord.TabIndex = 2;
@@ -73,7 +74,7 @@
             // btnViewAnalytics
             // 
             this.btnViewAnalytics.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewAnalytics.Location = new System.Drawing.Point(480, 129);
+            this.btnViewAnalytics.Location = new System.Drawing.Point(376, 129);
             this.btnViewAnalytics.Name = "btnViewAnalytics";
             this.btnViewAnalytics.Size = new System.Drawing.Size(276, 195);
             this.btnViewAnalytics.TabIndex = 3;
@@ -104,19 +105,32 @@
             // 
             // btnViewUpdateRequests
             // 
-            this.btnViewUpdateRequests.Location = new System.Drawing.Point(1270, 190);
+            this.btnViewUpdateRequests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewUpdateRequests.Location = new System.Drawing.Point(1062, 129);
             this.btnViewUpdateRequests.Name = "btnViewUpdateRequests";
-            this.btnViewUpdateRequests.Size = new System.Drawing.Size(243, 158);
+            this.btnViewUpdateRequests.Size = new System.Drawing.Size(276, 195);
             this.btnViewUpdateRequests.TabIndex = 6;
             this.btnViewUpdateRequests.Text = "View Update Requests";
             this.btnViewUpdateRequests.UseVisualStyleBackColor = true;
             this.btnViewUpdateRequests.Click += new System.EventHandler(this.btnViewUpdateRequests_Click);
+            // 
+            // btnViewLeaveRequests
+            // 
+            this.btnViewLeaveRequests.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewLeaveRequests.Location = new System.Drawing.Point(209, 351);
+            this.btnViewLeaveRequests.Name = "btnViewLeaveRequests";
+            this.btnViewLeaveRequests.Size = new System.Drawing.Size(276, 195);
+            this.btnViewLeaveRequests.TabIndex = 7;
+            this.btnViewLeaveRequests.Text = "View leave requests";
+            this.btnViewLeaveRequests.UseVisualStyleBackColor = true;
+            this.btnViewLeaveRequests.Click += new System.EventHandler(this.btnViewLeaveRequests_Click);
             // 
             // FrmHRLandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1525, 569);
+            this.Controls.Add(this.btnViewLeaveRequests);
             this.Controls.Add(this.btnViewUpdateRequests);
             this.Controls.Add(this.btnHRLogout);
             this.Controls.Add(this.btnBackFromHRLanding);
@@ -140,5 +154,6 @@
         private System.Windows.Forms.Button btnBackFromHRLanding;
         private System.Windows.Forms.Button btnHRLogout;
         private System.Windows.Forms.Button btnViewUpdateRequests;
+        private System.Windows.Forms.Button btnViewLeaveRequests;
     }
 }

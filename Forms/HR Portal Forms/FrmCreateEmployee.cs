@@ -13,7 +13,7 @@ namespace HR_Global_System
 {
     public partial class FrmCreateEmployee : Form
     {
-        HRPortalEmployeeRelatedMethods employeeFunctionality=new HRPortalEmployeeRelatedMethods();
+        HRPortalEmployeeRelatedMethods employeeFunctionality;
         public FrmCreateEmployee()
         {
             InitializeComponent();
@@ -26,6 +26,7 @@ namespace HR_Global_System
                 txtNewEmployeeManager.Text,Convert.ToDecimal(txtNewEmployeeSalary),Convert.ToDecimal(txtNewEmployeeLeave),txtNewEmployeeGrade.Text,txtNewEmployeeCountry.Text);
 
             employeeFunctionality.CreateNewRecord(newEmployee);
+            FormManagement.MoveBackToPreviousForm(this, new FrmHRLandingPage());
         }
 
         private void btnBackFromCreateEmp_Click(object sender, EventArgs e)

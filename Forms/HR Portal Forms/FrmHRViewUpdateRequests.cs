@@ -13,25 +13,16 @@ namespace HR_Global_System.Forms
 {
     public partial class FrmHRViewUpdateRequests : Form
     {
+        HRUpdateRequestsMethods requestHandlingMethods;
         public FrmHRViewUpdateRequests()
         {
             InitializeComponent();
+            requestHandlingMethods.ViewRequestRecords(dgvViewRequests);
+
         }
 
         private void FrmHRViewUpdateRequests_Load(object sender, EventArgs e)
         {
-            OleDbConnection con = new OleDbConnection();
-            con.ConnectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source = HRDatabase.mdb";
-            OleDbCommand cmd = new OleDbCommand();
-            cmd.Connection = con;
-            cmd.CommandText = @"SELECT * From TableEmployeeRequests WHERE CountryOfRequester=@cor";
-            cmd.Parameters.AddWithValue("@cor", SessionManager.Instance._countryOfUser);
-            con.Open();
-            OleDbDataReader reader = cmd.ExecuteReader();
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = reader;
-            dgvViewRequests.DataSource = bindingSource;
-            con.Close();
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)

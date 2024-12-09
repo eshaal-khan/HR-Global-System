@@ -1,4 +1,5 @@
 ﻿using HR_Global_System.Forms;
+using HR_Global_System.Forms.HR_Portal_Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,11 @@ namespace HR_Global_System
         {
             FormManagement.NavigateToNextForm(this, new FrmHRViewUpdateRequests());
 
+        }
+
+        private void btnViewLeaveRequests_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new FrmHRViewLeaveRequests());
         }
     }
 }
