@@ -17,6 +17,7 @@ namespace HR_Global_System
             InitializeComponent();
         }
 
+        //implementation of FormManagement to hide complexities of hiding + closing the current form and opening a new instance of the next one
         private void btnAccessSelfService_Click(object sender, EventArgs e)
         {
             FormManagement.NavigateToNextForm(this, new FrmSelfServiceLogin());

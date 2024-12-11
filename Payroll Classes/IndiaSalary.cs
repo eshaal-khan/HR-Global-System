@@ -8,6 +8,38 @@ namespace HR_Global_System.Payroll_Classes
 {
     class IndiaSalary : ISalaryByCountry
     {
-
+        public decimal CalculateMonthlySalary(decimal annualSalary)
+        {
+            decimal salaryAfterTax;
+            if (annualSalary < 0 && annualSalary >= 2776.83M)
+            {
+                return annualSalary / 12;
+            }
+            else if (annualSalary < 2776.83M && annualSalary >= 6479.28M)
+            {
+                salaryAfterTax = annualSalary * 0.95M;
+                return salaryAfterTax/12;
+            }
+            else if (annualSalary < 6479.28M && annualSalary >= 9256.11M)
+            {
+                salaryAfterTax = annualSalary * 0.90M;
+                return salaryAfterTax / 12;
+            }
+            else if (annualSalary < 9256.11M && annualSalary >= 11107.33M)
+            {
+                salaryAfterTax = annualSalary * 0.85M;
+                return salaryAfterTax / 12;
+            }
+            else if (annualSalary < 11107.33M && annualSalary >= 13884.16M)
+            {
+                salaryAfterTax = annualSalary * 0.8M;
+                return salaryAfterTax / 12;
+            }
+            else
+            {
+                salaryAfterTax = annualSalary * 0.7M;
+                return salaryAfterTax / 12;
+            }
+        }
     }
 }

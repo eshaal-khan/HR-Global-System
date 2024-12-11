@@ -8,17 +8,17 @@ namespace HR_Global_System.Payroll_Classes
 {
     public class SalaryCalculator
     {
+        //implementation of strategy pattern- classes all to do with calculating take-home pay have differing behaviour based on employee's base country
         //context class for strategy pattern
-        private ISalaryByCountry _countryStrategy;
-
+        private ISalaryByCountry _setCountryStrategy;
         public void SetCountry(ISalaryByCountry country)
         {
-            _countryStrategy=country;
+            _setCountryStrategy=country;
         }
 
-        public decimal CalculateMonthlySalary(decimal AnnualSalary)
+        public decimal CalculateMonthlySalary(decimal annualSalary)
         {
-            return 0.5M;  //run method here e.g. return _votingStrategy.CountVotes(votes);
+            return _setCountryStrategy.CalculateMonthlySalary(annualSalary);
         }
 
     }

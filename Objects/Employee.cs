@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HR_Global_System
 {
+    //Prototype pattern - provides a template for creating Employees
     public class Employee
     {
         private string _employeeID;

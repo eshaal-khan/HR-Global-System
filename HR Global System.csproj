@@ -81,6 +81,12 @@
     <Compile Include="Forms\Self Service Portal Forms\FrmSubmitLeaveRequest.Designer.cs">
       <DependentUpon>FrmSubmitLeaveRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Self Service Portal Forms\FrmViewMySalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Self Service Portal Forms\FrmViewMySalary.Designer.cs">
+      <DependentUpon>FrmViewMySalary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Self Service Portal Forms\FrmViewPersonalLeave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HR Portal Forms\FrmViewEmployeeRecords.resx">
       <DependentUpon>FrmViewEmployeeRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmViewMySalary.resx">
+      <DependentUpon>FrmViewMySalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmViewPersonalLeave.resx">
       <DependentUpon>FrmViewPersonalLeave.cs</DependentUpon>

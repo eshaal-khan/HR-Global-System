@@ -9,6 +9,6 @@ namespace HR_Global_System.Payroll_Classes
     public interface ISalaryByCountry
     {
         //interface for strategy pattern - ensures all tax calculations use a common method
-        public decimal CalculateMonthlySalary(decimal annualSalary);
+        decimal CalculateMonthlySalary(decimal annualSalary);
     }
 }

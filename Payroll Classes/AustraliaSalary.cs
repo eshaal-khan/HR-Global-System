@@ -9,5 +9,33 @@ namespace HR_Global_System.Payroll_Classes
     class AustraliaSalary:ISalaryByCountry
     {
         //code for calculating salaries for employees in Australia
+        public decimal CalculateMonthlySalary(decimal annualSalary)
+        {
+            decimal salaryAfterTax;
+            if (annualSalary < 0 && annualSalary >= 9097.45M)
+            {
+                return annualSalary / 12;
+            }
+            else if (annualSalary < 9097.45M && annualSalary >= 22493.70M)
+            {
+                salaryAfterTax = annualSalary * 0.81M;
+                return salaryAfterTax / 12;
+            }
+            else if (annualSalary < 22493.70M && annualSalary >= 59983.70M)
+            {
+                salaryAfterTax = annualSalary * 0.675M;
+                return salaryAfterTax / 12;
+            }
+            else if (annualSalary < 59983.70M && annualSalary >= 89974.80M)
+            {
+                salaryAfterTax = annualSalary * 0.63M;
+                return salaryAfterTax / 12;
+            }
+            else
+            {
+                salaryAfterTax = annualSalary * 0.55M;
+                return salaryAfterTax / 12;
+            }
+        }
     }
 }

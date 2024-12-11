@@ -64,7 +64,6 @@ namespace HR_Global_System
 
         private void btnSelfServiceUpdate_Click(object sender, EventArgs e)
         {
-            //FormManagement.NavigateToNextForm(this, new FrmSelfServiceUpdate(fetchedDetails));
             FormManagement.NavigateToNextForm(this,new FrmRequestInfoUpdates());
 
         }
@@ -101,6 +100,12 @@ namespace HR_Global_System
         private void btnViewLeave_Click(object sender, EventArgs e)
         {
             FormManagement.NavigateToNextForm(this, new FrmViewPersonalLeave());
+        }
+
+        private void btnViewSalary_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new FrmViewMySalary());
+
         }
     }
 }

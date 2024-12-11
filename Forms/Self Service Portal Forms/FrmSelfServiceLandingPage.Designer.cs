@@ -50,6 +50,7 @@
             this.btnViewPersonalRequests = new System.Windows.Forms.Button();
             this.btnRequestLeave = new System.Windows.Forms.Button();
             this.btnViewLeave = new System.Windows.Forms.Button();
+            this.btnViewSalary = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSelfServiceWelcome
@@ -271,11 +272,24 @@
             this.btnViewLeave.UseVisualStyleBackColor = true;
             this.btnViewLeave.Click += new System.EventHandler(this.btnViewLeave_Click);
             // 
+            // btnViewSalary
+            // 
+            this.btnViewSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewSalary.Location = new System.Drawing.Point(1618, 910);
+            this.btnViewSalary.Name = "btnViewSalary";
+            this.btnViewSalary.Size = new System.Drawing.Size(315, 191);
+            this.btnViewSalary.TabIndex = 22;
+            this.btnViewSalary.TabStop = false;
+            this.btnViewSalary.Text = "View my monthly salary";
+            this.btnViewSalary.UseVisualStyleBackColor = true;
+            this.btnViewSalary.Click += new System.EventHandler(this.btnViewSalary_Click);
+            // 
             // FrmSelfServiceLandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1957, 1263);
+            this.Controls.Add(this.btnViewSalary);
             this.Controls.Add(this.btnViewLeave);
             this.Controls.Add(this.btnRequestLeave);
             this.Controls.Add(this.btnViewPersonalRequests);
@@ -328,5 +342,6 @@
         private System.Windows.Forms.Button btnViewPersonalRequests;
         private System.Windows.Forms.Button btnRequestLeave;
         private System.Windows.Forms.Button btnViewLeave;
+        private System.Windows.Forms.Button btnViewSalary;
     }
 }

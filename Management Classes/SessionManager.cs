@@ -10,6 +10,8 @@ using System.Diagnostics;
 
 namespace HR_Global_System
 {
+    //Singleton pattern - only 1 instance of SessionManager can exist at once, i.e. only 1 session at 1 time
+    //Increased access control & tracking of key values e.g. ID, title & base country w/o global variable
     //Used the following to understand and implement Singleton pattern- https://csharpindepth.com/articles/singleton
     public sealed class SessionManager
     {
