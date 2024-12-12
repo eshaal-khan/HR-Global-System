@@ -29,6 +29,7 @@ namespace HR_Global_System.Forms.Self_Service_Portal_Forms
             decimal baseAnnualSalary=Convert.ToDecimal(result);
             string country = SessionManager.Instance._countryOfUser;
             ISalaryByCountry salaryByCountry;
+            MessageBox.Show(Convert.ToString(baseAnnualSalary));
             switch (country)
             {
                 case "UK":
@@ -59,6 +60,7 @@ namespace HR_Global_System.Forms.Self_Service_Portal_Forms
                     throw new ArgumentException("Your country is not in the system, please contact your HR lead");
             }
             SalaryCalculator salaryCalculator = new SalaryCalculator();
+            salaryCalculator.SetCountry(salaryByCountry);
             decimal monthlyTakeHomeSalary= salaryCalculator.CalculateMonthlySalary(baseAnnualSalary);
             txtMonthlySalary.Text = monthlyTakeHomeSalary.ToString();
 
