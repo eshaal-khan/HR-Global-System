@@ -1,4 +1,5 @@
-﻿using HR_Global_System.Management_Classes;
+﻿using HR_Global_System.Login_Classes;
+//using HR_Global_System.Management_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace HR_Global_System
 {
     public partial class FrmSelfServiceLogin : Form
     {
+        ILogin basicLogin=new BasicLogin();
         public FrmSelfServiceLogin()
         {
             InitializeComponent();
@@ -21,14 +23,13 @@ namespace HR_Global_System
 
         private void btnSelfServiceSignIn_Click(object sender, EventArgs e)
         {
-            SelfServiceLogin loginHandler = new SelfServiceLogin();
-            bool successfulLogin = loginHandler.ValidateDetails(txtSelfServiceUsername.Text, txtSelfServicePassword.Text);
-            if (successfulLogin)
+            if (basicLogin.ValidateCredentials(txtSelfServiceUsername.Text,txtSelfServicePassword.Text))
             {
                 MessageBox.Show("Successful Login!");
                 Employee employeeRecord = HRPortalEmployeeRelatedMethods.CreateEmployeeObject(txtSelfServiceUsername.Text);
                 SessionManager.Instance.CreateSession(employeeRecord.employeeID, employeeRecord.jobTitle, employeeRecord.baseCountry);
                 FormManagement.NavigateToNextForm(this, new FrmSelfServiceLandingPage());
+
             }
             else
             {
@@ -39,7 +40,7 @@ namespace HR_Global_System
 
         private void btnBackFromSSLogin_Click(object sender, EventArgs e)
         {
-                FormManagement.MoveBackToPreviousForm(this, new FrmWelcomePage());
+            FormManagement.MoveBackToPreviousForm(this, new FrmWelcomePage());
         }
     }
 }

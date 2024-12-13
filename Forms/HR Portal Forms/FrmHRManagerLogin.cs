@@ -1,4 +1,5 @@
-﻿using HR_Global_System.Management_Classes;
+﻿using HR_Global_System.Login_Classes;
+//using HR_Global_System.Management_Classes
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,16 +17,16 @@ namespace HR_Global_System
 {
     public partial class FrmHRManagerLogin : Form
     {
+        private ILogin _login;
         public FrmHRManagerLogin()
         {
             InitializeComponent();
+            _login = new LoginHR(new BasicLogin());
         }
 
         private void btnHRManagerSignIn_Click(object sender, EventArgs e)
-        {   
-            HRLogin loginHandler = new HRLogin();
-            bool successfulLogin= loginHandler.ValidateHRDetails(txtHRUsername.Text,txtHRPassword.Text);
-            if (successfulLogin)
+        {
+            if (_login.ValidateCredentials(txtHRUsername.Text,txtHRPassword.Text))
             {
                 FormManagement.NavigateToNextForm(this, new FrmHRLandingPage());
             }

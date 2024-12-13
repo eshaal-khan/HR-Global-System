@@ -93,6 +93,10 @@
     <Compile Include="Forms\Self Service Portal Forms\FrmViewPersonalLeave.Designer.cs">
       <DependentUpon>FrmViewPersonalLeave.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login Classes\BasicLogin.cs" />
+    <Compile Include="Login Classes\ILogin.cs" />
+    <Compile Include="Login Classes\LoginDecorator.cs" />
+    <Compile Include="Login Classes\LoginHR.cs" />
     <Compile Include="Objects\LeaveRequest.cs" />
     <Compile Include="HR Portal Functionality\HRAnalyticsPageMethods.cs" />
     <Compile Include="Forms\HR Portal Forms\FrmHRViewSelectedRequest.cs">
@@ -127,9 +131,6 @@
     </Compile>
     <Compile Include="HR Portal Functionality\HRPortalEmployeeRelatedMethods.cs" />
     <Compile Include="HR Portal Functionality\HRUpdateRequestsMethods.cs" />
-    <Compile Include="Login Classes\HRLogin.cs" />
-    <Compile Include="Login Classes\LoginBase.cs" />
-    <Compile Include="Login Classes\SelfServiceLogin.cs" />
     <Compile Include="Management Classes\SessionManager.cs" />
     <Compile Include="Objects\Employee.cs" />
     <Compile Include="Management Classes\FormManagement.cs" />

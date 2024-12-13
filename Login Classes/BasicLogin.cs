@@ -6,13 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HR_Global_System.Management_Classes
+namespace HR_Global_System.Login_Classes
 {
-    //encapsulation - only accessible within child classes
-    public abstract class LoginBase
+    class BasicLogin: ILogin
     {
+        //functionality for logging in Self-Service Side
         protected string dbConnectionQuery = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-        public bool ValidateDetails(string username, string password)
+        public bool ValidateCredentials (string username, string password)
         {
             try
             {
@@ -33,7 +33,8 @@ namespace HR_Global_System.Management_Classes
                         {
                             return false;
                         }
-                }   } 
+                    }
+                }
             }
             catch (OleDbException exception)
             {
@@ -42,6 +43,7 @@ namespace HR_Global_System.Management_Classes
                 SessionManager.Instance.FinishSession();
                 return false;
             }
+            //code for logging in goes here, may need to change to return a bool
         }
     }
 }
