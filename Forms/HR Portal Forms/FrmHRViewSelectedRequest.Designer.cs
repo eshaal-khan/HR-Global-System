@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHRViewSelectedRequest));
             this.lblEmpID = new System.Windows.Forms.Label();
             this.lblSubmissionDate = new System.Windows.Forms.Label();
             this.txtEmpID = new System.Windows.Forms.TextBox();
@@ -40,6 +41,7 @@
             this.cbxRequestStatus = new System.Windows.Forms.ComboBox();
             this.btnSaveStatusChange = new System.Windows.Forms.Button();
             this.lblViewRequest = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEmpID
@@ -159,11 +161,23 @@
             this.lblViewRequest.TabIndex = 11;
             this.lblViewRequest.Text = "View Details for the selected request below:";
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(1326, 25);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(125, 128);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FrmHRViewSelectedRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1489, 974);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblViewRequest);
             this.Controls.Add(this.btnSaveStatusChange);
             this.Controls.Add(this.cbxRequestStatus);
@@ -197,5 +211,6 @@
         private System.Windows.Forms.ComboBox cbxRequestStatus;
         private System.Windows.Forms.Button btnSaveStatusChange;
         private System.Windows.Forms.Label lblViewRequest;
+        private System.Windows.Forms.Button btnBack;
     }
 }

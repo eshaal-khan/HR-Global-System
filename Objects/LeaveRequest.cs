@@ -8,6 +8,7 @@ namespace HR_Global_System.Forms.HR_Portal_Forms
 {
     public class LeaveRequest
     {
+        //attributes for LeaveRequest type object
         private string _requesterID;
         private DateTime _dateFrom; 
         private DateTime _dateTill;
@@ -15,6 +16,7 @@ namespace HR_Global_System.Forms.HR_Portal_Forms
         private string _requestStatus;
         private string _additonalNotes;
 
+        //constructor of LeaveRequest type object
         public LeaveRequest (string requesterID,DateTime dateFrom, DateTime dateTill, string leaveReason, string requestStatus, string additonalNotes)
         {
             this._requesterID = requesterID;
@@ -25,6 +27,8 @@ namespace HR_Global_System.Forms.HR_Portal_Forms
             this._additonalNotes = additonalNotes;
         }
 
+        //getters and setters for each LeaveRequest object attribute
+        //allows for more controlled access compared to public attributes (encapsulation) + provides flexibility to change accessibility of individual attributes
         public string requesterID
         {
             get 

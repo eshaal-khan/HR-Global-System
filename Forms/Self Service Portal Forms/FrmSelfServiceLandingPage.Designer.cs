@@ -313,7 +313,6 @@
             this.Controls.Add(this.lblSelfServiceWelcome);
             this.Name = "FrmSelfServiceLandingPage";
             this.Text = "FrmSelfServiceLandingPage";
-            this.Load += new System.EventHandler(this.FrmSelfServiceLandingPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

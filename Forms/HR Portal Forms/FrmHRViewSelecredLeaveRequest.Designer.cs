@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHRViewSelectedLeaveRequest));
             this.lblViewRequest = new System.Windows.Forms.Label();
             this.btnSaveStatusChange = new System.Windows.Forms.Button();
             this.cbxStatus = new System.Windows.Forms.ComboBox();
@@ -42,6 +43,7 @@
             this.lblEmpID = new System.Windows.Forms.Label();
             this.txtReason = new System.Windows.Forms.TextBox();
             this.lblReason = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblViewRequest
@@ -119,7 +121,7 @@
             this.lblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEndDate.Location = new System.Drawing.Point(26, 220);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(440, 60);
+            this.lblEndDate.Size = new System.Drawing.Size(264, 36);
             this.lblEndDate.TabIndex = 16;
             this.lblEndDate.Text = "Last day of leave:";
             // 
@@ -145,7 +147,7 @@
             this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStartDate.Location = new System.Drawing.Point(26, 150);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(445, 60);
+            this.lblStartDate.Size = new System.Drawing.Size(267, 36);
             this.lblStartDate.TabIndex = 13;
             this.lblStartDate.Text = "First day of leave:";
             // 
@@ -173,15 +175,27 @@
             this.lblReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReason.Location = new System.Drawing.Point(26, 289);
             this.lblReason.Name = "lblReason";
-            this.lblReason.Size = new System.Drawing.Size(365, 60);
+            this.lblReason.Size = new System.Drawing.Size(219, 36);
             this.lblReason.TabIndex = 24;
             this.lblReason.Text = "Reason given:";
+            // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(1431, 48);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(125, 128);
+            this.btnBack.TabIndex = 26;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FrmHRViewSelectedLeaveRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1620, 1225);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtReason);
             this.Controls.Add(this.lblReason);
             this.Controls.Add(this.lblViewRequest);
@@ -219,5 +233,6 @@
         private System.Windows.Forms.Label lblEmpID;
         private System.Windows.Forms.TextBox txtReason;
         private System.Windows.Forms.Label lblReason;
+        private System.Windows.Forms.Button btnBack;
     }
 }

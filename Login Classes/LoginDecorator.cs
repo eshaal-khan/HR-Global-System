@@ -9,6 +9,9 @@ namespace HR_Global_System.Login_Classes
     public abstract class LoginDecorator:ILogin
     {
         //abstract class implementing ILogin
+        //Contains ValidateCredentials for passing to decorated objects/classes
+
+        //follows OCP - new decorators can be added to extend functionality without modifying existing code e.g. administrator/CEO login portal
         protected ILogin _login;
 
         public LoginDecorator(ILogin login)

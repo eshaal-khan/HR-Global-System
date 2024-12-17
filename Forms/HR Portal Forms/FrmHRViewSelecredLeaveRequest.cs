@@ -15,6 +15,7 @@ namespace HR_Global_System.Forms.HR_Portal_Forms
     {
         public FrmHRViewSelectedLeaveRequest(LeaveRequest selectedLeaveRequest)
         {
+            //initialisation of elements as per data from the LeaveRequest type object passed in
             InitializeComponent();
             txtEmpID.Text=selectedLeaveRequest.requesterID;
             txtStartDate.Text=Convert.ToString(selectedLeaveRequest.dateFrom.Date);
@@ -24,7 +25,7 @@ namespace HR_Global_System.Forms.HR_Portal_Forms
             cbxStatus.Text=selectedLeaveRequest.requestStatus;
         }
 
-        private void btnSaveStatusChange_Click(object sender, EventArgs e)
+        private void btnSaveStatusChange_Click(object sender, EventArgs e) //saving status change of selected record
         {
             OleDbConnection con = new OleDbConnection();
             con.ConnectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
@@ -40,6 +41,15 @@ namespace HR_Global_System.Forms.HR_Portal_Forms
             con.Close();
             DialogResult res = MessageBox.Show("Changes have been made", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             FormManagement.MoveBackToPreviousForm(this, new FrmHRViewLeaveRequests());
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to go back? Changes made to the leave request status will not be saved.", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res == DialogResult.Yes)
+            {
+                FormManagement.MoveBackToPreviousForm(this, new FrmHRViewLeaveRequests());
+            }
         }
     }
 }

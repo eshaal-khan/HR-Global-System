@@ -13,7 +13,7 @@ namespace HR_Global_System.Forms.Self_Service_Portal_Forms
 {
     public partial class FrmViewPersonalLeave : Form
     {
-        public FrmViewPersonalLeave()
+        public FrmViewPersonalLeave() //retrieval of the logged in user's leave requests from TableLeaveRequests
         {
             InitializeComponent();
             OleDbConnection con = new OleDbConnection();
@@ -28,6 +28,11 @@ namespace HR_Global_System.Forms.Self_Service_Portal_Forms
             bindingSource.DataSource = reader;
             dgvViewMyLeave.DataSource = bindingSource;
             con.Close();
+        }
+
+        private void btnBackToPreviousPage_Click(object sender, EventArgs e)
+        {
+                FormManagement.MoveBackToPreviousForm(this, new FrmSelfServiceLandingPage());
         }
     }
 }

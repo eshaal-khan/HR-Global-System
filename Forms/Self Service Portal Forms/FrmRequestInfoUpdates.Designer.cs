@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRequestInfoUpdates));
             this.lblRequestUpdate = new System.Windows.Forms.Label();
             this.lblUpdateRequestDetails = new System.Windows.Forms.Label();
             this.rtxtRequestDetails = new System.Windows.Forms.RichTextBox();
             this.btnSendRequest = new System.Windows.Forms.Button();
             this.lblUpdateRequestTitle = new System.Windows.Forms.Label();
             this.txtRequestTitle = new System.Windows.Forms.TextBox();
+            this.btnBackFromPage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblRequestUpdate
@@ -92,11 +94,23 @@
             this.txtRequestTitle.Size = new System.Drawing.Size(973, 38);
             this.txtRequestTitle.TabIndex = 5;
             // 
+            // btnBackFromPage
+            // 
+            this.btnBackFromPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFromPage.Image = ((System.Drawing.Image)(resources.GetObject("btnBackFromPage.Image")));
+            this.btnBackFromPage.Location = new System.Drawing.Point(1431, 27);
+            this.btnBackFromPage.Name = "btnBackFromPage";
+            this.btnBackFromPage.Size = new System.Drawing.Size(125, 128);
+            this.btnBackFromPage.TabIndex = 6;
+            this.btnBackFromPage.UseVisualStyleBackColor = true;
+            this.btnBackFromPage.Click += new System.EventHandler(this.btnBackFromPage_Click);
+            // 
             // FrmRequestInfoUpdates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1586, 837);
+            this.Controls.Add(this.btnBackFromPage);
             this.Controls.Add(this.txtRequestTitle);
             this.Controls.Add(this.lblUpdateRequestTitle);
             this.Controls.Add(this.btnSendRequest);
@@ -118,5 +132,6 @@
         private System.Windows.Forms.Button btnSendRequest;
         private System.Windows.Forms.Label lblUpdateRequestTitle;
         private System.Windows.Forms.TextBox txtRequestTitle;
+        private System.Windows.Forms.Button btnBackFromPage;
     }
 }

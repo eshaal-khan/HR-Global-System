@@ -31,6 +31,7 @@
             this.lblWelcomePage = new System.Windows.Forms.Label();
             this.btnAccessHRPortal = new System.Windows.Forms.Button();
             this.btnAccessSelfService = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblWelcomePage
@@ -46,7 +47,7 @@
             // btnAccessHRPortal
             // 
             this.btnAccessHRPortal.Font = new System.Drawing.Font("MV Boli", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccessHRPortal.Location = new System.Drawing.Point(1200, 136);
+            this.btnAccessHRPortal.Location = new System.Drawing.Point(630, 136);
             this.btnAccessHRPortal.Name = "btnAccessHRPortal";
             this.btnAccessHRPortal.Size = new System.Drawing.Size(429, 317);
             this.btnAccessHRPortal.TabIndex = 1;
@@ -65,11 +66,23 @@
             this.btnAccessSelfService.UseVisualStyleBackColor = true;
             this.btnAccessSelfService.Click += new System.EventHandler(this.btnAccessSelfService_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("MV Boli", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(1200, 136);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(429, 317);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit System";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FrmWelcomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1689, 819);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAccessSelfService);
             this.Controls.Add(this.btnAccessHRPortal);
             this.Controls.Add(this.lblWelcomePage);
@@ -85,6 +98,7 @@
         private System.Windows.Forms.Label lblWelcomePage;
         private System.Windows.Forms.Button btnAccessHRPortal;
         private System.Windows.Forms.Button btnAccessSelfService;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

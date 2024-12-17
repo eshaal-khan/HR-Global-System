@@ -11,7 +11,12 @@ using System.Security.Cryptography.X509Certificates;
 namespace HR_Global_System.Forms
 {
     //Used the following for understanding how to use charts and read data into them: https://www.youtube.com/watch?v=ySTpfFFuYh8
-    internal class HRAnalyticsPageMethods
+    //SRP- class with specific purpose of ensuring all methods related to retrieving the correct information for charts and displaying them are kept together
+
+    //Data Structures - majority of the methods here responsible for collating data use Dictionary data structure
+        //alternatives considered e.g. lists and arrays did not meet the requirements in this problem - one which can store 2 values with different data types was needed
+        //arrays only allow pre-fixed number of elements - in these scenarios we do not know how many elements there will be
+    public class HRAnalyticsPageMethods
     {
         //method which takes the values, chart and name of the series and populates the chart (bar chart specific)
         public static void PopulateBarChart(Dictionary<string, int> XYAxisValues, Chart chtToPopulate, string seriesName)
@@ -22,7 +27,7 @@ namespace HR_Global_System.Forms
                 chtToPopulate.Series[seriesName].Points.AddXY(barValue.Key, barValue.Value);
             }
         }
-
+        //method similar to above but specifically for the salary bar chart, as this requires a dictionary where the value in the key-value pair is a decimal (above requires an integer value)
         public static void PopulateSalaryBarChart(Dictionary<string, decimal> XYAxisValues, Chart chtToPopulate, string seriesName)
         {
 
@@ -32,6 +37,27 @@ namespace HR_Global_System.Forms
             }
         }
 
+        //method which displays gender count data using values retrieved + stored in dictionary
+        public static void ShowGenderCount(Label lblMale, Label lblFemale, Label lblOther, Dictionary<string, int> genderCounts)
+        {
+            foreach (var entry in genderCounts)
+            {
+                string gender = entry.Key;
+                int count = entry.Value;
+                if (gender == "Male")
+                {
+                    lblMale.Text = $"Male Employee Count: {count}";
+                }
+                else if (gender == "Female")
+                {
+                    lblFemale.Text = $"Female Employee Count: {count}";
+                }
+                else
+                {
+                    lblOther.Text = $"Other: {count}";
+                }
+            }
+        }
 
         //method for collating the data for headcount per barchart in the country of the HR lead
         public static Dictionary<string, int> FetchRoleHeadcountData()
@@ -78,7 +104,7 @@ namespace HR_Global_System.Forms
         public static Dictionary<string, int> FetchCountryHeadcountData()
         {
             string connectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-            Dictionary<string, int> XYAxisValues = new Dictionary<string, int>();
+            Dictionary<string, int> XYAxisValues = new Dictionary<string, int>(); //Dictionary - key = base country, value = number of employees in the country
             string jobHeadcountQuery = "SELECT BaseCountry FROM TableEmployeeInfo";
             using (OleDbConnection con = new OleDbConnection(connectionString))
             {
@@ -118,7 +144,7 @@ namespace HR_Global_System.Forms
         public static Dictionary<string, decimal> FetchTotalSalaryValues()
         {
             string connectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-            Dictionary<string, decimal> XYAxisValues = new Dictionary<string, decimal>();
+            Dictionary<string, decimal> XYAxisValues = new Dictionary<string, decimal>(); //Dictionary - key = role/job title, value = total spent on the base salaries of people in the role in the country
             string salaryByRoleQuery = "SELECT JobTitle,BaseAnnualSalary FROM TableEmployeeInfo WHERE BaseCountry=@baseCountry";
             using (OleDbConnection con = new OleDbConnection(connectionString))
             {
@@ -160,7 +186,7 @@ namespace HR_Global_System.Forms
         public static Dictionary<string, int> FetchGenderCounts()
         {
             string connectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-            Dictionary<string, int> XYAxisValues = new Dictionary<string, int>();
+            Dictionary<string, int> XYAxisValues = new Dictionary<string, int>(); //Dictionary - key = gender, value = number of employees in the country with that gender registered
             string genderCountQuery = "SELECT Gender FROM TableEmployeeInfo WHERE BaseCountry=@baseCountry";
             using (OleDbConnection con = new OleDbConnection(connectionString))
             {
@@ -201,7 +227,7 @@ namespace HR_Global_System.Forms
         public static Dictionary<string, int> FetchProfessionGradeCounts()
         {
             string connectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-            Dictionary<string, int> XYAxisValues = new Dictionary<string, int>();
+            Dictionary<string, int> XYAxisValues = new Dictionary<string, int>();//Dictionary - key = Profession grade, value = number of employees in the country at that profession grade
             string professionGradeCountQuery = "SELECT ProfessionGrade FROM TableEmployeeInfo WHERE BaseCountry=@baseCountry";
             using (OleDbConnection con = new OleDbConnection(connectionString))
             {
@@ -236,31 +262,6 @@ namespace HR_Global_System.Forms
                     return null;
                 }
 
-
-                //method which displays pie chart data - NOTE may not be needed
-
-            }
-        }
-
-        //method which displays gender count data
-        public static void ShowGenderCount (Label lblMale, Label lblFemale, Label lblOther, Dictionary <string,int> genderCounts)
-        {
-            foreach (var entry in genderCounts)
-            {
-                string gender = entry.Key;
-                int count = entry.Value;
-                if (gender=="Male")
-                {
-                    lblMale.Text = $"Male Employee Count: {count}";
-                }
-                else if (gender=="Female")
-                {
-                    lblFemale.Text = $"Female Employee Count: {count}";
-                }
-                else
-                {
-                    lblOther.Text = $"Other: {count}";
-                }
             }
         }
     }

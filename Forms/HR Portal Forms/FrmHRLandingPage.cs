@@ -20,6 +20,7 @@ namespace HR_Global_System
             lblHRLandingPage.Text = ("Welcome to the HR Portal! Use the below options for navigation:");
         }
 
+        //methods for navigating forward, back and logging out depending on button clicked
         private void btnViewEmployeeRecords_Click(object sender, EventArgs e)
         {
             FormManagement.NavigateToNextForm(this, new FrmViewEmployeeRecords());

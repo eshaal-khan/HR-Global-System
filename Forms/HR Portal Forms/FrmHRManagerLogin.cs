@@ -17,14 +17,15 @@ namespace HR_Global_System
 {
     public partial class FrmHRManagerLogin : Form
     {
+        //interface for implementation of decorator pattern classes
         private ILogin _login;
         public FrmHRManagerLogin()
         {
             InitializeComponent();
-            _login = new LoginHR(new BasicLogin());
+            _login = new LoginHR(new BasicLogin()); //instantiation of decorated class
         }
 
-        private void btnHRManagerSignIn_Click(object sender, EventArgs e)
+        private void btnHRManagerSignIn_Click(object sender, EventArgs e) //actions and output depending on whether the validation conducted by the decorated pattern returned showed details as valid
         {
             if (_login.ValidateCredentials(txtHRUsername.Text,txtHRPassword.Text))
             {
@@ -33,11 +34,10 @@ namespace HR_Global_System
             else
             {
                 MessageBox.Show("Access denied- please ensure you are a HR lead and your details are correct");
-                SessionManager.Instance.FinishSession();
             }
         }
 
-        private void btnBackFromHRLogin_Click(object sender, EventArgs e)
+        private void btnBackFromHRLogin_Click(object sender, EventArgs e) //navigation back to welcome page
         {
             FormManagement.MoveBackToPreviousForm(this, new FrmWelcomePage());
         }

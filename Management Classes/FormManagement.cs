@@ -12,7 +12,9 @@ namespace HR_Global_System
 {
     public class FormManagement
     {
-        //Facade pattern - class used to manage and hide complexities of moving between 2 forms both ways (to next form and back)
+        //methods for moving forward/back through the program, reduce repition of code/functionality
+        //Follows SRP - purpose of this class is simply to hold methods used for form navigation
+        //Follows DRY- eliminates repition of navigation code, simply call the correct method
         public static void NavigateToNextForm(Form presentForm, Form nextForm)
         {
             presentForm.Hide();

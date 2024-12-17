@@ -9,6 +9,7 @@ namespace HR_Global_System.Payroll_Classes
     public interface ISalaryByCountry
     {
         //interface for strategy pattern - ensures all tax calculations use a common method
+        //declares algorithms common to the strategies - here it is calculating monthly salary after tax based on each country's tax brackets
         decimal CalculateMonthlySalary(decimal annualSalary);
     }
 }

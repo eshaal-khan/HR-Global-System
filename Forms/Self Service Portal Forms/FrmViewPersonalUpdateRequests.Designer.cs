@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmViewPersonalUpdateRequests));
             this.dgvViewMyRequests = new System.Windows.Forms.DataGridView();
             this.lblPersonalUpdateRequests = new System.Windows.Forms.Label();
+            this.btnBackFromHRLanding = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewMyRequests)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +55,23 @@
             this.lblPersonalUpdateRequests.TabIndex = 8;
             this.lblPersonalUpdateRequests.Text = "View all update requests you have made here:";
             // 
+            // btnBackFromHRLanding
+            // 
+            this.btnBackFromHRLanding.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFromHRLanding.Image = ((System.Drawing.Image)(resources.GetObject("btnBackFromHRLanding.Image")));
+            this.btnBackFromHRLanding.Location = new System.Drawing.Point(1426, 52);
+            this.btnBackFromHRLanding.Name = "btnBackFromHRLanding";
+            this.btnBackFromHRLanding.Size = new System.Drawing.Size(125, 128);
+            this.btnBackFromHRLanding.TabIndex = 10;
+            this.btnBackFromHRLanding.UseVisualStyleBackColor = true;
+            this.btnBackFromHRLanding.Click += new System.EventHandler(this.btnBackFromHRLanding_Click);
+            // 
             // FrmViewPersonalUpdateRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1587, 966);
+            this.Controls.Add(this.btnBackFromHRLanding);
             this.Controls.Add(this.dgvViewMyRequests);
             this.Controls.Add(this.lblPersonalUpdateRequests);
             this.Name = "FrmViewPersonalUpdateRequests";
@@ -72,5 +86,6 @@
 
         private System.Windows.Forms.DataGridView dgvViewMyRequests;
         private System.Windows.Forms.Label lblPersonalUpdateRequests;
+        private System.Windows.Forms.Button btnBackFromHRLanding;
     }
 }

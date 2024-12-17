@@ -18,10 +18,6 @@ namespace HR_Global_System
         public FrmViewAnalytics()
         {
             InitializeComponent();
-        }
-
-        private void FrnViewAnalytics_Load(object sender, EventArgs e)
-        {
             //methods for job roles count in the country
             Dictionary<string, int> jobRolesCount = HRAnalyticsPageMethods.FetchRoleHeadcountData();
             HRAnalyticsPageMethods.PopulateBarChart(jobRolesCount, chtHeadcountByJob, "Employee Count");
@@ -31,20 +27,19 @@ namespace HR_Global_System
             HRAnalyticsPageMethods.PopulateBarChart(professionGradeCounts, chtProfessionGrades, "Employee Count");
 
             //methods for headcounts in each country
-            Dictionary<string,int> countryEmployeesCount=HRAnalyticsPageMethods.FetchCountryHeadcountData();
-            HRAnalyticsPageMethods.PopulateBarChart(countryEmployeesCount, chtCountryHeadcounts,"Employee Count");
+            Dictionary<string, int> countryEmployeesCount = HRAnalyticsPageMethods.FetchCountryHeadcountData();
+            HRAnalyticsPageMethods.PopulateBarChart(countryEmployeesCount, chtCountryHeadcounts, "Employee Count");
 
             //methods for salary total per role
-            Dictionary<string,decimal> salaryTotals =HRAnalyticsPageMethods.FetchTotalSalaryValues();
+            Dictionary<string, decimal> salaryTotals = HRAnalyticsPageMethods.FetchTotalSalaryValues();
             HRAnalyticsPageMethods.PopulateSalaryBarChart(salaryTotals, chtMoneyPerRole, "Money (£)");
 
             //methods for gender counts
             Dictionary<string, int> genderCount = HRAnalyticsPageMethods.FetchGenderCounts();
-            HRAnalyticsPageMethods.ShowGenderCount(lblGenRepMaleCount, lblGenRepFemaleCount, lblGenRepOtherCount,genderCount);
-
+            HRAnalyticsPageMethods.ShowGenderCount(lblGenRepMaleCount, lblGenRepFemaleCount, lblGenRepOtherCount, genderCount);
         }
 
-        private void btnBackFromHRLanding_Click(object sender, EventArgs e)
+        private void btnBackFromHRLanding_Click(object sender, EventArgs e) //navigation back to the landing page
         {
             FormManagement.MoveBackToPreviousForm(this, new FrmHRLandingPage());
         }

@@ -12,19 +12,20 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace HR_Global_System
 {
     //Used the following for help in structuring the databases querying code- https://stackoverflow.com/questions/15148588/proper-way-of-getting-a-data-from-an-access-database
-    internal class HRPortalEmployeeRelatedMethods
+    //Follows SRP- class with specific purpose of keeping all methods related to Employee data CRUD on HR lead portal together
+    //Only reason this class would change would be to add/remove CRUD functionality
+    public class HRPortalEmployeeRelatedMethods
     {
+        //attributes used across all defined methods for db connections
         private static OleDbConnection con= new OleDbConnection();
         private static OleDbCommand cmd= new OleDbCommand();
         private static OleDbDataReader reader;
         private string connectionString= "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
 
+        //method for retrieving all employee records from TableEmployee info for employees who have the same base country as HR lead, and show info in data grid view
         public void RetrieveEmpData(DataGridView dgvShowAllEmployeeRecords)
-        {
-
-            //con = new OleDbConnection();
+        {            
             con.ConnectionString = connectionString;
-            //cmd = new OleDbCommand();
             cmd.Connection = con;
             cmd.CommandText = @"SELECT * From TableEmployeeInfo WHERE BaseCountry=@baseCountry";
             cmd.Parameters.AddWithValue("@baseCountry", SessionManager.Instance._countryOfUser);
@@ -36,13 +37,15 @@ namespace HR_Global_System
             con.Close();
         }
 
-        public void DeleteSelectedRecord(string employeeID)
+        //method for deleting a selected employee record
+        //first moves record to an archive table, as information is retained for 5 years in line with GDPR
+        //once successfully moved to archive table, it is then deleted from employee info table
+        public void DeleteSelectedEmpRecord(string employeeID)
         {
             OleDbConnection conInsertRecord = new OleDbConnection();
             conInsertRecord.ConnectionString = connectionString;
             OleDbCommand cmdInsertRecord = new OleDbCommand();
             cmdInsertRecord.Connection = conInsertRecord;
-            //SQL for deleting the record where the ID is the one in the variable above
             cmdInsertRecord.CommandText = @"INSERT INTO TableRecordsArchive (LoginNumber,[Password],FirstName,Surname,Gender,ContactEmail,ContactNumber,JobTitle,ManagerName,BaseAnnualSalary,PaidLeaveHours,ProfessionGrade,BaseCountry) 
             SELECT LoginNumber,[Password],FirstName,Surname,Gender,ContactEmail,ContactNumber,JobTitle,ManagerName,BaseAnnualSalary,PaidLeaveHours,ProfessionGrade,BaseCountry FROM TableEmployeeInfo WHERE LoginNumber= @id";
             cmdInsertRecord.Parameters.AddWithValue("@id", employeeID); //parameterised query
@@ -50,22 +53,20 @@ namespace HR_Global_System
             reader = cmdInsertRecord.ExecuteReader();
             conInsertRecord.Close();
             DialogResult res1 = MessageBox.Show("Record successfully inserted!!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
-            //con = new OleDbConnection();
             con.ConnectionString = connectionString;
-            //cmd = new OleDbCommand();
             cmd.Connection = con;
-            //SQL for deleting the record where the ID is the one in the variable above
             cmd.CommandText = @"DELETE FROM TableEmployeeInfo WHERE LoginNumber= @id";
             cmd.Parameters.AddWithValue("@id", employeeID); //parameterised query
             con.Open();
             int status = cmd.ExecuteNonQuery();
             MessageBox.Show(Convert.ToString(status));
             con.Close();
-            //shows message to user that deleting has been done successfully- if not, prints an error message
             DialogResult res = MessageBox.Show("Employee record deleted!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public void CheckAndDeleteOldRecords()
+
+        //method used for checking that all records in TableRecordsArchive are less than 5 years old in line with the company's GDPR policy
+        //if more than 5 years old, they will be deleted and HR lead will be notified of how many records have been deleted since last login
+        public void CheckAndDeleteArchivedEmpRecords()
         {
             DateTime cutoffDate = DateTime.Now.AddYears(-5);
             DateTime cutoffDateFormatted = cutoffDate.Date;
@@ -93,11 +94,13 @@ namespace HR_Global_System
             
         }
 
-        public void CreateNewRecord(Employee newEmployee)
+        //method with takes Employee type object as parameter (monadic method)
+        //uses the attributes of passed object for adding a new Employee record to the table through a parameterised query for security/preventing SQL injection
+        public void CreateNewEmpRecord(Employee newEmployee)
         {
-            //con = new OleDbConnection();
+            con = new OleDbConnection();
             con.ConnectionString = connectionString;
-            //cmd = new OleDbCommand();
+            cmd = new OleDbCommand();
             cmd.Connection = con;
             cmd.CommandText = @"INSERT INTO TableEmployeeInfo (LoginNumber, [Password],FirstName,Surname,Gender,ContactEmail,ContactNumber,JobTitle,ManagerName,BaseAnnualSalary,PaidLeaveHours,ProfessionGrade,BaseCountry) 
             VALUES (@id,@pwd,@fn,@sn,@gen, @email,@number,@job,@manager, @salary,@leave,@grade,@country)";
@@ -120,11 +123,13 @@ namespace HR_Global_System
             DialogResult res = MessageBox.Show("New record successfully added!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void UpdateSelectedRecord(Employee updatedEmployeeInfo)
+        //method used to make updates to a specific employee info record, using attributes of the passed in Employee object
+        //conducted through parameterised query
+        public void UpdateSelectedEmpRecord(Employee updatedEmployeeInfo)
         {
-            //con = new OleDbConnection();
+            con = new OleDbConnection();
             con.ConnectionString = connectionString;
-            //cmd = new OleDbCommand();
+            cmd = new OleDbCommand();
             cmd.Connection = con;
             cmd.CommandText = @"UPDATE TableEmployeeInfo SET [Password]=@pwd,FirstName=@fn , Surname=@sn , Gender=@gen , ContactEmail=@email , ContactNumber=@number , JobTitle=@job, ManagerName=@manager, BaseAnnualSalary=@salary, PaidLeaveHours=@leave, ProfessionGrade=@grade, BaseCountry=@country  WHERE LoginNumber=@id";
             //parameterised queries for information needed for table
@@ -145,50 +150,6 @@ namespace HR_Global_System
             int status = cmd.ExecuteNonQuery();
             con.Close();
             DialogResult res = MessageBox.Show("Edit complete!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public static Employee CreateEmployeeObject(string ID)
-        {
-            string connectionString = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
-            using (OleDbConnection con = new OleDbConnection(connectionString))
-            {
-                con.Open();
-
-                string commandText = @"SELECT * From TableEmployeeInfo WHERE LoginNumber= @id";
-                using (OleDbCommand cmd = new OleDbCommand(commandText, con))
-                {
-                    cmd.Parameters.AddWithValue("@id", ID);
-                    using (OleDbDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            Employee EmployeeRecord = new Employee
-                                (
-                                reader["LoginNumber"].ToString(),
-                               reader["Password"].ToString(),
-                             reader["FirstName"].ToString(),
-                            reader["Surname"].ToString(),
-                            reader["Gender"].ToString(),
-                            reader["ContactEmail"].ToString(),
-                           reader["ContactNumber"].ToString(),
-                            reader["JobTitle"].ToString(),
-                            reader["ManagerName"].ToString(),
-                            Convert.ToDecimal(reader["BaseAnnualSalary"].ToString()),
-                            Convert.ToDecimal(reader["PaidLeaveHours"].ToString()),
-                            reader["ProfessionGrade"].ToString(),
-                            reader["BaseCountry"].ToString()
-                                );
-                            return EmployeeRecord;
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error in fetching data, please try again");
-                            return null;
-                        }
-                    }
-                }
-            }
         }
     }
 }

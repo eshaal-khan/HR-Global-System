@@ -13,7 +13,7 @@ namespace HR_Global_System.Forms
 {
     public partial class FrmViewPersonalUpdateRequests : Form
     {
-        public FrmViewPersonalUpdateRequests()
+        public FrmViewPersonalUpdateRequests() //retrieval and display in data grid view of logged in user's previously submitted update to personal info requests from TableEmployeeRequests
         {
             InitializeComponent();
             OleDbConnection con = new OleDbConnection();
@@ -29,6 +29,11 @@ namespace HR_Global_System.Forms
             dgvViewMyRequests.DataSource = bindingSource;
             con.Close();
 
+        }
+
+        private void btnBackFromHRLanding_Click(object sender, EventArgs e)
+        {
+                FormManagement.MoveBackToPreviousForm(this, new FrmSelfServiceLandingPage());
         }
     }
 }

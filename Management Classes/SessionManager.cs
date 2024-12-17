@@ -15,13 +15,19 @@ namespace HR_Global_System
     //Used the following to understand and implement Singleton pattern- https://csharpindepth.com/articles/singleton
     public sealed class SessionManager
     {
-
+        //holds reference to created instance
         private static SessionManager instance = null;
+
+        //lock needed for instance of SessionManager created
         private static readonly object padlock = new object();
         public string _IDOfUser { get; private set; }
         public string _jobOfUser { get; private set; }
         public string _countryOfUser { get; private set; }
+        
+        //private, parameterless constructor- prevents other classes from instantiating it & subclassing (both of which would violate the pattern)
         private SessionManager() { }
+        
+        //used for getting details of the currently existing session
         public static SessionManager Instance
         {
             get
@@ -36,6 +42,7 @@ namespace HR_Global_System
                 }
         }   }
         
+        //upon successful login, a new session is created and values needed for creating a session are added
         public void CreateSession(string userID, string userJobTitle, string userCountry)
         {
             this._IDOfUser = userID;
@@ -43,6 +50,7 @@ namespace HR_Global_System
             this._countryOfUser = userCountry;
         }
 
+        //once user is done with their session, it is ended + program is closed
         public void FinishSession()
         {
             _IDOfUser = null;

@@ -8,24 +8,27 @@ namespace HR_Global_System.Payroll_Classes
 {
     class FranceSalary : ISalaryByCountry
     {
+        //concrete strategy for France
+        //implements interface and applies France tax brackets (found online) to return take-home pay for the month depending on annual base salary for employees with France base country
+
         public decimal CalculateMonthlySalary(decimal annualSalary)
         {
             decimal salaryAfterTax;
-            if (annualSalary < 0 && annualSalary >= 9296.83M)
+            if (annualSalary > 0 && annualSalary <= 9296.83M)
             {
                 return annualSalary / 12;
             }
-            else if (annualSalary < 9296.83M && annualSalary >= 23704.68M)
+            else if (annualSalary > 9296.83M && annualSalary <= 23704.68M)
             {
                 salaryAfterTax = annualSalary * 0.89M;
                 return salaryAfterTax / 12;
             }
-            else if (annualSalary < 23704.68M && annualSalary >= 67780.23M)
+            else if (annualSalary > 23704.68M && annualSalary <= 67780.23M)
             {
                 salaryAfterTax = annualSalary * 0.7M;
                 return salaryAfterTax / 12;
             }
-            else if (annualSalary < 67780.23M && annualSalary >= 145787.46M)
+            else if (annualSalary > 67780.23M && annualSalary <= 145787.46M)
             {
                 salaryAfterTax = annualSalary * 0.59M;
                 return salaryAfterTax / 12;

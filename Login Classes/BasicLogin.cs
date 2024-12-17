@@ -11,6 +11,8 @@ namespace HR_Global_System.Login_Classes
     class BasicLogin: ILogin
     {
         //functionality for logging in Self-Service Side
+        //Concrete class that implements ILogin
+        //Simply defines and runs ValidateCredentials method
         protected string dbConnectionQuery = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
         public bool ValidateCredentials (string username, string password)
         {
@@ -26,7 +28,7 @@ namespace HR_Global_System.Login_Classes
 
                         if (result != null)
                         {
-                            Employee employeeRecord = HRPortalEmployeeRelatedMethods.CreateEmployeeObject(username);
+                            Employee employeeRecord = Employee.CreateEmpObject(username);
                             return true;
                         }
                         else

@@ -278,6 +278,7 @@
             // 
             // btnUpdateEmployeeInfo
             // 
+            this.btnUpdateEmployeeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateEmployeeInfo.Location = new System.Drawing.Point(1372, 794);
             this.btnUpdateEmployeeInfo.Name = "btnUpdateEmployeeInfo";
             this.btnUpdateEmployeeInfo.Size = new System.Drawing.Size(206, 139);

@@ -10,10 +10,11 @@ namespace HR_Global_System.Login_Classes
 {
     public class LoginHR:LoginDecorator
     {
-        public LoginHR(ILogin login):base(login) { }
+        //Concrete decorator used to add further functionality for logging in HR leads specifically
         protected string dbConnectionQuery = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
+        public LoginHR(ILogin login) : base(login) { }
 
-
+        //override method for implementing ValidateCredentials and passing necessary values to ValidateJobRole method (holds the extra functionality needed for this decorated object)
         public override bool ValidateCredentials(string username, string password)
         {
             if (base.ValidateCredentials(username, password))

@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHRViewLeaveRequests));
             this.lblViewLeaveRequests = new System.Windows.Forms.Label();
             this.dgvViewLeaveRequests = new System.Windows.Forms.DataGridView();
             this.cmsSelectLeaveRequestRecord = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBackToHRLanding = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewLeaveRequests)).BeginInit();
             this.cmsSelectLeaveRequestRecord.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +45,7 @@
             this.lblViewLeaveRequests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewLeaveRequests.Location = new System.Drawing.Point(27, 32);
             this.lblViewLeaveRequests.Name = "lblViewLeaveRequests";
-            this.lblViewLeaveRequests.Size = new System.Drawing.Size(1650, 65);
+            this.lblViewLeaveRequests.Size = new System.Drawing.Size(990, 39);
             this.lblViewLeaveRequests.TabIndex = 3;
             this.lblViewLeaveRequests.Text = "View leave requests sent by employees in your country here:";
             // 
@@ -65,20 +67,32 @@
             this.cmsSelectLeaveRequestRecord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem});
             this.cmsSelectLeaveRequestRecord.Name = "cmsSelectLeaveRequestRecord";
-            this.cmsSelectLeaveRequestRecord.Size = new System.Drawing.Size(361, 107);
+            this.cmsSelectLeaveRequestRecord.Size = new System.Drawing.Size(171, 52);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(360, 48);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(170, 48);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // btnBackToHRLanding
+            // 
+            this.btnBackToHRLanding.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToHRLanding.Image = ((System.Drawing.Image)(resources.GetObject("btnBackToHRLanding.Image")));
+            this.btnBackToHRLanding.Location = new System.Drawing.Point(1420, 95);
+            this.btnBackToHRLanding.Name = "btnBackToHRLanding";
+            this.btnBackToHRLanding.Size = new System.Drawing.Size(125, 128);
+            this.btnBackToHRLanding.TabIndex = 5;
+            this.btnBackToHRLanding.UseVisualStyleBackColor = true;
+            this.btnBackToHRLanding.Click += new System.EventHandler(this.btnBackToHRLanding_Click);
             // 
             // FrmHRViewLeaveRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1769, 1286);
+            this.Controls.Add(this.btnBackToHRLanding);
             this.Controls.Add(this.lblViewLeaveRequests);
             this.Controls.Add(this.dgvViewLeaveRequests);
             this.Name = "FrmHRViewLeaveRequests";
@@ -96,5 +110,6 @@
         private System.Windows.Forms.DataGridView dgvViewLeaveRequests;
         private System.Windows.Forms.ContextMenuStrip cmsSelectLeaveRequestRecord;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.Button btnBackToHRLanding;
     }
 }

@@ -16,42 +16,35 @@ namespace HR_Global_System
 {
     public partial class FrmSelfServiceLandingPage : Form
     {
-        //static OleDbConnection con;
-        Employee fetchedDetails = HRPortalEmployeeRelatedMethods.CreateEmployeeObject(SessionManager.Instance._IDOfUser);
-        static OleDbCommand cmd=new OleDbCommand();
-        static OleDbDataReader reader;
+        //new employee object instantiated for storing/retrieving info related to the logged in user of the ss portal
+        public Employee fetchedEmployeeDetails = Employee.CreateEmpObject(SessionManager.Instance._IDOfUser);
         public FrmSelfServiceLandingPage()
         {
+            //load/populate all necessary components of the Form
             InitializeComponent();
-            //Employee fetchedDetails = HRPortalEmployeeFunctionality.CreateEmployeeObject(SessionManager.Instance._IDOfUser);
-            lblSelfServiceID.Text = $"Employee ID: {fetchedDetails.employeeID}";
+            lblSelfServiceID.Text = $"Employee ID: {fetchedEmployeeDetails.employeeID}";
             lblSelfServicePassword.Text = $"Password: *******";
-            lblSelfServiceFirstName.Text = $"First Name: {fetchedDetails.firstName}";
-            lblSelfServiceSurname.Text = $"Surname: {fetchedDetails.surname}";
-            lblSelfServiceGender.Text = $"Gender: {fetchedDetails.gender}";
-            lblSelfServiceEmail.Text = $"Email Address: {fetchedDetails.emailAddress}";
-            lblSelfServiceNumber.Text = $"Contact Number: {fetchedDetails.phoneNumber}";
-            lblSelfServiceJobTtitle.Text = $"Job Title: {fetchedDetails.jobTitle}";
-            lblSelfServiceManager.Text = $"Manager: {fetchedDetails.manager}";
-            lblSelfServiceAnnualSalary.Text = $"Annual Salary (before tax): {Convert.ToString(fetchedDetails.annualSalary)}";
-            lblSelfServicePaidLeave.Text = $"Paid Leave Entitlement (hours): {Convert.ToString(fetchedDetails.totalPaidLeave)}";
-            lblSelfServiceJobGrade.Text = $"Profession Grade: {fetchedDetails.jobGrade}";
-            lblSelfServiceBaseCountry.Text = $"Base Country: {fetchedDetails.baseCountry}";
+            lblSelfServiceFirstName.Text = $"First Name: {fetchedEmployeeDetails.firstName}";
+            lblSelfServiceSurname.Text = $"Surname: {fetchedEmployeeDetails.surname}";
+            lblSelfServiceGender.Text = $"Gender: {fetchedEmployeeDetails.gender}";
+            lblSelfServiceEmail.Text = $"Email Address: {fetchedEmployeeDetails.emailAddress}";
+            lblSelfServiceNumber.Text = $"Contact Number: {fetchedEmployeeDetails.phoneNumber}";
+            lblSelfServiceJobTtitle.Text = $"Job Title: {fetchedEmployeeDetails.jobTitle}";
+            lblSelfServiceManager.Text = $"Manager: {fetchedEmployeeDetails.manager}";
+            lblSelfServiceAnnualSalary.Text = $"Annual Salary (before tax): {Convert.ToString(fetchedEmployeeDetails.annualSalary)}";
+            lblSelfServicePaidLeave.Text = $"Paid Leave Entitlement (hours): {Convert.ToString(fetchedEmployeeDetails.totalPaidLeave)}";
+            lblSelfServiceJobGrade.Text = $"Profession Grade: {fetchedEmployeeDetails.jobGrade}";
+            lblSelfServiceBaseCountry.Text = $"Base Country: {fetchedEmployeeDetails.baseCountry}";
             btnSelfServicePassword.Text = "Show Password";
 
 
         }
 
-        private void FrmSelfServiceLandingPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSelfServicePassword_Click(object sender, EventArgs e)
+        private void btnSelfServicePassword_Click(object sender, EventArgs e) //method for keeping password hidden if chosen for security, particularly in public settings
         {
             if (btnSelfServicePassword.Text == "Show Password")
             {
-                lblSelfServicePassword.Text = $"Password: {fetchedDetails.password}";
+                lblSelfServicePassword.Text = $"Password: {fetchedEmployeeDetails.password}";
                 btnSelfServicePassword.Text = "Hide Password";
             }
             else if (btnSelfServicePassword.Text == "Hide Password")
@@ -62,13 +55,13 @@ namespace HR_Global_System
             }
         }
 
-        private void btnSelfServiceUpdate_Click(object sender, EventArgs e)
+        private void btnSelfServiceUpdate_Click(object sender, EventArgs e) //navigation to page for requesting updates to details
         {
             FormManagement.NavigateToNextForm(this,new FrmRequestInfoUpdates());
 
         }
 
-        private void btnBackFromSSLanding_Click(object sender, EventArgs e)
+        private void btnBackFromSSLanding_Click(object sender, EventArgs e) //navigation out of ss portal, back to landing page
         {
             DialogResult res = MessageBox.Show("Are you sure you want to go back? Proceeding will log you out of the portal.", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (res == DialogResult.Yes)
@@ -77,34 +70,34 @@ namespace HR_Global_System
             }
         }
 
-        private void btnSSLogout_Click(object sender, EventArgs e)
+        private void btnViewPersonalRequests_Click(object sender, EventArgs e) //navigation to page to view all previous + current update requests, details about them including status
+        {
+            FormManagement.NavigateToNextForm(this, new FrmViewPersonalUpdateRequests());
+        }
+
+        private void btnRequestLeave_Click(object sender, EventArgs e) //navigation to page on which employee can request leave
+        {
+            FormManagement.NavigateToNextForm(this, new FrmSubmitLeaveRequest());
+        }
+
+        private void btnViewLeave_Click(object sender, EventArgs e) //navigation to page on which employee can view all previous + current leave including status and other details
+        {
+            FormManagement.NavigateToNextForm(this, new FrmViewPersonalLeave());
+        }
+
+        private void btnViewSalary_Click(object sender, EventArgs e) //navigation to page which employee can use to view their monthly take-home pay in GBP
+        {
+            FormManagement.NavigateToNextForm(this, new FrmViewMySalary());
+
+        }
+
+        private void btnSSLogout_Click(object sender, EventArgs e) //end session/log out of portal
         {
             DialogResult res = MessageBox.Show("Are you sure you would like to log out?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (res == DialogResult.Yes)
             {
                 SessionManager.Instance.FinishSession();
             }
-
-        }
-
-        private void btnViewPersonalRequests_Click(object sender, EventArgs e)
-        {
-            FormManagement.NavigateToNextForm(this, new FrmViewPersonalUpdateRequests());
-        }
-
-        private void btnRequestLeave_Click(object sender, EventArgs e)
-        {
-            FormManagement.NavigateToNextForm(this, new FrmSubmitLeaveRequest());
-        }
-
-        private void btnViewLeave_Click(object sender, EventArgs e)
-        {
-            FormManagement.NavigateToNextForm(this, new FrmViewPersonalLeave());
-        }
-
-        private void btnViewSalary_Click(object sender, EventArgs e)
-        {
-            FormManagement.NavigateToNextForm(this, new FrmViewMySalary());
 
         }
     }

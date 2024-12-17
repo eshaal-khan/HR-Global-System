@@ -216,7 +216,6 @@
             this.Controls.Add(this.chtHeadcountByJob);
             this.Name = "FrmViewAnalytics";
             this.Text = "FrnViewAnalytics";
-            this.Load += new System.EventHandler(this.FrnViewAnalytics_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chtHeadcountByJob)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtMoneyPerRole)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtCountryHeadcounts)).EndInit();

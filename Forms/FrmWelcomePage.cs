@@ -18,14 +18,23 @@ namespace HR_Global_System
         }
 
         //implementation of FormManagement to hide complexities of hiding + closing the current form and opening a new instance of the next one
-        private void btnAccessSelfService_Click(object sender, EventArgs e)
+        private void btnAccessSelfService_Click(object sender, EventArgs e) //navigation to ss login page
         {
             FormManagement.NavigateToNextForm(this, new FrmSelfServiceLogin());
         }
 
-        private void btnAccessHRPortal_Click(object sender, EventArgs e)
+        private void btnAccessHRPortal_Click(object sender, EventArgs e) //navigation to HR login page
         {
             FormManagement.NavigateToNextForm(this, new FrmHRManagerLogin());
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to go exit the system?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

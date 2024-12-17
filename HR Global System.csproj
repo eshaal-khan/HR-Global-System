@@ -117,12 +117,6 @@
     <Compile Include="Forms\Self Service Portal Forms\FrmRequestInfoUpdates.Designer.cs">
       <DependentUpon>FrmRequestInfoUpdates.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Self Service Portal Forms\FrmSelfServiceUpdate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Self Service Portal Forms\FrmSelfServiceUpdate.Designer.cs">
-      <DependentUpon>FrmSelfServiceUpdate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Self Service Portal Forms\FrmViewPersonalUpdateRequests.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,7 +124,6 @@
       <DependentUpon>FrmViewPersonalUpdateRequests.cs</DependentUpon>
     </Compile>
     <Compile Include="HR Portal Functionality\HRPortalEmployeeRelatedMethods.cs" />
-    <Compile Include="HR Portal Functionality\HRUpdateRequestsMethods.cs" />
     <Compile Include="Management Classes\SessionManager.cs" />
     <Compile Include="Objects\Employee.cs" />
     <Compile Include="Management Classes\FormManagement.cs" />
@@ -236,9 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmSelfServiceLogin.resx">
       <DependentUpon>FrmSelfServiceLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Self Service Portal Forms\FrmSelfServiceUpdate.resx">
-      <DependentUpon>FrmSelfServiceUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HR Portal Forms\FrmViewEmployeeRecords.resx">
       <DependentUpon>FrmViewEmployeeRecords.cs</DependentUpon>

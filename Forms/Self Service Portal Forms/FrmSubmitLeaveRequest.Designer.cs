@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubmitLeaveRequest));
             this.lblDateFrom = new System.Windows.Forms.Label();
             this.dtpDateFrom = new System.Windows.Forms.DateTimePicker();
             this.dtpDateTill = new System.Windows.Forms.DateTimePicker();
@@ -40,6 +41,7 @@
             this.btnSubmitLeaveRequest = new System.Windows.Forms.Button();
             this.rtxtAdditionalNotes = new System.Windows.Forms.RichTextBox();
             this.lblAdditionalInfo = new System.Windows.Forms.Label();
+            this.btnBackFromHRLanding = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDateFrom
@@ -157,11 +159,23 @@
             this.lblAdditionalInfo.TabIndex = 12;
             this.lblAdditionalInfo.Text = "Additional details/notes:";
             // 
+            // btnBackFromHRLanding
+            // 
+            this.btnBackFromHRLanding.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFromHRLanding.Image = ((System.Drawing.Image)(resources.GetObject("btnBackFromHRLanding.Image")));
+            this.btnBackFromHRLanding.Location = new System.Drawing.Point(1061, 14);
+            this.btnBackFromHRLanding.Name = "btnBackFromHRLanding";
+            this.btnBackFromHRLanding.Size = new System.Drawing.Size(125, 128);
+            this.btnBackFromHRLanding.TabIndex = 13;
+            this.btnBackFromHRLanding.UseVisualStyleBackColor = true;
+            this.btnBackFromHRLanding.Click += new System.EventHandler(this.btnBackFromHRLanding_Click);
+            // 
             // FrmSubmitLeaveRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1911, 1275);
+            this.Controls.Add(this.btnBackFromHRLanding);
             this.Controls.Add(this.lblAdditionalInfo);
             this.Controls.Add(this.rtxtAdditionalNotes);
             this.Controls.Add(this.btnSubmitLeaveRequest);
@@ -195,5 +209,6 @@
         private System.Windows.Forms.Button btnSubmitLeaveRequest;
         private System.Windows.Forms.RichTextBox rtxtAdditionalNotes;
         private System.Windows.Forms.Label lblAdditionalInfo;
+        private System.Windows.Forms.Button btnBackFromHRLanding;
     }
 }

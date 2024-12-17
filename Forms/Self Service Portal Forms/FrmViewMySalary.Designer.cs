@@ -32,6 +32,7 @@
             this.lblMonthlySalary = new System.Windows.Forms.Label();
             this.txtMonthlySalary = new System.Windows.Forms.TextBox();
             this.btnBackFromViewSalary = new System.Windows.Forms.Button();
+            this.lblNote = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblMonthlySalary
@@ -64,11 +65,21 @@
             this.btnBackFromViewSalary.UseVisualStyleBackColor = true;
             this.btnBackFromViewSalary.Click += new System.EventHandler(this.btnBackFromViewSalary_Click);
             // 
+            // lblNote
+            // 
+            this.lblNote.AutoSize = true;
+            this.lblNote.Location = new System.Drawing.Point(22, 164);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(92, 32);
+            this.lblNote.TabIndex = 19;
+            this.lblNote.Text = "label1";
+            // 
             // FrmViewMySalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 437);
+            this.ClientSize = new System.Drawing.Size(1199, 592);
+            this.Controls.Add(this.lblNote);
             this.Controls.Add(this.btnBackFromViewSalary);
             this.Controls.Add(this.txtMonthlySalary);
             this.Controls.Add(this.lblMonthlySalary);
@@ -84,5 +95,6 @@
         private System.Windows.Forms.Label lblMonthlySalary;
         private System.Windows.Forms.TextBox txtMonthlySalary;
         private System.Windows.Forms.Button btnBackFromViewSalary;
+        private System.Windows.Forms.Label lblNote;
     }
 }

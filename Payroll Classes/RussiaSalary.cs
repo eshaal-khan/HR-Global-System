@@ -8,10 +8,13 @@ namespace HR_Global_System.Payroll_Classes
 {
     class RussiaSalary : ISalaryByCountry
     {
+        //concrete strategy for Russia
+        //implements interface and applies Russia tax brackets (found online) to return take-home pay for the month depending on annual base salary for employees with Russia base country
+
         public decimal CalculateMonthlySalary(decimal annualSalary)
         {
             decimal SalaryAfterTax;
-            if (annualSalary <0 && annualSalary >=37212.48M)
+            if (annualSalary > 0 && annualSalary <= 37212.48M)
             {
                 SalaryAfterTax = annualSalary * 0.87M;
                 return SalaryAfterTax/12;

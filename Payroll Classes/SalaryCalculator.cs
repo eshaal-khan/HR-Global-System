@@ -9,7 +9,7 @@ namespace HR_Global_System.Payroll_Classes
     public class SalaryCalculator
     {
         //implementation of strategy pattern- classes all to do with calculating take-home pay have differing behaviour based on employee's base country
-        //context class for strategy pattern
+        //context class for strategy pattern- uses strategy, holds reference to correct strategy object/class and passes it the work
         private ISalaryByCountry _setCountryStrategy;
         public void SetCountry(ISalaryByCountry country)
         {

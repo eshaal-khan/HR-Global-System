@@ -277,6 +277,7 @@
             // 
             // btnCreateEmployee
             // 
+            this.btnCreateEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateEmployee.Location = new System.Drawing.Point(1363, 854);
             this.btnCreateEmployee.Name = "btnCreateEmployee";
             this.btnCreateEmployee.Size = new System.Drawing.Size(237, 147);
