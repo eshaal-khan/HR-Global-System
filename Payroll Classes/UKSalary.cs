@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HR_Global_System.Payroll_Classes
 {
-    class UKSalary : ISalaryByCountry
+    public class UKSalary : ISalaryByCountry
     {
         //concrete strategy for UK
         //implements interface and applies UK tax brackets (found online) to return take-home pay for the month depending on annual base salary for employees with UK base country

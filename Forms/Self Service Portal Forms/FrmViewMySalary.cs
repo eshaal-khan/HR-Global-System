@@ -32,7 +32,6 @@ namespace HR_Global_System.Forms.Self_Service_Portal_Forms
                 decimal baseAnnualSalary = Convert.ToDecimal(result);//retrieve and store annual base salary of logged in user (needed by concrete strategy objects)
                 string country = SessionManager.Instance._countryOfUser; //store base country of logged in user so correct strategy object can be selected below
                 ISalaryByCountry salaryByCountry; //interface responsible for passing responsibility to correct strategy object
-                MessageBox.Show(Convert.ToString(baseAnnualSalary));
                 switch (country) //switch statement responsible for selecting the correct strategy object
                 {
                     case "UK":
