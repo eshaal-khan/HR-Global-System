@@ -44,8 +44,8 @@ namespace HR_Global_System
             }
             else
             {
-                Employee newEmployee = new Employee(txtNewEmployeeID.Text, txtNewEmployeePassword.Text, txtNewEmployeeFirstName.Text, txtNewEmployeeSurname.Text, txtNewEmployeeGender.Text, txtNewEmployeeEmail.Text, txtNewEmployeeMobile.Text, txtNewEmployeeJob.Text,
-                txtNewEmployeeManager.Text, Convert.ToDecimal(txtNewEmployeeSalary), Convert.ToDecimal(txtNewEmployeeLeave), txtNewEmployeeGrade.Text, txtNewEmployeeCountry.Text);
+                Employee newEmployee = new Employee(Convert.ToString(txtNewEmployeeID.Text), Convert.ToString(txtNewEmployeePassword.Text), Convert.ToString(txtNewEmployeeFirstName.Text), Convert.ToString(txtNewEmployeeSurname.Text), Convert.ToString(txtNewEmployeeGender.Text), Convert.ToString(txtNewEmployeeEmail.Text), Convert.ToString(txtNewEmployeeMobile.Text), Convert.ToString(txtNewEmployeeJob.Text),
+                Convert.ToString(txtNewEmployeeManager.Text), Convert.ToDecimal(txtNewEmployeeSalary.Text), Convert.ToDecimal(txtNewEmployeeLeave.Text), Convert.ToString(txtNewEmployeeGrade.Text), Convert.ToString(txtNewEmployeeCountry.Text));
 
                 employeeMethodsHandler.CreateNewEmpRecord(newEmployee);
                 FormManagement.MoveBackToPreviousForm(this, new FrmHRLandingPage()); //navigates back to previous page on successful completion of action

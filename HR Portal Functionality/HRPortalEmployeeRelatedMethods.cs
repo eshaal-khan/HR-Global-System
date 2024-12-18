@@ -25,7 +25,10 @@ namespace HR_Global_System
 
         //method for retrieving all employee records from TableEmployee info for employees who have the same base country as HR lead, and show info in data grid view
         public void RetrieveEmpData(DataGridView dgvShowAllEmployeeRecords)
-        {            
+        {
+            OleDbConnection con = new OleDbConnection();
+            OleDbCommand cmd = new OleDbCommand();
+            OleDbDataReader reader;
             con.ConnectionString = connectionString;
             cmd.Connection = con;
             cmd.CommandText = @"SELECT * From TableEmployeeInfo WHERE BaseCountry=@baseCountry";
@@ -54,16 +57,16 @@ namespace HR_Global_System
             conInsertRecord.Open();
             reader = cmdInsertRecord.ExecuteReader();
             conInsertRecord.Close();
-            DialogResult res1 = MessageBox.Show("Record successfully inserted!!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            OleDbConnection con = new OleDbConnection();
+            OleDbCommand cmd = new OleDbCommand();
             con.ConnectionString = connectionString;
             cmd.Connection = con;
             cmd.CommandText = @"DELETE FROM TableEmployeeInfo WHERE LoginNumber= @id";
             cmd.Parameters.AddWithValue("@id", employeeID); //parameterised query
             con.Open();
             int status = cmd.ExecuteNonQuery();
-            MessageBox.Show(Convert.ToString(status));
             con.Close();
-            DialogResult res = MessageBox.Show("Employee record deleted!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult res = MessageBox.Show("Employee record has been deleted, please note it has been moved to the archive as per our GDPR policy", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         //method used for checking that all records in TableRecordsArchive are less than 5 years old in line with the company's GDPR policy
@@ -83,7 +86,7 @@ namespace HR_Global_System
                     {
                         cmd.Parameters.AddWithValue("@cutoffDate", cutoffDateFormatted);
                         int deletedRows = cmd.ExecuteNonQuery();
-                        DialogResult res=MessageBox.Show(Convert.ToString(deletedRows) + " has been deleted in line with GDPR. Please view out data policy for more information","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        DialogResult res=MessageBox.Show(Convert.ToString(deletedRows) + " records have been deleted in line with GDPR and our policy which states all deleted records will be kept for 5 years.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         con.Close();
                     }
                 }

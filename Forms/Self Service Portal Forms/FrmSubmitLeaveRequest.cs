@@ -52,7 +52,7 @@ namespace HR_Global_System.Forms.HR_Portal_Forms
                     int status = cmd.ExecuteNonQuery();
                     con.Close();
                     DialogResult res = MessageBox.Show("Leave request has been submitted to your HR lead");
-
+                    FormManagement.MoveBackToPreviousForm(this, new FrmSelfServiceLandingPage());
                 }
                 catch (Exception ex)
                 {

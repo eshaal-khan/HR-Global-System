@@ -32,7 +32,7 @@ namespace HR_Global_System.Forms.Self_Service_Portal_Forms
 
         private void btnBackToPreviousPage_Click(object sender, EventArgs e)
         {
-                FormManagement.MoveBackToPreviousForm(this, new FrmSelfServiceLandingPage());
+             FormManagement.MoveBackToPreviousForm(this, new FrmSelfServiceLandingPage());
         }
     }
 }

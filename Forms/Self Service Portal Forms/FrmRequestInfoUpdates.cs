@@ -44,7 +44,7 @@ namespace HR_Global_System.Forms
             {
                 UpdateRequest newUpdateRequest = new UpdateRequest(SessionManager.Instance._IDOfUser, submissionDateFormatted, txtRequestTitle.Text, rtxtRequestDetails.Text, "Submitted", SessionManager.Instance._countryOfUser);
                 newUpdateRequest.SendUpdateRequestToDB(newUpdateRequest);
-                this.Close();
+                FormManagement.MoveBackToPreviousForm(this, new FrmSelfServiceLandingPage());
 
             }
         }
