@@ -14,6 +14,7 @@ namespace HR_Global_System
     //Used the following for help in structuring the databases querying code- https://stackoverflow.com/questions/15148588/proper-way-of-getting-a-data-from-an-access-database
     //Follows SRP- class with specific purpose of keeping all methods related to Employee data CRUD on HR lead portal together
     //Only reason this class would change would be to add/remove CRUD functionality
+    //Encapsulation of all take-home pay calculation logic and classes
     public class HRPortalEmployeeRelatedMethods
     {
         //attributes used across all defined methods for db connections
@@ -36,6 +37,7 @@ namespace HR_Global_System
             dgvShowAllEmployeeRecords.DataSource = bindingSource;
             con.Close();
         }
+
 
         //method for deleting a selected employee record
         //first moves record to an archive table, as information is retained for 5 years in line with GDPR

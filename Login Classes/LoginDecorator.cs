@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HR_Global_System.Login_Classes
 {
+    //Inheritance of ILogin methods
     public abstract class LoginDecorator:ILogin
     {
         //abstract class implementing ILogin

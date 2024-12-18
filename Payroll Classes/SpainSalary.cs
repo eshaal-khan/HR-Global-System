@@ -10,6 +10,7 @@ namespace HR_Global_System.Payroll_Classes
     {
         //concrete strategy for Spain
         //implements interface and applies Spain tax brackets (found online) to return take-home pay for the month depending on annual base salary for employees with Spain base country
+        //Follows LSP- definition of CalculateMonthlySalary below means that this class (child class of ISalaryByCountry) can uphold behaviour of the parent class
         public decimal CalculateMonthlySalary(decimal annualSalary)
         {
             decimal salaryAfterTax;

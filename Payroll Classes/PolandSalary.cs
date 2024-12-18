@@ -10,7 +10,7 @@ namespace HR_Global_System.Payroll_Classes
     {
         //concrete strategy for Poland
         //implements interface and applies Poland tax brackets (found online) to return take-home pay for the month depending on annual base salary for employees with Poland base country
-
+        //Follows LSP- definition of CalculateMonthlySalary below means that this class (child class of ISalaryByCountry) can uphold behaviour of the parent class
         public decimal CalculateMonthlySalary(decimal annualSalary)
         {
             decimal salaryAfterTax;

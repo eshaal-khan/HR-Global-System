@@ -12,7 +12,10 @@ namespace HR_Global_System.Login_Classes
     {
         //functionality for logging in Self-Service Side
         //Concrete class that implements ILogin
+        //Inherits ILogin
         //Simply defines and runs ValidateCredentials method
+        //Follows LSP- definition of ValidateCredentials below means that this class (child class of ILogin) can uphold behaviour of the parent class
+
         protected string dbConnectionQuery = "Provider = Microsoft.JET.OLEDB.4.0; Data Source =HRDatabase.mdb";
         public bool ValidateCredentials (string username, string password)
         {

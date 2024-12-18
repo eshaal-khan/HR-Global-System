@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace HR_Global_System.Login_Classes
 {
+    //Inheritance of LoginDecorator attributes and methods
     public class LoginHR:LoginDecorator
     {
         //Concrete decorator used to add further functionality for logging in HR leads specifically
